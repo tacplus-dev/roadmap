@@ -1,0 +1,13 @@
+rename schematic/platform/proto-base to schematic/platform/proto
+
+create schematic/testapp and schematic/testapp/services
+move schematic/platform/services/echo to schematic/testapp/services
+
+we need to reorganize schematic/platform/clients/webapp. we can discuss in detail but here is the gist.
+we need each service that has a webclient to have a repo in clients. we will need a place for the default stuff.
+the echo webapp client will need to move to schematic/testapp/...
+
+we need to run builds from somewhere in schematic/testapp. we can discuss how to lay this out.
+the gist is that schematic/platform is reusable
+because we are a typed system we have to build almost everything for each downstream app. i realize there are a few things we could build once but its probably not worth it now. we will simply do a complete build per app.
+for all intensive purposes we will just have one app right now. we can work later on versioning and pinning.
