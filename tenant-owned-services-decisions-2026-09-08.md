@@ -55,3 +55,28 @@ Open:
 - Kernel service_state sizing: identity agent said large/no seam, state agent found single
   codegen choke point (~20 fragments). Needs human check.
 - Prior-research decision 4: refuse s2s_read ["*"] wildcard? Not yet discussed.
+
+## Addendum 2026-09-17 (Jody) — a fourth class, 9d: shared dispatcher
+
+Item 9 placed nothing for `scottyagent`, and none of a/b/c fit it: it HAS its own S2S reach
+(subscribes to messaging.MessageBus.stream, takes kernel.FencedLock) like 9a, its rows are PER
+USER (AgentCursor keyed by recipient principal), and it holds NO authority (no delegated tokens,
+no LLM). A 9c service cannot do the job — it may not subscribe to a bus or take a lock.
+
+   d. Shared dispatcher: /system/services/<name>, own S2S reach, one instance serving every
+      tenant and every personal principal, NO authority. Its only job is to turn a fleet-wide
+      S2S event into a per-user row that the user's OWN runtime (9c) reads. Rules: acts for
+      nobody (never calls a tenant service or scottypersonal, never holds a user token); retains
+      no user content (ids, reasons, timestamps only); per-user rows held by
+      store_principal/store_namespace + generated egress filters. (scottyagent)
+
+Decided A over: B (make it 9b, one per tenant — personal-principal recipients have no tenant pod,
+so a shared instance is needed anyway) and C (retire into the per-user Scotty runtime — that
+runtime is back-pocket, and something with reach must still consume the bus).
+
+Two follow-ups filed, not built:
+- tacplus: a consumer-scoped topic envelope so a subscriber group can receive
+  {delivery_id, recipient, namespace} and never the body. Today scottyagent's process holds every
+  tenant's full Message and reads only two fields — discipline, not a control.
+- scottypersonal: watch its own principal's AgentCursor/AgentCycle rows (WATCH over pinned rows now
+  generates — tacplus 2026-09-17, watch_egress_gen.go) instead of scottyagent poking anyone.
