@@ -1,9 +1,9 @@
 # Tenant-owned service identity (`spiffe://<prefix>/<tenant>/services/<svc>`) — findings
 
-Research only; no files changed. Paths: `P` = `/Users/jody/workspace/gitlab/secondstarcavalier/schematic/platform`,
-`T` = `/Users/jody/workspace/gitlab/secondstarcavalier/schematic/tacplus`,
-`D` = `/Users/jody/workspace/gitlab/secondstarcavalier/docmanager`,
-`SC` = `/Users/jody/workspace/gitlab/secondstarcavalier/scotty/backend`.
+Research only; no files changed. Paths: `P` = `/Users/jody/workspace/gitlab/seabeam/schematic/platform`,
+`T` = `/Users/jody/workspace/gitlab/seabeam/schematic/tacplus`,
+`D` = `/Users/jody/workspace/gitlab/seabeam/sonar/docmanager`,
+`SC` = `/Users/jody/workspace/gitlab/seabeam/sonar/backend`.
 Prior research (`cross-tenant-system-identity-read-access-FINDINGS.md`) is taken as established and not re-derived.
 
 **Correction to the brief:** docmanager is NOT in scotty. `SC/services/` holds `scotty` and `scottyagent` only;

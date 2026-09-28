@@ -1,6 +1,6 @@
 # Kernel state path translation — findings
 
-Paths below are relative to `/Users/jody/workspace/gitlab/secondstarcavalier/schematic/`.
+Paths below are relative to `/Users/jody/workspace/gitlab/seabeam/schematic/`.
 `KCG` = `platform/services/kernel/codegen/src/main/resources/templates/`.
 
 ## Verdict

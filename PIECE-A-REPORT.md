@@ -328,7 +328,7 @@ the tree, re-apply:
 
 ```
 kubectl -n schematic set image sts/stratum \
-  stratum=us-central1-docker.pkg.dev/jody1-328023/cavalier/schematic/stratum@sha256:416cb8140ff7ddd7d0396060f8cf12813448c23909c48b97e961923e62e78e33
+  stratum=us-central1-docker.pkg.dev/jody1-328023/seabeam/schematic/stratum@sha256:416cb8140ff7ddd7d0396060f8cf12813448c23909c48b97e961923e62e78e33
 ```
 
 and find whoever is re-pinning it first, or it will revert again.

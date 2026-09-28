@@ -3,8 +3,8 @@
 Research pass only. No code changed in tacplus, schematic, or docmanager. Every claim below cites
 the file and line it was read from; paths are absolute unless the repo root is obvious from context.
 
-Repos: `S` = `/Users/jody/workspace/gitlab/secondstarcavalier/schematic`,
-`T` = `S/tacplus`, `D` = `/Users/jody/workspace/gitlab/secondstarcavalier/docmanager`,
+Repos: `S` = `/Users/jody/workspace/gitlab/seabeam/schematic`,
+`T` = `S/tacplus`, `D` = `/Users/jody/workspace/gitlab/seabeam/sonar/docmanager`,
 `L` = `/Users/jody/workspace/loopers`.
 
 ---
@@ -217,7 +217,7 @@ message RecordAnnotation {
 - It is read-only by construction: it lives on `s2s_read`, and the S2S read plane has no row-mutating
   RPC (`record_map.go:40-42`, `assertNoRowMutatingRPCs`). It cannot become a write or delete
   entitlement, so the "no delete entitlement, ever" ruling
-  (`~/workspace/gitlab/secondstarcavalier/scotty/backend/scotty-design-record.md:332-338`;
+  (`~/workspace/gitlab/seabeam/sonar/backend/scotty-design-record.md:332-338`;
   `D/decisions/service-agent-rpc-split-and-identity-2026-09-07.md:78`) is untouched.
 - It is not a tenant allow-list. It says "name one tenant," not "only these tenants" (see §6 for why
   that is a Jody call, and why I recommend against it in v1).

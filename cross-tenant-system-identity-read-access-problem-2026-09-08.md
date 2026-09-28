@@ -4,7 +4,7 @@
 
 DocManagerAgent is a "virtual owner" service (settled design: it acts under its own static
 service identity, never on behalf of a requesting user — see
-`~/workspace/gitlab/secondstarcavalier/scotty/backend/scotty-design-record.md` §9 and
+`~/workspace/gitlab/seabeam/sonar/backend/scotty-design-record.md` §9 and
 `~/workspace/loopers/docmanager/decisions/service-agent-rpc-split-and-identity-2026-09-07.md`).
 It's meant to autonomously read and organize a company's documents. Its own S2S identity,
 like every service identity in the platform, is necessarily `/system` — but the documents it
@@ -85,12 +85,12 @@ auditable capability** in tacplus, not an implicit behavior:
 
 ## Pointers into the actual code (read these, don't guess)
 
-- `~/workspace/gitlab/secondstarcavalier/schematic/platform/services/kernel/server/src/main/java/com/gitlab/secondstarcavalier/controlplane/schematic/services/kernel/cluster/IdentityServiceImpl.java`
+- `~/workspace/gitlab/seabeam/schematic/platform/services/kernel/server/src/main/java/com/gitlab/seabeam/controlplane/schematic/services/kernel/cluster/IdentityServiceImpl.java`
   (~line 1661) — where a service token's namespace claim is derived from its SPIFFE subject.
-- `~/workspace/gitlab/secondstarcavalier/schematic/tacplus/pkg/templates/rust/chassis/spiffe/src/spiffe.rs.tmpl`,
+- `~/workspace/gitlab/seabeam/schematic/tacplus/pkg/templates/rust/chassis/spiffe/src/spiffe.rs.tmpl`,
   `.../servicemanager/src/spiffe.rs.tmpl`, `.../grpcserver/src/spiffe.rs.tmpl` — `SpiffeIds.build`
   and where `/system` gets hardcoded into a service's SPIFFE subject.
-- `~/workspace/gitlab/secondstarcavalier/docmanager/proto/services/docmanager.proto` (~line 248-252)
+- `~/workspace/gitlab/seabeam/sonar/docmanager/proto/services/docmanager.proto` (~line 248-252)
   — the `s2s_read` "does not auto-scope by namespace" design comment that's the current de facto
   (undeclared) mechanism.
 - `~/workspace/loopers/docmanager/workers/namespace-grant-investigation-result.md` — the full
@@ -102,7 +102,7 @@ auditable capability** in tacplus, not an implicit behavior:
   — the settled "virtual owner, static service identity" design ruling that makes this problem
   arise in the first place.
 - tacplus's own `Delegate`/`authorized_services` grant model (wherever it's defined in
-  `~/workspace/gitlab/secondstarcavalier/schematic/tacplus`) — the closest existing precedent for
+  `~/workspace/gitlab/seabeam/schematic/tacplus`) — the closest existing precedent for
   "a declared, generated grant naming what a service may do."
 
 ## What's wanted from this research pass
