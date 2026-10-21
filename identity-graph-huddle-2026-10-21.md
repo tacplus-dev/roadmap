@@ -67,6 +67,15 @@ and tenants.
 14. **XIDs are secure random strings, effectively nonces.** Deleted XIDs are not kept; no
     tombstones. (Replaces item 1's tombstone.)
 
+15. **Panel follow-up (Jody, 2026-10-21): item 8 is revised.** The panel (see
+    `identity-graph-panel-2026-10-21/SYNTHESIS.md`) was unanimous that a single token carrying every
+    TID lets one tenant's service act as the user in another tenant and leaks the tenant graph. Fix
+    accepted: a **session token** (sub = XID, no tenant list, seen only by the kernel facade) and
+    **per-tenant tokens** minted from it on demand (sub = XID, aud = the TID, short-lived, roles may
+    ride in it), which is what tenant services receive. The membership list stays the kernel's record,
+    not a travelling claim; live membership is checked at every mint. This is D29's exchange, so it is a
+    return to a recorded decision. Jody: "as long as we have a fix I am good with it."
+
 ## Side letters (acknowledged, not designed)
 
 - Self-service founder: the first employee to sign in founds the tenant; shared-domain issuers
