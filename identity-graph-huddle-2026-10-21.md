@@ -55,6 +55,18 @@ and tenants.
     invariant (mint XID/TID, bind a mapping key, bind an issuer, claim a name) goes to Stratum
     first because only Stratum can make the uniqueness check plus write atomic.
 
+## Added at the end of the huddle (Jody)
+
+12. **Device attestation is supported**, for two reasons: it proves the user is a human, and an
+    attested device is an **alternative anchor for minting the XID** instead of a personal
+    account. It should work across the user's devices through the shared keychain.
+13. **XIDs CAN merge.** A user may end up with two XIDs (different personal accounts, a device
+    first, etc.). On merge, **keep the oldest XID and delete the others**; their mappings move
+    to the survivor. (Replaces item 2's "never merged silently": the invariant is still one XID
+    per mapping key, but a merge is an operation, not an accident.)
+14. **XIDs are secure random strings, effectively nonces.** Deleted XIDs are not kept; no
+    tombstones. (Replaces item 1's tombstone.)
+
 ## Side letters (acknowledged, not designed)
 
 - Self-service founder: the first employee to sign in founds the tenant; shared-domain issuers
