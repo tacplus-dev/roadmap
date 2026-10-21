@@ -76,6 +76,44 @@ and tenants.
     not a travelling claim; live membership is checked at every mint. This is D29's exchange, so it is a
     return to a recorded decision. Jody: "as long as we have a fix I am good with it."
 
+## Panel findings walked one at a time with Jody (2026-10-21, after the panel)
+
+16. **Merge (accepted).** Requires fresh proof of control of every mapping being moved, personal or
+    device proof only, never an org login. One atomic Stratum transaction with an audit entry. Survivor
+    chosen by assurance first (personal IdP over device), then age, or by the human. A hash-only
+    `old -> survivor` record is kept so references resolve and a restore can't resurrect the loser.
+17. **Attested devices (accepted).** Every mapping carries an assurance level: attested device, synced
+    key, personal IdP, org IdP. Attested mappings are per device; a synced-keychain key is a separate,
+    lower-level mapping (that is how other devices find the XID). An attested device may mint an XID; a
+    synced key alone may not. Jody: the app's attestation counts as proof of personhood for our purposes
+    (a product bar, not a cryptographic one). A device-only XID dies with the device; the product says so.
+18. **Self-service tenant creation (Jody overrode the panel).** First login creates and owns the tenant;
+    no pending state, no DNS/admin-consent gate. Customers are not technical; the office manager or an
+    intern sets it up, and when that person leaves the company calls us. Requires a platform-operator
+    operation to reassign a tenant's admin. The consumer/shared-issuer deny-list stays as a cheap guard.
+19. **Membership revocation (accepted).** Lifetime hangs on the IdP's `auth_time` from the last org
+    login, never on our session refresh. A thin membership record beside the mapping: proved_at, optional
+    per-tenant max proof age, revoked flag. Tenant admin and platform operator can kick immediately;
+    per-tenant tokens are minted only against a live, unrevoked membership.
+20. **XID records (Jody).** XIDs exist in kernel state AND in Stratum. The Stratum record carries a
+    `last_used` stamp written lazily (at most about once a day) so year-idle XIDs are findable. What
+    happens to idle ones is a later product rule.
+21. **Stratum contract (accepted).** Linearizable multi-record transactions with conditional writes, a
+    unique index on mapping keys, a revision per record, a change feed so kernels invalidate rather than
+    wait for a miss. Fail closed for mint/bind/merge/revoke when Stratum is unreachable; minting for an
+    already-cached identity may continue for a bounded window. The domain-level quorum question is
+    answered before any of this is built.
+22. **Tombstones (Jody).** Keep the deletion/merge records: cheap, and creating one requires having had
+    an account, so there is no unauthenticated way to exhaust them. Backup-restore resurrection is noted
+    and addressed later if ever needed. Replaces item 14's "no tombstones".
+23. **Claim table (accepted).** Microsoft key = `(tid, oid)` (replaces item 2's `oid` and D29's `sub`;
+    update D29). Google `sub` only; `hd`/email are for tenant binding and display. Apple `sub` plus our
+    team id; never transfer the app between teams. Per-tenant OIDC: exact configured issuer plus `sub`,
+    refuse address-shaped subjects, tenant attests `sub` is never reassigned.
+24. **IdP records get an immutable id (Jody).** An IdP is registered once and minted an id like XID and
+    TID; the issuer URL and JWKS are mutable attributes. Mapping keys are `(idp_id, subject)`, not
+    `(issuer URL, subject)`. Google, Apple and Microsoft are pre-registered records with fixed ids.
+
 ## Side letters (acknowledged, not designed)
 
 - Self-service founder: the first employee to sign in founds the tenant; shared-domain issuers
