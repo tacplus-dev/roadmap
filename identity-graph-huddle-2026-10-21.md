@@ -98,8 +98,11 @@ and tenants.
 20. **XID records (Jody).** XIDs exist in kernel state AND in Stratum. The Stratum record carries a
     `last_used` stamp written lazily (at most about once a day) so year-idle XIDs are findable. What
     happens to idle ones is a later product rule.
-21. **Stratum contract (accepted).** Linearizable multi-record transactions with conditional writes, a
-    unique index on mapping keys, a revision per record, a change feed so kernels invalidate rather than
+21. **Stratum contract (accepted).** Transactions are ALREADY noted: "Transactions across maps (Jody,
+    2026-10-18)" in `sonar/backend/decisions/mvp-plan-2026-09-28.md` Post-launch list (lock, several
+    changes across maps, commit all or reject all; one redo entry or a commit marker so a restore never
+    applies half). The identity graph adds to that note, not beside it: conditional writes with a unique
+    index on mapping keys, a revision per record, and a change feed so kernels invalidate rather than
     wait for a miss. Fail closed for mint/bind/merge/revoke when Stratum is unreachable; minting for an
     already-cached identity may continue for a bounded window. The domain-level quorum question is
     answered before any of this is built.
