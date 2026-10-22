@@ -114,3 +114,8 @@ design doc ("Federated Workload Identity: Satellites and Reflectors", Claude Doc
   complexity (lock, fence token, retry, commit) is hidden from the user. Extends the post-launch
   "Transactions across maps" item in `sonar/backend/decisions/mvp-plan-2026-09-28.md`; the API is
   generated (tacplus owns it), Stratum owns the implementation.
+- **Hazelcast stays (Jody, 2026-10-22):** replacing Hazelcast "is not something I want to take on for a
+  long time. I think they have 2 decades of experience that we do not have." So the stretched-cluster
+  test is not a gate on a replacement; if it fails, the answer is tuning, three zones in one region, or
+  Hazelcast's own cross-region features, in that order. The "own Hazelcast replacement" long-term note
+  (2026-10-14) is withdrawn as a plan.
