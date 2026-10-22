@@ -119,3 +119,13 @@ design doc ("Federated Workload Identity: Satellites and Reflectors", Claude Doc
   test is not a gate on a replacement; if it fails, the answer is tuning, three zones in one region, or
   Hazelcast's own cross-region features, in that order. The "own Hazelcast replacement" long-term note
   (2026-10-14) is withdrawn as a plan.
+
+## Near term (Jody, 2026-10-22, closing the huddle)
+
+- Because admission, key distribution and quorum all fold back into the cluster (kernel, Stratum),
+  nothing needs building for multi-cluster until we get closer to it.
+- **For now: one cluster per domain, and two domains, dev and prod.** This supersedes the earlier
+  "no dev fleet" line in this note for the near term; canary and stair-stepping by cluster become
+  the model once prod has more than one cluster.
+- Still true: one identity fleet (prod); dev has its own identity; no reflector; multi-cluster
+  shape when it comes is three GKE regions with one Stratum writer each.
