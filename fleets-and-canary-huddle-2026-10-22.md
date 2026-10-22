@@ -81,3 +81,36 @@ design doc ("Federated Workload Identity: Satellites and Reflectors", Claude Doc
   effect." If it ever comes, it is a read-only key export to an outsider, not a component.
 - Status: the reflector design in the identity doc is retired, kept as history. Admission becomes a
   kernel operation to design (cloud-auth proof, quorum policy, key install, bootstrap).
+
+## Quorum across clusters, and why more than one cluster (Jody, 2026-10-22)
+
+- Why several clusters at all: **geographic diversity**. We run the solution ourselves, in the cloud,
+  on one provider (GKE is fine); bandwidth between its regions is massive and latency small, so the
+  WAN/LAN distinction is minor. Data at rest can be duplicated to another cloud altogether.
+- Kernel state is convergent, so cross-cluster is not a worry there. Stratum is atomic, so the
+  quorum question is Stratum's.
+- **No third node type.** Stratum's writer/search split already separates "counted for durability
+  and split-brain" from "scaled for reads" (`platform/services/stratum/docs/DURABILITY.md`). Across
+  clusters it is the same model: one writer per location forms the quorum; search members are per
+  cluster and dynamic so reads stay local. A witness (votes, holds nothing) would be a writer role
+  with no data, not a new member kind, and only if we ever had two data locations.
+- **Shape:** three GKE clusters in three US regions, each with its kernel instance, gateway and one
+  Stratum writer; `min_durable_copies = 2`, so a write acknowledges after the nearest remote writer
+  and losing any one region keeps a majority. Cross-cloud is the archive sink (GCS shipping already
+  built on the stratum-archive branch) pointed at a second cloud's bucket: asynchronous by design,
+  data at rest, never quorum.
+- Numbers (Google backbone, for the record): zones in one region < 2 ms RTT; us-central1 to
+  us-east1/us-west1 about 30-35 ms; us-east1 to us-west1 about 60-70 ms. Only the atomic ack pays
+  it; firehose record types ride the archive stream, not a transaction.
+- **To verify before the design assumes it:** one stretched Hazelcast cluster across three regions
+  with heartbeat and partition-migration settings tuned for ~35 ms, with a region broken on purpose
+  (a looper task). Hazelcast discourages stretched clusters and its WAN replication is asynchronous
+  (not atomic). If the test fails: three zones in one region as the fallback (same quorum, no
+  regional survival), and the first concrete reason for the Hazelcast replacement on the long-term
+  list.
+- **Transactions and the fenced lock (Jody):** use transactions wherever possible so the caller makes
+  ONE request that takes the fenced lock, applies its changes and commits. When that feature is
+  built, build it on BOTH the server side and the generated client side, so the client-side
+  complexity (lock, fence token, retry, commit) is hidden from the user. Extends the post-launch
+  "Transactions across maps" item in `sonar/backend/decisions/mvp-plan-2026-09-28.md`; the API is
+  generated (tacplus owns it), Stratum owns the implementation.
