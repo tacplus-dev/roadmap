@@ -56,3 +56,28 @@ design doc ("Federated Workload Identity: Satellites and Reflectors", Claude Doc
 - Version-aware routing in gateway and kernel endpoint pools (design needed).
 - The canary step policy: sizes, dwell times, what the Admiral measures, who can override.
 - Expand/contract discipline for Stratum record types (ties to the transactions item).
+
+## The reflector is dropped (Jody, 2026-10-22, later the same day)
+
+- Jody opened with the reflector as "just really a reflector": a kernel instance on a cluster proves
+  its identity (cloud-auth / k8s for now), the reflector decides whether it may join the domain, and
+  if so the instance generates its own private key and installs the public key. Then asked the prior
+  question: do we need it at all? Clusters learn about each other and permit another cluster to join
+  or not.
+- Finding: the kernel already became the reflector on 2026-10-14. Of the reflector's three jobs,
+  membership (the kernel spans clusters; the pipeline decides members) and key distribution (kernel
+  state replicates across clusters over mTLS; a public key is one more record) are already the
+  kernel's, and public key publication for outside relying parties is already the gateway's
+  discovery/JWKS, which we kept. What remains is ADMISSION: a new kernel instance proves its cloud
+  identity (GKE directly, zero config) and the existing members decide by policy; then it generates
+  its own key and the public half replicates. No new component, no new trust root, no second store.
+- Rules the reflector was quietly providing, now needed explicitly:
+  1. Bootstrap: a new cluster finds the existing members through pipeline config or a fleet DNS name;
+     the first member of a new domain is designated by the pipeline, not elected.
+  2. Who says yes: admission is a decision of the existing members as a group (quorum), never one
+     reachable instance, or one compromised member can admit anyone.
+- A customer-run cluster never joins our domain (Jody): "I dont think so and if we ever decide to do
+  that then we could make changes." His reason: "isolated instances will disrupt the value of network
+  effect." If it ever comes, it is a read-only key export to an outsider, not a component.
+- Status: the reflector design in the identity doc is retired, kept as history. Admission becomes a
+  kernel operation to design (cloud-auth proof, quorum policy, key install, bootstrap).
