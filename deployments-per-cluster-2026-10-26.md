@@ -44,3 +44,25 @@ worked by their loopers (`seabeam/roadmap/items/looper-hierarchy.md`).
 ## Open
 
 - The top pipeline itself (creates `tac-<deployment>`, deploys nsproxy): part of the deploy huddle.
+
+## Tabled: a tenant placement resolver (Jody, 2026-10-26)
+
+Day 1 is a single cluster. Later the gateway looks up a request's target tenant in a **resolver** and gets the
+cluster it is active on (its public name), which may be the gateway's own cluster (the gateway knows its own
+cluster id, and dials in-cluster when local) or another (it forwards to that cluster's gateway with the original
+token). For failover the resolver returns **both the primary and the secondary**. Notes from the discussion:
+
+- It answers *where the tenant is active now*, with the lease **term**, and the gateway forwards only to the
+  active cluster for that term. The gateway never decides failover itself (a blip between one gateway and the
+  primary must not split traffic); the term changes only when the witness promotes the secondary (see "Kept for
+  later: region failover" in `stratum-per-tenant-2026-10-25.md`), and the redo service fences writes on the same
+  term. Returning both lets the gateway keep warm connections and switch at once.
+- In the failover phase it must answer while a cluster is down, so it runs outside either cluster (beside the
+  witness, at a third provider, or replicated). Day 1 it does not matter.
+- Gateways cache placements and watch for changes; no lookup per request.
+- A deployment spanning clusters shares one trust domain, and kernel's signing keys fail over with it, so a
+  forwarded token verifies on the other side.
+- Moving a tenant between clusters is the same operation: change its placement, bump the term.
+- Not built Day 1. The gateway keeps all routing behind its single resolve-a-target seam so the resolver slots in
+  as a new source of answers.
+- Open: does placement belong to the tenant record in kernel, or is it the resolver's own data?
