@@ -6,7 +6,8 @@ Overwritten to stay current (loopers and agents). Last updated: 2026-10-27 by an
   to the tacplus floor 2.4; none has a versioned release yet (all `0.x` until 2026-12-01).
 - **Works:** fleet-seatrials (GKE `seatrials`, https://seatrials.tacplus.dev) runs kernel, gateway, oauth, opa,
   eventbus, stratum, letsencrypt, kmaker, llmproxy, doppelganger, tenantecho, coop and pigeonhost. Sign-in with
-  Google (routed to `alpha`), Microsoft (routed to `beta`) and Apple works. nsproxy is built (tenant namespaces,
+  Google (routed to `alpha`), Microsoft and Apple works. Microsoft routing to `beta` is untested: Jody's Microsoft
+  account is personal, so it routes to no tenant; a member of the jodyseabeam directory is needed (2026-10-28). nsproxy is built (tenant namespaces,
   the reserved `restore` tenant `00000002`).
 - **Released / deployed:** seatrials is deployed from commit pins in its `fleet.lock`, not release lines. Tenant
   routing runs on an interim kernel-config override until the operator fix (tacplus-dev/operator#5, pushed
