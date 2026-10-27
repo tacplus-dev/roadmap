@@ -6,8 +6,8 @@ Jody, 2026-10-27. This replaces the earlier version of this record (a small comp
   `checksums.txt`; the repo is public).
 - **One build image per release line: `ghcr.io/tacplus-dev/tacplus/build:X.Y`.** It carries every toolchain (Go, Rust, Java and
   Maven, Python, Node, …) and the verifiers (Kani for Rust; JBMC and OpenJML for Java), and is rebuilt on every patch release of
-  its line. Big is fine. tacplus's own CI and gates run in it, and so do the loopers (the looper image is built from it).
-- **In the image, `tacplus` is a shell script** that runs the newest binary of the image's line:
+  its line. Big is fine. tacplus's own CI and gates run in it. Loopers do NOT run in it (decisions/deterministic-builds-2026-10-27.md).
+- **In the image, `tacplus` is a shell script** that runs the repository's **pinned** tacplus version (decisions/deterministic-builds-2026-10-27.md); only outside a repository does it fall back to the newest binary of the image's line:
   - It finds the newest `vX.Y.*` release, downloads the binary for the platform, **verifies it against `checksums.txt`**, caches it
     under `~/.cache/tacplus/<version>/`, and execs it with the arguments.
   - It checks for a newer patch at most about hourly, and otherwise uses the cache (so it also works offline when cached).
