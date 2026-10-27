@@ -17,3 +17,4 @@ Jody, 2026-10-27. This replaces the earlier version of this record (a small comp
 - **Activities:** generation, compile, test, fuzz and formal verification all run in the build image.
 - **No formal verification for Go:** Go's tooling is too weak. Rust (Kani) and Java (JBMC/OpenJML) are verified, which covers Go
   well enough because the generated code is the same logic. Go is fuzzed and tested.
+- **Later:** the build image may be split by language (e.g. build-go, build-rust, build-java), each carrying one toolchain and its verifier (Jody, 2026-10-27).
