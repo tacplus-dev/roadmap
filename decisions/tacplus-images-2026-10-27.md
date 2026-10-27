@@ -7,5 +7,8 @@ Jody, 2026-10-27.
   Formatting happens in-process (e.g. `go/format`) or is left to the build.
 - **`tacplus/build` (the build environment) is big, and that is fine.** It carries every toolchain needed to compile
   and test generated code in every language. The looper image is built from it, and gates run there.
+- **Building tacplus itself is tested in the build image.** Its CI and `just gates` (unit tests, cross-tests that compile
+  and run generated code in every language, determinism, current-generation) run in `tacplus/build`, which therefore
+  carries every toolchain. Only the shipped compiler image is kept small.
 - A smoke test enforces the split: generating a fixture in every language inside the compiler image with no toolchain
   on PATH must succeed (tacplus-dev/tacplus#189).
