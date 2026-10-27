@@ -15,3 +15,11 @@ How this maps onto labels and files:
 - A looper that finds a feature it was not asked for writes it to PROPOSALS.md (and may open an issue labelled `feature`,
   never `approved`). A design question on an approved feature is a comment with a recommendation plus `needs-decision`.
 - A looper never builds a feature that is not on a ROADMAP.md.
+
+## Before opening an issue: consult the roadmap (Jody, 2026-10-27)
+
+Anyone opening an issue (Jody, an agent, a looper, the nightly or port scan) first reads the repo's ROADMAP.md and
+the platform's (tacplus-dev/roadmap ROADMAP.md and `items/`):
+- **The feature is already on a roadmap:** don't open a new feature issue. Open one asking for **that roadmap entry to
+  be prioritized**, linking it and saying why now.
+- **It isn't:** open it as a `feature` (it then needs design, approval and a ROADMAP.md entry) or as a `bug`.
