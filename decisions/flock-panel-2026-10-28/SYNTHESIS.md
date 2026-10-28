@@ -116,3 +116,7 @@ The prompt is in `PROMPT.md`, and the raw outputs are beside this file.
 1. **Refuse (Jody, 2026-10-28).** A link conflict seen on a local write is refused. flock merges automatically only in the genuine
    partition race: both entries were created from the same link within the convergence window. Any other overlap is quarantined:
    no minting through that link, an alert, and a person resolves it with proof.
+2. **The older entry survives (Jody, 2026-10-28)**, ordered by an IMMUTABLE creation HLC that flock stamps once (the panel's fix for
+   point 3). A person resolving a quarantined overlap decides *whether* to merge, with proof of both entries; the generated helper
+   still decides *which one* survives. Read as applying to every merge, since refusing a local conflict (answer 1) already closes
+   the takeover path that made "keep oldest" dangerous.
