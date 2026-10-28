@@ -125,3 +125,7 @@ The prompt is in `PROMPT.md`, and the raw outputs are beside this file.
    entry back. A copy absent for more than **30 days** is wiped and rebuilt from its peers on return, never merged. Isolation is
    transient (Jody): no cluster is expected to be cut off for anywhere near that long. Redirect stubs for MERGED entries are dropped
    after the longest credential lifetime (tokens, sessions), not kept forever. This replaces the "majority of known copies" rule.
+4. **Keep minting through a partition (Jody, 2026-10-28).** A cut-off cluster keeps serving sign-ins and minting tokens. There is no
+   freshness bound that would stop it. A revocation or deletion made on the other side reaches it when the partition heals; until
+   then, the exposure is the length of the partition plus one token lifetime. Isolation is transient, and short token lifetimes are
+   the bound.
