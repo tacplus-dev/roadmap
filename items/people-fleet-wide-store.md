@@ -41,3 +41,11 @@ The merge rules are per field (max wins, removal beats add, older wins, a mark i
 annotations**. tacplus would then generate the convergent replicated store, the merge code and the gossip for any message that
 declares them. Uses beyond `people`: other small fleet-wide state, and **eventually replacing Hazelcast in kernel** (platform direction
 2026-10-23: nothing new in kernel may depend on Hazelcast).
+
+**Sequencing (Jody, 2026-10-28): generic first.** Design the tacplus annotations and generator first; the people store is their first
+user and is generated from the start (no hand-written store to rewrite later). **No hurry**: not on stratum's critical path.
+**Transparent:** the switch to convergent state happens behind the generated interfaces (kernel's `IdentityGraph`, the generated state
+clients), so services and kernel code that use them don't change. The same holds when it later replaces Hazelcast-backed state.
+
+Still open for the design: gossip transport and replica membership (join/leave, anti-entropy digests); exactly what the people
+table holds.
