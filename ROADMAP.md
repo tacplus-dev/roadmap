@@ -54,6 +54,7 @@ In priority order.
 
 ## Later
 
+- Convergent replicated state as proto annotations: tacplus generates the store, merge and gossip; first user the fleet-wide people store; eventually replaces Hazelcast in kernel; transparent behind generated interfaces (tacplus-dev/roadmap:items/people-fleet-wide-store.md; design, no hurry)
 - **Multi-cluster** and region failover: three regions, active/passive with a witness, the tenant placement
   resolver (`items/multi-cluster.md`; "Kept for later" in `decisions/stratum-per-tenant-2026-10-25.md`; "Tabled"
   in `decisions/deployments-per-cluster-2026-10-26.md`).
