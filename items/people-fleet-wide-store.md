@@ -69,3 +69,6 @@ Annotation shape: huddle in progress.
   - The mark always wins, is never undone and is refused at once.
   - A read of a MERGED entry follows `merged_into`.
   - A MERGED entry's redirect stub outlives the physical cleanup.
+- **Correction (Jody, 2026-10-28): no `(flock.unique)`.** Finding duplicates is hand-written code in the service (for example, people
+  finds two XIDs holding the same link). The proto declares only the table and the per-field merge rules. tacplus generates the merge
+  helpers, which that code calls; the loser is marked MERGED.
