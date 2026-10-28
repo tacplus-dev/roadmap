@@ -21,7 +21,7 @@ Copies gossip writes to each other and converge with **no locks of any kind** (J
 Tables are declared in proto. **tacplus generates** the merge code, the duplicate check, the store and the clients from the
 annotations. The interfaces services already use (generated state clients, kernel's `IdentityGraph`) stay the same, so moving state
 onto flock is transparent to services (Jody). The people table is the first user. Kernel's Hazelcast-backed state is a later
-candidate.
+candidate. flock is an **alternative to Stratum**, not a replacement, and will evolve and merge with kernel in some form. Hazelcast comes out of kernel only; Stratum keeps it (Jody, 2026-10-28).
 
 Language: Rust (the default).
 

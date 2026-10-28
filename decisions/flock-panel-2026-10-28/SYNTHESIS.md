@@ -129,3 +129,9 @@ The prompt is in `PROMPT.md`, and the raw outputs are beside this file.
    freshness bound that would stop it. A revocation or deletion made on the other side reaches it when the partition heals; until
    then, the exposure is the length of the partition plus one token lifetime. Isolation is transient, and short token lifetimes are
    the bound.
+5. **flock is an alternative to Stratum, not a replacement (Jody, 2026-10-28).**
+   - For the people table, flock is chosen in place of Stratum-first. The 10-21 "do not reopen" item is superseded there, and only
+     there.
+   - flock will evolve and merge with kernel in some form.
+   - Hazelcast comes out of **kernel**, not Stratum: Stratum keeps Hazelcast (as ROADMAP.md already says).
+   - Still open: should read-check-write callers fail to compile when their table moves to flock (the panel's point 10)?
