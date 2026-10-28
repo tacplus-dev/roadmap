@@ -1,6 +1,6 @@
 # flock: fleet-wide convergent state, declared in proto
 
-- **Status:** design draft for a panel review (2026-10-28). Nothing is decided beyond the points marked "Jody". Nothing is built.
+- **Status:** design draft; panel reviewed 2026-10-28 (decisions/flock-panel-2026-10-28/SYNTHESIS.md). Nothing is decided beyond the points marked "Jody". Nothing is built.
 - **Owner:** Jody
 - **Background:** `items/people-fleet-wide-store.md` (the huddle log this is distilled from).
   `decisions/tenant-deletion-2026-10-27.md` (XIDs kept and aged out after about a year).
