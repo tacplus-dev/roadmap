@@ -31,7 +31,13 @@
    included. For something **really important**, use a **two-person / two-key rule** (a second approver must confirm, e.g. the existing
    device-approval path) rather than synchronous confirmation.
 2. Gossip transport and membership: how a cluster's replica joins and leaves; anti-entropy (e.g. Merkle digests) for catch-up.
-3. Quorum for cleanup: a majority of known replicas, or all live ones?
+3. ~~Quorum for cleanup~~ **Answered (Jody, 2026-10-28): a majority of known replicas.** A replica returning after an outage never serves until it has caught up (anti-entropy). Marks win, so a late replica can't revive a deleted person.
 4. What exactly the table holds: person (XID, created, generation, mark), links, memberships, devices. Anything else (e.g. last
    sign-in for age-out)?
 5. ~~How kernel reads it~~ **Answered (Jody, 2026-10-28): A.** One people-service instance per cluster, in the `people` tenant's namespace, holding that cluster's replica and taking part in gossip. Kernel reads it over a local call with a short cache (as kernel#2 plans), so no identity storage goes back into kernel.
+
+## Direction: a convergent-state primitive in tacplus (Jody, 2026-10-28)
+The merge rules are per field (max wins, removal beats add, older wins, a mark is never undone), so they can be **declared as proto
+annotations**. tacplus would then generate the convergent replicated store, the merge code and the gossip for any message that
+declares them. Uses beyond `people`: other small fleet-wide state, and **eventually replacing Hazelcast in kernel** (platform direction
+2026-10-23: nothing new in kernel may depend on Hazelcast).
