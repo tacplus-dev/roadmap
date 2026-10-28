@@ -49,3 +49,8 @@ clients), so services and kernel code that use them don't change. The same holds
 
 Still open for the design: gossip transport and replica membership (join/leave, anti-entropy digests); exactly what the people
 table holds.
+
+## Name (Jody, 2026-10-28)
+**flock**: the service that hosts fleet-wide convergent state, named the way kernel is (one instance per cluster). tacplus
+generates the annotations' merge code and the clients; flock holds the replicas and gossips. The people store is its first table.
+Annotation shape: huddle in progress.
