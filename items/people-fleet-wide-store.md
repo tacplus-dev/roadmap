@@ -76,3 +76,10 @@ Annotation shape: huddle in progress.
   older entry (created time, then key), whatever order it's called in. Hand-written code decides only that two entries are
   duplicates, never which one survives. So two clusters that find the same duplicate at once converge rather than marking each other
   merged.
+- **Revised (Jody, 2026-10-28): duplicate detection is generated after all, and so needs an annotation.** The case that decides it: a
+  duplicate created on both sides of a partition. No caller ever sees it; it only shows up when gossip brings the two entries together.
+  The flow:
+  - A sign-in service (like oauth) creates the XID.
+  - A later sign-in with another account merges that link in.
+  - A known duplicate is merged.
+  The partition case has to be caught by flock itself, during replication.
