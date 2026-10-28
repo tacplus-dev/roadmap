@@ -27,8 +27,9 @@
 - Language: Rust (the default).
 
 ## Open questions
-1. The convergence window: until a mark or a generation bump reaches a cluster, that cluster may still mint for the person.
-   Acceptable at seconds, or must revocation be pushed and confirmed?
+1. ~~The convergence window~~ **Answered (Jody, 2026-10-28):** a short window is fine: plain gossip, revocations and deletion marks
+   included. For something **really important**, use a **two-person / two-key rule** (a second approver must confirm, e.g. the existing
+   device-approval path) rather than synchronous confirmation.
 2. Gossip transport and membership: how a cluster's replica joins and leaves; anti-entropy (e.g. Merkle digests) for catch-up.
 3. Quorum for cleanup: a majority of known replicas, or all live ones?
 4. What exactly the table holds: person (XID, created, generation, mark), links, memberships, devices. Anything else (e.g. last
