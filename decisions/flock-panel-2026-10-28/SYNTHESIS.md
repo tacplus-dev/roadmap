@@ -111,3 +111,8 @@ The prompt is in `PROMPT.md`, and the raw outputs are beside this file.
 3. **Purging:** keep marks forever and purge only data (the panel's preference), or purge with full membership plus wipe-and-rebuild?
 4. **A freshness bound on minting during a partition** (stop after T without a majority), against serving throughout.
 5. **The 10-21 items:** confirm that flock replaces "Stratum-first" and "refuse a conflicting login" for the people table.
+
+## Jody's answers
+1. **Refuse (Jody, 2026-10-28).** A link conflict seen on a local write is refused. flock merges automatically only in the genuine
+   partition race: both entries were created from the same link within the convergence window. Any other overlap is quarantined:
+   no minting through that link, an alert, and a person resolves it with proof.
