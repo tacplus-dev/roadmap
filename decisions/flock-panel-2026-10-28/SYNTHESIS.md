@@ -120,3 +120,8 @@ The prompt is in `PROMPT.md`, and the raw outputs are beside this file.
    point 3). A person resolving a quarantined overlap decides *whether* to merge, with proof of both entries; the generated helper
    still decides *which one* survives. Read as applying to every merge, since refusing a local conflict (answer 1) already closes
    the takeover path that made "keep oldest" dangerous.
+3. **Marks are purged, but only once every copy has seen them (Jody, 2026-10-28).** Not forever: a mark is removed once every copy
+   in the fleet's membership list has acknowledged it. A majority is not enough, because a copy that missed it would ship the live
+   entry back. A copy absent for more than **30 days** is wiped and rebuilt from its peers on return, never merged. Isolation is
+   transient (Jody): no cluster is expected to be cut off for anywhere near that long. Redirect stubs for MERGED entries are dropped
+   after the longest credential lifetime (tokens, sessions), not kept forever. This replaces the "majority of known copies" rule.
