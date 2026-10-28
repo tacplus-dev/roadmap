@@ -120,3 +120,23 @@ for example the device-approval path), not synchronous confirmation (Jody).
 5. **What the people table holds**, beyond person, links, memberships and devices: for example, last sign-in for the age-out.
 6. **Clock bounds**: should a write whose time is far ahead of the receiving copy's clock be refused, so a copy with a bad clock
    cannot win every `LAST_WRITE`?
+
+## Revision (Jody, 2026-10-28): kernel and flock, one state model
+
+- **Two services, kept separate.** **Kernel always stays within its cluster. flock spans clusters.** This replaces the earlier "flock
+  will evolve and merge with kernel": they don't merge. They share one state model and differ only in where the state lives.
+- **The annotations reuse kernel's state model.** There is no `flock.*` namespace. A flock table is a state root:
+  `option (spec.service_state) = {label: ["flock"], export: true}`.
+  - Boundaries are `repeated` entry fields with `(spec.persistence)` and `(spec.assert_max_size)`, as in kernel.
+  - Each entry is keyed by `(spec.store_key)`, which flock creates.
+  - Readers use `(spec.state_imports)` and the same generated state clients and Watch.
+  - New field options:
+    - `(spec.merge)`: `IMMUTABLE`, `MIN`, `MAX`, `LAST_WRITE`, `SET_ADD_WINS`, `SET_REMOVE_WINS`.
+    - `(spec.unique)` and `(spec.identity)`, for detecting duplicates.
+  - The deletion mark is the existing record `(spec.deleted_flag)`, extended with `DeleteReason` and `merged_into`.
+  - The write clock is `(spec.store_epoch)`, which becomes a hybrid clock.
+  - The generator refuses a `flock`-labelled root if any field in it has no `(spec.merge)` rule.
+- **Moving a state root from kernel to flock** is therefore a label change plus merge rules. Services that import it keep the same
+  generated clients.
+
+The `(flock.table)` / `(flock.merge)` spellings earlier in this document are superseded by the `spec.*` forms above.
