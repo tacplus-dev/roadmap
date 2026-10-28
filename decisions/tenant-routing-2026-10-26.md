@@ -41,3 +41,10 @@ Scotty: a person's own dog lives in their personal space, so a request to Scotty
 
 Tenants talking to each other — the Admiral discovers that two tenants have a relationship and tells each
 Skipper, who asks whether they want to connect: `seabeam/roadmap/items/tenant-relationships.md`.
+
+## Addendum 2026-10-28: instance identity by tid
+
+Jody, deciding tacplus-dev/gateway#3: a tenant-owned service instance is identified by its tenant's **tid**,
+not its name. Its SPIFFE ID is `spiffe://<td>/tenants/<tid>/services/<svc>` (kernel#23). The gateway matches the
+request's target-tenant tid against the instance identity directly, with no tid → name lookup. User and session
+token namespaces (`/tenants/<name>`) are not changed by this.
