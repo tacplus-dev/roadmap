@@ -72,3 +72,7 @@ Annotation shape: huddle in progress.
 - **Correction (Jody, 2026-10-28): no `(flock.unique)`.** Finding duplicates is hand-written code in the service (for example, people
   finds two XIDs holding the same link). The proto declares only the table and the per-field merge rules. tacplus generates the merge
   helpers, which that code calls; the loser is marked MERGED.
+- **The generated helper picks the survivor (Jody, 2026-10-28).** `merge_entries(a, b) -> (survivor, loser's MERGED mark)` keeps the
+  older entry (created time, then key), whatever order it's called in. Hand-written code decides only that two entries are
+  duplicates, never which one survives. So two clusters that find the same duplicate at once converge rather than marking each other
+  merged.
