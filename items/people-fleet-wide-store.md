@@ -34,4 +34,4 @@
 3. Quorum for cleanup: a majority of known replicas, or all live ones?
 4. What exactly the table holds: person (XID, created, generation, mark), links, memberships, devices. Anything else (e.g. last
    sign-in for age-out)?
-5. How kernel reads it (embedded replica library vs a local people-service instance per cluster).
+5. ~~How kernel reads it~~ **Answered (Jody, 2026-10-28): A.** One people-service instance per cluster, in the `people` tenant's namespace, holding that cluster's replica and taking part in gossip. Kernel reads it over a local call with a short cache (as kernel#2 plans), so no identity storage goes back into kernel.
