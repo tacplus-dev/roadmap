@@ -54,6 +54,19 @@ token namespaces (`/tenants/<name>`) are not changed by this.
 this." Routing the client to the right tenant is not enough on its own:
 - A tenant-owned instance refuses any call meant for another tenant, whoever the caller is. A `/system` caller included. The check
   compares the tid in the instance's certificate (kernel#23) with the call's tenant.
-- Traffic between a tenant-owned service's members (Stratum's Hazelcast, for example) admits only members holding that tenant's
-  certificate, with network policy as a second layer. Shared cluster names and multicast join are not allowed
+- Traffic between a tenant-owned service's members (Stratum's Hazelcast, for example) admits only members that prove that tenant's
+  identity, with network policy as a second layer. **Superseded on how (see below): tokens, not certificates.** Shared cluster names and multicast join are not allowed
   (tacplus-dev/stratum#17; the record plane is tacplus-dev/tacplus#207).
+
+## Addendum 2026-10-29 (later): member traffic uses tokens, never mTLS (Jody)
+"we will drop per tenant CA, mTLS." gRPC never uses mTLS, and black-box member traffic now follows the same model:
+- **Server TLS plus kernel-issued bearer tokens,** through a generated **member port** (tacplus-dev/tacplus#212). Hazelcast binds to
+  loopback only.
+- **Every byte is framed.** A token frame opens each connection and is refreshed in-band. The receiver strips the frames before the
+  raw bytes reach Hazelcast.
+- **Both sides check identity:** the subject is `/tenants/<tid>/services/<svc>` with the same tid, and the audience is that
+  service's member port.
+- **Fail closed:** nothing is forwarded before a valid token, an expired token drops the connection, and there is no plaintext
+  fallback.
+- **There is no per-tenant CA.** Open-source Hazelcast has no member TLS, and kernel's enterprise override only made its SSLConfig
+  silently plaintext (tacplus-dev/stratum#17, kernel#24).
