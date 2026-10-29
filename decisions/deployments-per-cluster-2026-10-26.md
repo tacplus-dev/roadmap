@@ -86,3 +86,6 @@ token). For failover the resolver returns **both the primary and the secondary**
 - **Where it leads:** when tenants span clusters, the **tenant placement resolver** (tabled above) answers which deployment a tenant
   is active in, and its FQDN. Traffic is sent there, and identities hold fleet-wide because the trust domain is shared.
 - Item 3 above is superseded. A deployment's FQDN is not its trust domain.
+- **Deployments differ by purpose (Jody):** each deployment runs its own kernel and services, possibly of different kinds, versions or
+  configurations, depending on what it's for. For example, one deployment runs SeaBeam and another runs doppelganger, on the same
+  cluster. A deployment is the unit of "what runs, and how", independent of the others.
