@@ -38,6 +38,9 @@
 - **The XID itself, in the people store, may need only the personal links.**
 - Offboarding follows: the company disables someone at its IdP, so they get no new smallco token. Their existing token runs out within
   its short lifetime. Their personal links, and their Scotty, are untouched.
+- **One Scotty per person, and it runs in the people tenant (Jody).** It can store personal things only with the person's **personal**
+  (people-tenant) token. A company token can't write the personal side. So **a person normally signs in with both** their personal and
+  their company account(s). The session holds both proofs, and each tenant's token comes from its own proof.
 - **All of this is configuration defined in proto** (Jody): the providers offered, a tenant's authorized OIDC IdP and registered
   domains, how people join a tenant, and so on. It is generated, not hand-written.
 
