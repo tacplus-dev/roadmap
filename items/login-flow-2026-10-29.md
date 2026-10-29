@@ -30,6 +30,14 @@
   personal Scotty if they leave their employer. The prompt is "link your personal account so you don't get locked out", not "sign in
   with a personal account". Once linked, we don't ask or suggest that they sign in with it. They can: any linked account signs in as
   the same XID, just like having several accounts.
+- **Access is the token, not the XID (Jody, later 2026-10-29).** There is exactly **one XID per human**. What lets you into smallco is
+  the token you hold for smallco's tenant, which comes from signing in through smallco's authorized IdP. Your XID alone gives you nothing
+  there.
+- **The tenant holds its own tenant → XID mapping** (smallco's IdP subject → XID), as **tenant data**: it's deleted with the tenant, and
+  the company controls it.
+- **The XID itself, in the people store, may need only the personal links.**
+- Offboarding follows: the company disables someone at its IdP, so they get no new smallco token. Their existing token runs out within
+  its short lifetime. Their personal links, and their Scotty, are untouched.
 - **All of this is configuration defined in proto** (Jody): the providers offered, a tenant's authorized OIDC IdP and registered
   domains, how people join a tenant, and so on. It is generated, not hand-written.
 
