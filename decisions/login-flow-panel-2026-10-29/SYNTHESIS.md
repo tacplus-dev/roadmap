@@ -134,3 +134,11 @@ What follows is where it breaks, with fixes.
     Managed Apple IDs are company accounts. A personal account at the same provider (a personal Gmail, say) is fine.
 
 All four points are settled. The design (`items/login-flow-design-2026-10-29.md`) plus this synthesis is the accepted sign-in design.
+
+## Note (Jody, 2026-10-29, later): the personal/org account model is a setting
+"we need to make the auth schema where we use personal and org accounts some sort of setting. not everyone would want this."
+The split between personal and company accounts is an option, not a fixed part of the platform. That covers personal links on the XID,
+company tenants holding their own mappings, the "link your personal account" prompt, Scotty's personal side, and suspension on domain
+registration. A deployment can turn it off, for example for a single-organization deployment where every account is the
+organization's. It's a deployment-level setting in the proto-defined config (tacplus-dev/tacplus#224). The plain model (one account
+type, one tenant mapping) must work without any of it. What exactly the off mode looks like is still to be designed.
