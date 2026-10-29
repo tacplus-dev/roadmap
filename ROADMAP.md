@@ -71,6 +71,7 @@ In priority order.
 - Ongoing: the tacplus security sweep (`items/tacplus-security-sweep.md`) and the per-repo advisory issues.
 
 ## Not doing
+- **We are not an identity provider, and will never become one** (Jody, 2026-10-29). No passwords, password resets, MFA enrolment, magic links, email or SMS codes, or user directories of our own. People sign in only through external OIDC IdPs (Apple, Google, Microsoft, or a company's own). Anyone who wants a self-hosted IdP can use one of the free ones (Keycloak, Authentik, Zitadel, …) and connect it as their OIDC IdP. If asked "will you implement passwords/…", the answer is no.
 
 - **More SeaBeam services**: nothing else comes over that is not already in tacplus-dev, except stratum. Every
   other SeaBeam source is retired, never ported (Jody, 2026-10-27; tacplus-dev/looper#5, `ports.yaml`).

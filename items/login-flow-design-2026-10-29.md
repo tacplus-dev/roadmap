@@ -10,6 +10,8 @@
   - `items/flock-design-2026-10-28.md` (the people store; refuse a conflicting link)
   - `decisions/tenant-routing-2026-10-26.md` (per-tenant tokens; tid)
 
+- **We are not an IdP (Jody, 2026-10-29):** no passwords, resets, MFA enrolment, magic links or user directories, ever. Sign-in is only through external OIDC IdPs; a self-hosted option is one of the free IdPs, connected over OIDC. (ROADMAP.md, "Not doing".)
+
 ## Model
 
 - **One XID per human (Jody).** An XID is random, 128 bits, and never reused.
