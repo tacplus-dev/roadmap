@@ -6,7 +6,7 @@ Reviewers:
 - GPT via codex, high effort, read-only
 - copilot, its default model
 - doppelganger: answering as Jody from `~/workspace/jody`, run as a Claude subagent because the local `claude` CLI's login had expired
-- claude-opus (a subagent): pending; to be added
+- claude-opus, as a subagent (it arrived after Jody accepted points 1–16)
 
 The prompt and the raw outputs are beside this file. Doppelganger's answer is quoted in the hub's session record.
 
@@ -62,8 +62,31 @@ The prompt and the raw outputs are beside this file. Doppelganger's answer is qu
     pinned by digest. No looper can publish them, so a looper can't push code that every other looper then runs.
 16. **Check GitHub's app limit per owner** before creating about 30 apps.
 
+## Added by the fourth review (claude-opus), not yet confirmed by Jody
+17. **Split the thinker from the writer.** Building a dependency runs its code (`build.rs`, proc macros) inside the looper's job,
+    and so does the LLM itself, which reads untrusted text. So the job that holds the identity must run neither.
+    - The LLM-and-build job has **no `id_tokens` and no protected variables**. It produces a patch artifact.
+    - A deterministic, LLM-free, protected **commit job** applies the patch, checks that the tree SHA equals the tested one, mints
+      the GitHub token, pushes a branch and opens a PR. The gates are required checks, and GitHub squash-merges.
+
+    This closes "dependency X's looper writes kernel through a build script".
+18. **The WIF pool's `attribute_condition` pins `assertion.namespace_id`** (tacplus-dev's). A composite attribute
+    (`project_id:ref:ref_protected`, plus `pipeline_source` in schedule/trigger) is what the per-key bindings match. The reader key
+    is granted by `namespace_id`, and on protected refs only. Otherwise any gitlab.com user could mint `tacplus-reader`.
+19. **Pipeline variables set to `no_one_allowed` in every project.** Inputs come only through validated `spec:inputs`. Runners use
+    **one ephemeral VM per job**, unprivileged, with no shared caches across projects.
+20. **Grant `roles/cloudkms.signer`, not `signerVerifier`.** Only Jody holds `setIamPolicy` on the key ring and admin on the pool.
+    Data Access audit logs are on, and `google.subject` includes `project_id` and `job_id`.
+21. **The `id_token` is exchanged at job start, then unset.** `iss` is pinned, the token's age is capped (for example 5 minutes),
+    and `aud` is kernel's exchange endpoint, never the trust domain.
+
+**Conflicts with a Jody decision, so Jody's stands:**
+- claude-opus would let "derived" answers produce only `needs-decision`. Jody's 2026-10-07 rule (point 1) says they are
+  authoritative for reversible work.
+- claude-opus suggests one write app plus a token broker instead of about 30 apps. "One identity per repository" is Jody's, so it
+  was noted, not adopted.
+
 ## Still open
-- The fourth review (claude-opus).
 - How the reader app's cross-repository read access interacts with private repositories' contents (copilot: an exfiltration
   path). Mitigation: nothing secret lives in repositories (secrets live in GitLab and KMS), and a looper's outbound network is
   limited to the services it needs.
