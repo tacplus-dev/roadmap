@@ -22,6 +22,9 @@
   earlier through another route (Google Workspace, say) stops working for sign-in. It keeps working if the company authorized that same
   IdP. The person's XID and personal links carry on. They join the company tenant only by signing in through its IdP (direct join or
   admin approval is the company's setting), and they're told why on their next sign-in.
+- **What a sign-in vouches for:** "signing in with a company vouches for personal but not the other way around." A company sign-in vouches
+  for the company tenant **and** the person's personal side (the people tenant, their Scotty). A personal sign-in vouches for the
+  personal side only, **never** a company tenant.
 
 ## How it maps (hub's notes, not decided)
 - **Finding the IdP from a domain** is a lookup in our records: a tenant that verified the domain, and the IdP it authorized. It isn't
