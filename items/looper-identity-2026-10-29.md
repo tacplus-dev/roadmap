@@ -1,6 +1,6 @@
 # Looper identity: one identity per repo, rooted in GitLab OIDC, and loopers talking through doppelganger
 
-- **Status:** design draft for a panel review (2026-10-29). Nothing is decided beyond the points marked "Jody". Nothing is built.
+- **Status:** design, panel reviewed and accepted with changes (Jody, 2026-10-29): see decisions/looper-identity-panel-2026-10-29/SYNTHESIS.md, which takes precedence where they differ. Nothing is decided beyond the points marked "Jody". Nothing is built.
 - **Owner:** Jody
 - **Background:**
   - `decisions/ci-on-gitlab-2026-10-27.md`, with its 2026-10-29 addendum: deploys, tests and secrets on GitLab; nothing on a laptop;
