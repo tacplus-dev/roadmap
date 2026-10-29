@@ -145,3 +145,19 @@ The `(flock.table)` / `(flock.merge)` spellings earlier in this document are sup
 **iKernel and eKernel** may be a better naming scheme later: iKernel for the cluster-local kernel (today's `kernel`, which always stays
 within its cluster) and eKernel for the one that spans clusters (today's `flock`). That reflects that they share one state model and
 differ only in reach. Nothing is renamed now; the names stay `kernel` and `flock` until Jody decides.
+
+## Kernel across clusters (Jody, 2026-10-29)
+- **Kernels in one trust domain mint across clusters.** Each kernel's **private** signing keys never leave it; only the **public**
+  verifying keys are replicated to every kernel in the trust domain, so any kernel's token verifies fleet-wide. So kernel *does* host a
+  fleet-scoped root: its public verifying keys, an add-only set with expiry and no identity merges.
+- **Kernel-to-kernel trust uses Kubernetes service-account tokens plus an OPA policy (Jody).**
+  - A kernel presents a short-lived **projected service-account token** (audience: the peer kernel).
+  - The peer verifies it against the sending **cluster's OIDC issuer** (GKE publishes discovery and JWKS), with no call to the other
+    cluster's API server.
+  - A generated **OPA policy** decides: the issuer is a member cluster listed in the fleet's proto config; `sub` is
+    `system:serviceaccount:tac-<deployment>:kernel`; the audience matches; the token is fresh.
+  - Only then are public keys exchanged.
+  - There's no new CA tier. Within a cluster, kmaker (TokenReview plus the operator CA) still issues kernel certificates.
+- **Hub's proposal (open):** replication is an annotation-driven **generated capability** (`scope: FLEET` on a state root), not a
+  service. Kernel uses it only for the verifying-key set. The people table, with its merges, duplicates and quarantine, lives in the
+  people service with the same capability, which keeps the complex merge code out of the token authority.
