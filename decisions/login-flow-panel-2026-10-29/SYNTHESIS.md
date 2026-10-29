@@ -120,3 +120,8 @@ What follows is where it breaks, with fixes.
   - Every link added this way is announced to every address the person has, so an admin who reset the account to hijack it is seen
     and can be disputed.
   - After the window, recovery needs a human review.
+- **C. No tombstone (Jody, 2026-10-29; he is "very conflicted about forever").**
+  - A merged XID's redirect lives 30 days, then nothing is kept.
+  - In its place, a **rule**: any tenant mapping that points at an XID kernel doesn't know (merged, aged out, anything) **fails closed**
+    to "this account needs re-linking", and never mints a new XID. That covers a restored backup and a missed sweep.
+  - Random 128-bit XIDs make reuse impossible, so no record is needed for that.
