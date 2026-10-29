@@ -72,5 +72,7 @@ token). For failover the resolver returns **both the primary and the secondary**
   cluster is retired after verification. The driver is cost; it isn't urgent.
 - **arm64 everywhere.** Every image is built and run for arm64. The **amd64 builds stay in place but disabled**, behind a setting,
   to avoid the cost. Turning them back on is a config change, not a rewrite.
+  **Re-enable amd64 (x86_64) for tacplus.dev once the change rate settles** (Jody): open-source users will want it. Until then,
+  double builds are waste, since only arm64 runs.
 - **Each deployment has its own load balancer, FQDN and Let's Encrypt.** Sharing a cluster shares nothing else at the edge:
   `tac-seatrials` keeps seatrials.tacplus.dev, its certificate and its account key.
