@@ -53,6 +53,7 @@ In priority order.
    `tacplus-dev/operator:ROADMAP.md`, `tacplus-dev/nsproxy:ROADMAP.md`.
 
 ## Later
+- Re-enable amd64 (x86_64) image builds for tacplus.dev once the change rate settles; arm64 only until then (decisions/deployments-per-cluster-2026-10-26.md, 2026-10-29 addendum)
 
 - Convergent replicated state as proto annotations: tacplus generates the store, merge and gossip; first user the fleet-wide people store; eventually replaces Hazelcast in kernel; transparent behind generated interfaces (tacplus-dev/roadmap:items/people-fleet-wide-store.md; design, no hurry)
 - **Multi-cluster** and region failover: three regions, active/passive with a witness, the tenant placement
