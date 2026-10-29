@@ -112,3 +112,11 @@ What follows is where it breaks, with fixes.
   - **Tokens follow:** a company tenant's token carries that tenant's identifier as the user. The people tenant (Scotty's home) keeps
     the real XID.
   - Only kernel maps between them.
+- **B. A person whose only account was `@company`: a grace window plus warning (Jody, 2026-10-29).**
+  - When the company registers, everyone with a link from that domain is told, at the verified address, to link a personal account
+    before suspension takes effect.
+  - Then, for a grace window (30 days by default; in the proto config), the suspended link signs in **only** to a page that links a
+    freshly signed-in personal account to the same XID and retires the company link.
+  - Every link added this way is announced to every address the person has, so an admin who reset the account to hijack it is seen
+    and can be disputed.
+  - After the window, recovery needs a human review.
