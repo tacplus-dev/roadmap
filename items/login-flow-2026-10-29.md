@@ -44,6 +44,12 @@
 - **Company-only sessions (Jody):** we encourage the personal sign-in. When Scotty sees something that belongs on the personal side but
   holds no personal token, it **says so**: it will not store personal things with the company, so either the person signs in with their
   personal account or that thing is lost. Personal data never falls back into a company tenant.
+- **First company sign-in (Jody):** it creates the tenant's mapping, and so membership, by default. The person is also asked to sign in
+  with a personal account. If that account already has an XID, the tenant maps to it. If they don't sign in with a personal account, or
+  it has no XID yet, a new XID is created.
+- **Merges leave stale mappings in tenants (Jody):** a tenant may still map to an XID that was merged into another. So a merged XID is
+  **not deleted right away**: it stays as a dead XID **linked to the live one** (the MERGED redirect), and **each tenant periodically
+  updates its mappings** to the live XID.
 - **All of this is configuration defined in proto** (Jody): the providers offered, a tenant's authorized OIDC IdP and registered
   domains, how people join a tenant, and so on. It is generated, not hand-written.
 
