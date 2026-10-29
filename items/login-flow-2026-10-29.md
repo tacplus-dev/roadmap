@@ -41,6 +41,9 @@
 - **One Scotty per person, and it runs in the people tenant (Jody).** It can store personal things only with the person's **personal**
   (people-tenant) token. A company token can't write the personal side. So **a person normally signs in with both** their personal and
   their company account(s). The session holds both proofs, and each tenant's token comes from its own proof.
+- **Company-only sessions (Jody):** we encourage the personal sign-in. When Scotty sees something that belongs on the personal side but
+  holds no personal token, it **says so**: it will not store personal things with the company, so either the person signs in with their
+  personal account or that thing is lost. Personal data never falls back into a company tenant.
 - **All of this is configuration defined in proto** (Jody): the providers offered, a tenant's authorized OIDC IdP and registered
   domains, how people join a tenant, and so on. It is generated, not hand-written.
 
