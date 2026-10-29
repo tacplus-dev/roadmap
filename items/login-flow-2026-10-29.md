@@ -15,6 +15,8 @@
 - **Once signed in, we encourage linking personal accounts,** so the person isn't locked out of their Scotty if their employment ends.
 - **An unregistered domain under Custom:** "your company isn't registered". There's no generic discovery and no ad-hoc sign-in.
 - **Registering a company requires being signed in with a personal account.** We want to know who is registering it.
+- **Custom IdPs are OIDC only.** SAML support was intentionally discontinued and is not coming back. The authorized IdP is a per-tenant OIDC
+  issuer and client in the tenant's config, which goes with the tenant.
 
 ## How it maps (hub's notes, not decided)
 - **Finding the IdP from a domain** is a lookup in our records: a tenant that verified the domain, and the IdP it authorized. It isn't
