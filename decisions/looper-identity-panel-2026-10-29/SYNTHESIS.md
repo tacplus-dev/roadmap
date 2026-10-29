@@ -62,7 +62,7 @@ The prompt and the raw outputs are beside this file. Doppelganger's answer is qu
     pinned by digest. No looper can publish them, so a looper can't push code that every other looper then runs.
 16. **Check GitHub's app limit per owner** before creating about 30 apps.
 
-## Added by the fourth review (claude-opus), not yet confirmed by Jody
+## Added by the fourth review (claude-opus), accepted by Jody 2026-10-29 ("yes accept")
 17. **Split the thinker from the writer.** Building a dependency runs its code (`build.rs`, proc macros) inside the looper's job,
     and so does the LLM itself, which reads untrusted text. So the job that holds the identity must run neither.
     - The LLM-and-build job has **no `id_tokens` and no protected variables**. It produces a patch artifact.
