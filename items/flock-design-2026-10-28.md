@@ -140,3 +140,8 @@ for example the device-approval path), not synchronous confirmation (Jody).
   generated clients.
 
 The `(flock.table)` / `(flock.merge)` spellings earlier in this document are superseded by the `spec.*` forms above.
+
+## Naming idea for later (Jody, 2026-10-29)
+**iKernel and eKernel** may be a better naming scheme later: iKernel for the cluster-local kernel (today's `kernel`, which always stays
+within its cluster) and eKernel for the one that spans clusters (today's `flock`). That reflects that they share one state model and
+differ only in reach. Nothing is renamed now; the names stay `kernel` and `flock` until Jody decides.
