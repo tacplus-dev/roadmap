@@ -48,3 +48,12 @@ Jody, deciding tacplus-dev/gateway#3: a tenant-owned service instance is identif
 not its name. Its SPIFFE ID is `spiffe://<td>/tenants/<tid>/services/<svc>` (kernel#23). The gateway matches the
 request's target-tenant tid against the instance identity directly, with no tid → name lookup. User and session
 token namespaces (`/tenants/<name>`) are not changed by this.
+
+## Addendum 2026-10-29: the server refuses too (Jody)
+"The black box hazelcast traffic must not allow accidental tenant to tenant connections. The mTLS certs and policy must not allow
+this." Routing the client to the right tenant is not enough on its own:
+- A tenant-owned instance refuses any call meant for another tenant, whoever the caller is. A `/system` caller included. The check
+  compares the tid in the instance's certificate (kernel#23) with the call's tenant.
+- Traffic between a tenant-owned service's members (Stratum's Hazelcast, for example) admits only members holding that tenant's
+  certificate, with network policy as a second layer. Shared cluster names and multicast join are not allowed
+  (tacplus-dev/stratum#17; the record plane is tacplus-dev/tacplus#207).
