@@ -177,3 +177,13 @@ differ only in reach. Nothing is renamed now; the names stay `kernel` and `flock
 - To be put to a **panel** (Jody: "we might ask the panel to weigh in"). Panel questions to include: hosting the identity graph in kernel versus a separate service; and retiring kmaker (kernel#29).
 
 - Supersedes: the identity graph moving to a people service (2026-10-25; kernel#2, people#1) and "a separate flock service".
+
+## Kernel without Hazelcast (Jody, 2026-10-29)
+- **Kernel is being rewritten without Hazelcast** (the platform direction: nothing new in kernel depends on Hazelcast; Hazelcast stays
+  in Stratum). So kernel needs **no black-box member traffic**, and the member port (tacplus#212) is for Stratum, not kernel.
+- **Kernel replicas share state through the generated replication capability, over gRPC:** `scope: CLUSTER` roots among one
+  cluster's kernels, `scope: FLEET` roots fleet-wide. Today a kernel mints with its own key and others verify because the public keys
+  were shared over Hazelcast; after the rewrite, the verifying-key set is one replicated root.
+- **One trust mechanism for kernel-to-kernel, in one cluster and across clusters:** a projected Kubernetes service-account token,
+  verified against the sending cluster's OIDC issuer (the local one when in-cluster), plus a generated OPA policy.
+- **Hence kmaker goes** (kernel#29), with the Hazelcast removal rather than with #212.
