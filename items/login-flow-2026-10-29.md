@@ -50,6 +50,9 @@
 - **Merges leave stale mappings in tenants (Jody):** a tenant may still map to an XID that was merged into another. So a merged XID is
   **not deleted right away**: it stays as a dead XID **linked to the live one** (the MERGED redirect), and **each tenant periodically
   updates its mappings** to the live XID.
+  - **How (Jody):** a merge publishes an event that every tenant holding that XID watches, so the tenant updates at once. A daily
+    sweep catches anything missed. On sign-in, kernel follows the redirect, so access works before the tenant has updated.
+  - **A merged XID's redirect lives 30 days** (Jody). That replaces the flock rule "dropped after the longest credential lifetime".
 - **All of this is configuration defined in proto** (Jody): the providers offered, a tenant's authorized OIDC IdP and registered
   domains, how people join a tenant, and so on. It is generated, not hand-written.
 
