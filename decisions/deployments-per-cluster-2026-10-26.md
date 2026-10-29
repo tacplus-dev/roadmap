@@ -17,7 +17,7 @@ worked by their loopers (`seabeam/roadmap/items/looper-hierarchy.md`).
    recognizable at a glance: **`people` is `00000001`**, fixed in every deployment; `00000002` and up stay free.
    Minted ids are random and start with a letter, so they never fall in the reserved range. Using the tid in
    SPIFFE paths and grants instead of the tenant name is a separate, later decision.
-3. **Trust domain per deployment**, derived from its name (for example `prod.tacplus.dev`).
+3. ~~**Trust domain per deployment**, derived from its name (for example `prod.tacplus.dev`).~~ **Superseded 2026-10-29: the trust domain is the fleet's, and spans its deployments (see the addendum below).**
 4. **nsproxy**: a deployment runs in `tac-<deployment>` with no rights outside it, so it cannot create its
    tenants' namespaces. nsproxy, one per cluster, deployed by the top pipeline, does it on the deployment's
    behalf:
@@ -76,3 +76,13 @@ token). For failover the resolver returns **both the primary and the secondary**
   double builds are waste, since only arm64 runs.
 - **Each deployment has its own load balancer, FQDN and Let's Encrypt.** Sharing a cluster shares nothing else at the edge:
   `tac-seatrials` keeps seatrials.tacplus.dev, its certificate and its account key.
+
+## Addendum 2026-10-29 (Jody): the trust domain spans deployments
+- **The trust domain is the fleet's, not a deployment's.** The fleet *is* the trust domain (flock huddle, 2026-10-28). One fleet can
+  have **several deployments, even on the same cluster**, all sharing one trust domain. Each still has its own namespace, LB, FQDN and
+  Let's Encrypt.
+- **Why:** with one cluster, we can run two deployments of a fleet and treat them **as if they were different clusters**, to test
+  multi-cluster behaviour cheaply.
+- **Where it leads:** when tenants span clusters, the **tenant placement resolver** (tabled above) answers which deployment a tenant
+  is active in, and its FQDN. Traffic is sent there, and identities hold fleet-wide because the trust domain is shared.
+- Item 3 above is superseded. A deployment's FQDN is not its trust domain.
