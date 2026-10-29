@@ -17,6 +17,11 @@
 - **Registering a company requires being signed in with a personal account.** We want to know who is registering it.
 - **Custom IdPs are OIDC only.** SAML support was intentionally discontinued and is not coming back. The authorized IdP is a per-tenant OIDC
   issuer and client in the tenant's config, which goes with the tenant.
+- **When a company registers a domain, existing links from that domain are suspended, not deleted.** "We dont want to let business and
+  personal get confused." From then on a sign-in from that domain must come through the company's authorized IdP, so a link made
+  earlier through another route (Google Workspace, say) stops working for sign-in. It keeps working if the company authorized that same
+  IdP. The person's XID and personal links carry on. They join the company tenant only by signing in through its IdP (direct join or
+  admin approval is the company's setting), and they're told why on their next sign-in.
 
 ## How it maps (hub's notes, not decided)
 - **Finding the IdP from a domain** is a lookup in our records: a tenant that verified the domain, and the IdP it authorized. It isn't
