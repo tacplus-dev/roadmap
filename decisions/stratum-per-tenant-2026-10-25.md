@@ -130,5 +130,5 @@ is kept as the direction, not dropped.
 ## Addendum 2026-10-28: the second site is redo to redo (Jody, redo#1)
 The local redo ships each tenant's log to the redo at the second site over `redo.RedoSite`, a contract in redo's own proto, and
 REMOTE is acked once that site has the write. The call between deployments uses generated cross-deployment S2S clients
-(tacplus-dev/tacplus#204), never a hand-written mTLS client. A bucket as the second site (option B) was not chosen. Built in two
+(tacplus-dev/tacplus#204), never a hand-written cross-site client. A bucket as the second site (option B) was not chosen. Built in two
 steps: the whole service, tested against an in-process second site, now; the deployed link once #204 lands.
