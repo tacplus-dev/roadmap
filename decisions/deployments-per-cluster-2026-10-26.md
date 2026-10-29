@@ -66,3 +66,11 @@ token). For failover the resolver returns **both the primary and the secondary**
 - Not built Day 1. The gateway keeps all routing behind its single resolve-a-target seam so the resolver slots in
   as a new source of answers.
 - Open: does placement belong to the tenant record in kernel, or is it the resolver's own data?
+
+## Addendum 2026-10-29 (Jody): one cluster, arm64 everywhere, each deployment self-contained
+- **One GKE cluster: `cavalier`.** seatrials moves onto it as the `tac-seatrials` deployment (fleet-seatrials#4), and the `seatrials`
+  cluster is retired after verification. The driver is cost; it isn't urgent.
+- **arm64 everywhere.** Every image is built and run for arm64. The **amd64 builds stay in place but disabled**, behind a setting,
+  to avoid the cost. Turning them back on is a config change, not a rewrite.
+- **Each deployment has its own load balancer, FQDN and Let's Encrypt.** Sharing a cluster shares nothing else at the edge:
+  `tac-seatrials` keeps seatrials.tacplus.dev, its certificate and its account key.
