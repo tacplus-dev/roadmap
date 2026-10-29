@@ -125,3 +125,12 @@ What follows is where it breaks, with fixes.
   - In its place, a **rule**: any tenant mapping that points at an XID kernel doesn't know (merged, aged out, anything) **fails closed**
     to "this account needs re-linking", and never mints a new XID. That covers a restored backup and a missed sweep.
   - Random 128-bit XIDs make reuse impossible, so no record is needed for that.
+- **D. A company account is never a personal link (Jody, 2026-10-29):** "We dont want a company domain to also be used as a personal
+  domain even though it would work. Its a problem waiting to happen to whomever is in that situation that they might not even really
+  understand."
+  - The hub's clause that a suspended link "keeps working if the company authorized that same IdP" is **dropped**. That link becomes a
+    company link into the tenant, and the person keeps their Scotty through B.
+  - Accounts are classified by **who controls them**, never by provider: Google with `hd`, Microsoft with a non-consumer `tid`, and
+    Managed Apple IDs are company accounts. A personal account at the same provider (a personal Gmail, say) is fine.
+
+All four points are settled. The design (`items/login-flow-design-2026-10-29.md`) plus this synthesis is the accepted sign-in design.
