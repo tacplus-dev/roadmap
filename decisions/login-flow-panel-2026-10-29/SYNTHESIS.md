@@ -102,3 +102,13 @@ What follows is where it breaks, with fixes.
   merged_into` stay so nothing resurrects or re-mints.
 - **D. Dropping "keeps working if the company authorized that same IdP"** (point 4). That clause was the hub's wording, not Jody's;
   he said suspension "is a good idea".
+
+## Jody's answers
+- **A. Pairwise per-tenant identifiers: accepted (Jody, 2026-10-29).** The concern is **correlation, not secrecy**: an XID is not a
+  secret, but as a stable identifier shared across tenants it lets two companies intersect their member lists, joins leaked data, and
+  makes merge events reveal links.
+  - A company tenant sees a kernel-issued identifier for each person, for example HMAC(tenant, XID). The tenant maps
+    subject → that identifier, never the raw XID.
+  - **Tokens follow:** a company tenant's token carries that tenant's identifier as the user. The people tenant (Scotty's home) keeps
+    the real XID.
+  - Only kernel maps between them.
