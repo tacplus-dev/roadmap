@@ -1,6 +1,6 @@
 # Sign-in and linking: design
 
-- **Status:** design for a panel review (2026-10-29). The points marked **(Jody)** are his decisions, from the huddle log in
+- **Status:** design, panel reviewed 2026-10-29 (decisions/login-flow-panel-2026-10-29/SYNTHESIS.md; its converged fixes apply, and four points wait on Jody). The points marked **(Jody)** are his decisions, from the huddle log in
   `items/login-flow-2026-10-29.md`. The rest is the hub's proposal. Nothing is built.
 - **Owner:** Jody
 - **Background:**
