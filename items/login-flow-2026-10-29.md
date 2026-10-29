@@ -1,6 +1,6 @@
 # The sign-in flow
 
-- **Status:** huddle in progress (2026-10-29). Changes nothing yet.
+- **Status:** huddle log (2026-10-29). The clean design is `items/login-flow-design-2026-10-29.md`.
 - **Owner:** Jody
 - **Background:**
   - `decisions/identity-session-credential-2026-10-25.md`
