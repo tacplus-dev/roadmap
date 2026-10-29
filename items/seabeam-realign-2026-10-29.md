@@ -55,6 +55,11 @@ and are picked up as before.
 **Marker for phase 2:** tacplus-dev/fleet-seatrials#3 closes and the new Stratum runs on seatrials with the isolation tests passing.
 tacplus-dev will update this brief then.
 
+## Platforms (Jody, 2026-10-29)
+- **SeaBeam is arm64 only, permanently.** Only we run it, and we run arm64, so SeaBeam needs **no amd64 builds at all**. Don't add an
+  amd64 setting.
+- tacplus.dev differs: its amd64 builds stay in place, disabled, to be re-enabled for open-source users once its change rate settles.
+
 ## What not to do
 
 - Don't bring anything over from SeaBeam into tacplus-dev by hand. The port scan does that, by issue.
