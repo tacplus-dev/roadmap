@@ -23,3 +23,21 @@ the platform's (tacplus-dev/roadmap ROADMAP.md and `items/`):
 - **The feature is already on a roadmap:** don't open a new feature issue. Open one asking for **that roadmap entry to
   be prioritized**, linking it and saying why now.
 - **It isn't:** open it as a `feature` (it then needs design, approval and a ROADMAP.md entry) or as a `bug`.
+
+## Addendum 2026-10-31: a new mechanism must argue against reuse (Jody)
+
+Prompted by tacplus#212. Its custom TLS framing was specified straight from a stated mechanism. No alternative was weighed,
+and on 10-31 it was replaced by gRPC with make-before-break stream rotation (#259). Jody: "Yes that is a good specific
+mitigation."
+
+A feature design that adds a **new wire format, protocol, transport, or security mechanism** must, before approval:
+- **Include a "reuse what exists" alternative.** Say how the platform's existing stack would do it (generated gRPC, its
+  TLS and token handling, existing stream rules), and argue specifically why that isn't enough. "It's a black box" or
+  "it's different" is not an argument.
+- **Check it against the platform's written contracts**: docs/API.md (the Client Send Contract, stream auth), the
+  decisions here, and VERSIONING. List any rule it bends.
+- **Go through a round-table if it touches security or identity**: independent analyses, a cross-read, a summary
+  (the login-flow and looper-identity panels are the model). The summary goes on the issue before `approved`.
+
+Start from the requirements, not from a mechanism someone has already named: write the requirements first, then the
+options.
