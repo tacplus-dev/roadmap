@@ -53,6 +53,7 @@ In priority order.
    `tacplus-dev/operator:ROADMAP.md`, `tacplus-dev/nsproxy:ROADMAP.md`.
 
 ## Later
+- **Automatic security remediation with canary rollout** (Jody, 2026-11-01, "eventually"): any security vulnerability whose fix doesn't disrupt anything else is fixed, released and deployed automatically, first as a **canary** and then to 100% once the canary is healthy. Builds on: the nightly and deterministic scans (looper#49), the bug → fix → patch flow, the fleet canary design (`decisions/fleets-and-canary-huddle-2026-10-22.md`), and the post-deploy suite (fleet-seatrials#17). "Without disrupting anything else" needs a written test (contract unchanged, gates green, login continuity), designed before it's built.
 - Re-enable amd64 (x86_64) image builds for tacplus.dev once the change rate settles; arm64 only until then (decisions/deployments-per-cluster-2026-10-26.md, 2026-10-29 addendum)
 
 - Convergent replicated state as proto annotations: tacplus generates the store, merge and gossip; first user the fleet-wide people store; eventually replaces Hazelcast in kernel; transparent behind generated interfaces (tacplus-dev/roadmap:items/people-fleet-wide-store.md; design, no hurry)
