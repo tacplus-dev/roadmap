@@ -18,6 +18,7 @@ This file covers what spans repositories or has no repository yet. Each reposito
 - Planning files in every repository: `decisions/repo-roadmap-files-2026-10-27.md`.
 
 ## Next
+- **Skipper and Admiral as tacplus platform components** (high; moved from SeaBeam): survey, huddle, then the skipper and admiral repos (`items/skipper-admiral.md`, `decisions/skipper-and-admiral-2026-11-01.md`) (Jody, 2026-11-01)
 
 In priority order.
 
