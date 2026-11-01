@@ -31,3 +31,14 @@ technically we can have system to tenant but we probably won't use that."
 - Black-box protocols bind to loopback only and cross pods only through the member port.
 
 Related: `tenant-routing-2026-10-26.md`, `black-box-traffic-2026-10-29.md`, tacplus-dev/tacplus#212.
+
+## Addendum 2026-11-01: tenant data never lives in /system (Jody)
+
+Prompted by the blobstore, which had been built as one shared `/system` instance writing into every tenant's Stratum. Jody:
+"Yes it has to be per tenant. Otherwise it creates dependencies to system that should not exist."
+
+- A service that **holds or serves a tenant's data** is `tenant_owned`: one instance per tenant, with its own storage. `/system`
+  never stores a tenant's data, and never needs to call into a tenant to do its job.
+- So `/system` → tenant, "technically possible", is **not** a way to centralize tenant data. A design that relies on it must say why
+  it can't be tenant-owned, and gets Jody's decision.
+- First application: tacplus-dev/blobstore becomes tenant-owned.
