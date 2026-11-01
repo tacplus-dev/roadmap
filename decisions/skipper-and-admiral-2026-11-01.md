@@ -26,5 +26,24 @@ their admiral."
 
 ## Open (Jody)
 
-- Whether the Admiral may call a Skipper (`/system` → tenant: "technically possible, probably unused").
+- ~~Whether the Admiral may call a Skipper.~~ Settled below.
 - What each one does: its responsibilities and API.
+
+## Addendum 2026-11-01: the Skipper dials out, over a bidi channel (Jody)
+
+Jody: the Admiral needs to reach Skippers, "but we might make it so that the skippers reach out to the admiral and maintain a
+bidi channel."
+
+- **Every Skipper opens and holds one bidirectional stream to its Admiral.** That's tenant → `/system`, the allowed direction.
+  The Admiral uses that channel to reach the Skipper. It never dials into a tenant, so there is still **no `/system` → tenant
+  call path**.
+- **What that gives:**
+  - the Admiral can only reach Skippers that are connected;
+  - each message arrives on a channel the tenant's own Skipper opened and authenticated, with its own token;
+  - it works however many clusters the Skipper spans.
+- **Messages are typed, both ways, on a declared API.** What the Admiral sends is a **request**. The Skipper decides, by its own
+  policy, whether and how to act. The Admiral never reaches past the Skipper into the tenant's other services. Every message is
+  audited.
+- **It's a long-lived stream,** so it uses make-before-break token rotation (tacplus-dev/tacplus#259) and explicit `last`
+  signalling. The Skipper reconnects with backoff, and the Admiral treats a Skipper whose channel is down as unreachable, never
+  as a reason to dial in.
