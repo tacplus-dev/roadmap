@@ -53,6 +53,12 @@ something "until production", and ticks it off with the commit or issue that did
 - [ ] **Capacity:** SSD quota measured and requested if needed (Jody skipped it 2026-11-02 until measurement); runner
       first-job failures fixed (looper#43).
 
+## Deterministic deployment
+- [ ] **Known-good uni-config promotion:** a verified uni-config is recorded immutably (by digest, secrets by version) and
+      exactly that record is deployed to prod; rollback is an earlier record (`decisions/deterministic-deployments-2026-11-02.md`).
+- [ ] **Reproducibility proven:** rebuild dev from the repositories, pins and secret versions alone, and compare.
+- [ ] **Drift checks** on cloud, cluster and every fleet, with no unexplained differences.
+
 ## Before go-live
 - [ ] **A security review** of the production layout: a round-table over cluster, cloud and identity.
 - [ ] **Jody's go-live decision**, recorded in `decisions/`.
