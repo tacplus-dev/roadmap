@@ -74,3 +74,25 @@ the config."
 **Open, for a later huddle:** where a tenant's uni-config lives and what applies it. Candidates are a tenant pipeline, the
 tenant's Skipper (`skipper-and-admiral-2026-11-01.md`), or the kernel's existing `SetTenantConfig` path. Who may author it
 also matters, given the tenant's own users and "tenants talk to their Skipper".
+
+## Addendum: no magic environment; the uni-config is the config (Jody, 2026-11-02)
+
+Jody: "no magic env vars set by k8s, etc. the uni-config is the config. so that if an LLM is helping us it can get a
+redacted copy and know what should be happening."
+
+- **No configuration arrives any other way.** No environment variables set by Kubernetes or anything else:
+  - Kubernetes' service-link variables (`<SVC>_SERVICE_HOST` and the like) are off: `enableServiceLinks: false`;
+  - no downward-API env;
+  - no `envFrom` ConfigMaps or Secrets;
+  - no image-baked defaults that change behaviour.
+- **One fixed place.** A service learns everything from its part of the uni-config, delivered through the generated config
+  path at one fixed, well-known file location. The location is a platform constant, not an environment variable
+  (tacplus#262).
+- **Explicit defaults.** Defaults are declared in the config's types or the uni-config itself, never hidden in code or
+  platform behaviour. If a value matters, it's visible in the uni-config.
+- **A redacted copy for reading.** Because the uni-config is complete, a **redacted copy** tells a reader (a person or an
+  LLM helping us) what the deployment should be doing. Redaction is generated from the types, not hand-written:
+  tacplus#274's `Redact<T>`, with sensitive fields annotated. Secret values never appear; the secret **version references**
+  do, so the reader knows which secret is in use without seeing it. Each recorded uni-config (candidate or known good) gets
+  a redacted twin that the pipeline can hand to an assistant.
+- **Applies to tenant uni-configs the same way.** A tenant's redacted copy is shown only within that tenant's scope.
