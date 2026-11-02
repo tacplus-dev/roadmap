@@ -19,7 +19,7 @@ And: "we need to prepare ourselves for eventual production."
 - **GitLab settings under the same pipeline**, now.
 - **Production is planned in from the start**, not added later: production gets its own project(s) and its own approval.
 
-## Open (the design issue, for Jody's approval)
+## Open at the time (the design issue, approved below)
 
 - The tool, the layout of organization, folders and projects, the bootstrap, and the production gate:
   tacplus-dev/roadmap#2.
