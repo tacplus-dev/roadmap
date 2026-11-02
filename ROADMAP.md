@@ -53,6 +53,11 @@ In priority order.
    deploymentproxy, formerly nsproxy; its namespace part is done), then tacplus-dev/fleet-seatrials#4 (seatrials moves, with a runbook).
    `tacplus-dev/operator:ROADMAP.md`, `tacplus-dev/deploymentproxy:ROADMAP.md` (renamed 2026-11-02, `decisions/deploymentproxy-2026-11-02.md`).
 
+- **The cluster pipeline** (tacplus-dev/cluster#1): the only holder of cluster-admin on `tacplus`. It installs deploymentproxy,
+  creates each deployment's namespace and namespace-only roles, runs `plan` on every change, and leaves `apply` to Jody
+  alone. It's on the critical path to tacplus.dev, ahead of fleet-seatrials#4 (`decisions/cluster-pipeline-2026-11-02.md`;
+  approved by Jody 2026-11-02, roadmap#1). Agent, at Jody's request.
+
 ## Later
 - **Automatic security remediation with canary rollout** (Jody, 2026-11-01, "eventually"): any security vulnerability whose fix doesn't disrupt anything else is fixed, released and deployed automatically, first as a **canary** and then to 100% once the canary is healthy. Builds on: the nightly and deterministic scans (looper#49), the bug → fix → patch flow, the fleet canary design (`decisions/fleets-and-canary-huddle-2026-10-22.md`), and the post-deploy suite (fleet-seatrials#17). "Without disrupting anything else" needs a written test (contract unchanged, gates green, login continuity), designed before it's built. Chaos monkey runs in production too (Jody, 2026-11-01), so **a container being killed is not a disruption**. Failures matched to a chaos fault that recovered are logged and ignored; unrecovered ones, and ones with no matching fault, are triaged as real.
 - Re-enable amd64 (x86_64) image builds for tacplus.dev once the change rate settles; arm64 only until then (decisions/deployments-per-cluster-2026-10-26.md, 2026-10-29 addendum)
@@ -64,8 +69,6 @@ In priority order.
 - **Stratum transactions** across maps, server and generated client (`items/stratum-transactions.md`).
 - **Data export before tenant deletion** ("download your data", perhaps required first;
   `decisions/tenant-deletion-2026-10-27.md`).
-- **The deploy pipeline**: the top pipeline (creates `tac-<deployment>`, deploys deploymentproxy), with Jody's sign-off on
-  each deploy, then a panel. No issue yet (`decisions/deployments-per-cluster-2026-10-26.md`, "Open").
 - The identity graph's remaining steps (`items/identity-graph.md`), the looper hierarchy's project looper
   (`items/looper-hierarchy.md`), doppelganger as a fleet service (`items/doppelganger-fleet-service.md`).
 - Explorations, not plans: protos living with their owners (`items/explore-proto-ownership.md`), the application
