@@ -55,3 +55,7 @@ The hub raised two questions, and Jody answered "yes to both, write it up":
 - tacplus-dev/registry#6: `chaos-wedge` is not a chaos service any more. Register `chaos-controller` only.
 - tacplus-dev/operator#3 and #18, `deployments-per-cluster-2026-10-26.md` item 4, and the fleet manifests: "nsproxy"
   reads "deploymentproxy". The earlier decision stands as amended by this one.
+
+## Addendum 2026-11-02: how the node agent knows the controller
+
+Jody chose (a) on deploymentproxy#10 ("I thought we already selected A"): no listener on the node agent. The controller writes a cluster-scoped per-node task resource. Only deploymentproxy's service account may write it (RBAC plus a ValidatingAdmissionPolicy), and each agent watches only its own node's tasks. Authentication, TLS and audit are the API server's.
