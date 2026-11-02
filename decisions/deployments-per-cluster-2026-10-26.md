@@ -89,3 +89,7 @@ token). For failover the resolver returns **both the primary and the secondary**
 - **Deployments differ by purpose (Jody):** each deployment runs its own kernel and services, possibly of different kinds, versions or
   configurations, depending on what it's for. For example, one deployment runs SeaBeam and another runs doppelganger, on the same
   cluster. A deployment is the unit of "what runs, and how", independent of the others.
+
+## Amended 2026-11-02
+
+nsproxy is renamed deploymentproxy and also carries chaos faults: decisions/deploymentproxy-2026-11-02.md (Jody).
