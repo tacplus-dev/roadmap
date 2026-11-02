@@ -48,3 +48,29 @@ It extends `deterministic-builds-2026-10-27.md` (a build is fully determined by 
   secret references, a candidate → known-good record, and deploy-by-digest.
 - tacplus-dev/cloud#1 and tacplus-dev/cluster: already plan → apply of a committed input; drift checks report hand changes.
 - `PRODUCTION.md`: promotion of a known-good uni-config from dev to prod is a gate before production.
+
+## Addendum: deployment and tenant uni-configs never mix (Jody, 2026-11-02)
+
+Jody: "Another rule - the uni-config must contain everything for the deployment except tenants which have their own
+uni-configs. we dont have tenant configs in our config and vice versa. we can uplift tenant config into our state but not
+the config."
+
+- **The deployment's uni-config holds everything about the deployment, and nothing about any tenant.** It covers services,
+  pins, settings, identity and trust material, platform secrets, and the deployment's own sign-in.
+- **Each tenant has its own uni-config.** It holds that tenant's configuration (its settings, its tenant-owned services, its
+  own sign-in providers and secrets), and nothing about the deployment or other tenants.
+- **Never across:**
+  - no tenant configuration in the deployment's uni-config, and none of the deployment's in a tenant's;
+  - a deployment's config never lists, embeds or overrides a tenant's settings.
+- **Uplift into state, not config.** The platform may read a tenant's uni-config and reflect what it needs into the
+  deployment's **state**: a tenant record, its tid, its placement. That state is derived and never written back into the
+  deployment's config document.
+- **The rules above apply to tenant uni-configs too:**
+  - deterministic and reproducible;
+  - recorded by digest, with secrets by version;
+  - a known-good record is deployed as it is;
+  - tenant secrets stay out of the deployment's secrets and vice versa.
+
+**Open, for a later huddle:** where a tenant's uni-config lives and what applies it. Candidates are a tenant pipeline, the
+tenant's Skipper (`skipper-and-admiral-2026-11-01.md`), or the kernel's existing `SetTenantConfig` path. Who may author it
+also matters, given the tenant's own users and "tenants talk to their Skipper".
