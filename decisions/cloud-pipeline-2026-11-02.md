@@ -23,3 +23,17 @@ And: "we need to prepare ourselves for eventual production."
 
 - The tool, the layout of organization, folders and projects, the bootstrap, and the production gate:
   tacplus-dev/roadmap#2.
+
+## Approved (Jody, 2026-11-02)
+
+Jody approved the design in roadmap#2: "approve. and we are getting ready for production not in production. keep a list of
+stuff that we will need to do before we actual go production."
+
+- **OpenTofu**, the `google` and `gitlab` providers, state in GCS.
+- **A Cloud Identity Free organization on tacplus.dev**, with the org policies listed in roadmap#2.
+- **Folders and projects:** `bootstrap`, `ci` and `dev` are **built now**. `prod` is **designed but not built**: its project,
+  its separate `cloud-prod-pipeline` identity and the `apply-prod` gate wait for the production list (`PRODUCTION.md`).
+- **Ordering:** finish the first tacplus.dev bring-up on jody1-328023. Build the cloud pipeline in parallel, then move
+  dev over.
+- **The production list** is kept in `PRODUCTION.md` at the root of this repository. Every item says where it came from.
+  The hub adds to it whenever a decision or finding defers something "until production".
