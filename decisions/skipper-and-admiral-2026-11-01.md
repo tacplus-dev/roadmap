@@ -47,3 +47,24 @@ bidi channel."
 - **It's a long-lived stream,** so it uses make-before-break token rotation (tacplus-dev/tacplus#259) and explicit `last`
   signalling. The Skipper reconnects with backoff, and the Admiral treats a Skipper whose channel is down as unreachable, never
   as a reason to dial in.
+
+## Addendum 2026-11-01: the Admiral is LLM-driven; the operator stays separate (Jody)
+
+Jody: "I see the admiral as LLM driven. And because that means we need llmproxy in place which means we need operator it is
+good to keep them separate."
+
+- **The Admiral is LLM-driven.** It reaches models only through **llmproxy**, like every model user (no model credential, no
+  vendor SDK).
+- **The operator stays a separate, deterministic component:** uni-config in, cluster state out, per cluster. It holds the
+  infrastructure power: namespaces, Secrets, deployments, RBAC.
+- **The Admiral asks; the operator acts.**
+  - The Admiral drives the operator only through a **narrow, typed API** (e.g. promote or roll back a canary, pause chaos, roll
+    back a service). This is the nsproxy and chaos-wedge pattern.
+  - The operator checks every request against the uni-config and its own rules, does only what it was built for, and every call
+    is traced and audited.
+  - A confused or prompt-injected Admiral can at worst **ask** for something the operator refuses.
+- **Bring-up order:** operator → llmproxy (deployed by the operator) → Admiral. Skippers connect to their Admiral once it's up.
+- **Prompt-injection hardening applies to the Admiral,** as for loopers (tacplus-dev/looper#40): every message from a Skipper
+  is data in nonce-keyed provenance blocks, never instructions. Direction comes only from the Admiral's own configuration and
+  its declared API.
+- **Open:** whether the Skipper is LLM-driven too.
