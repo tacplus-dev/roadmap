@@ -25,7 +25,15 @@ shared cluster until something creates its namespace and grants its account.
 
   A reconciler (Config Sync or Argo CD) stays a possible later step.
 
-## Open
+## Settled 2026-11-02
 
-- **Round-table** (issue-flow addendum, 2026-10-31: security-related mechanisms). The hub recommended one. Jody's
-  "approved" didn't say whether it's waived, so the hub asked.
+Jody: "I dont think we need a round-table for the cluster pipeline. what you said is what we agree upon. one pipeline
+manages the cluster another manages each deployement in a 1 to 1 relationship"
+
+- **No round-table** (waived by Jody).
+- **Two kinds of pipeline:**
+  - **One cluster pipeline** (tacplus-dev/cluster) manages the cluster and everything cluster-scoped.
+  - **One pipeline per deployment, 1:1**, manages that deployment only, inside its own namespaces, with its own
+    namespace-only account. For example, tacplus-dev/fleet-seatrials manages `seatrials`.
+  - A deployment pipeline never touches the cluster or another deployment. The cluster pipeline never deploys a
+    deployment's workloads.
