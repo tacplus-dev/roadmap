@@ -26,3 +26,6 @@
    - the audit of every Admiral message;
    - the Skipper's own policy for acting on requests;
    - deployed with every fleet by the operator, like the chaos agent.
+
+## GetConfig (2026-11-02, decided)
+- Admiral → operator `GetConfig` (deployment, redacted). Skipper → tenant `GetConfig` (its own tenant, redacted). Admiral → Skipper → its tenant's redacted config; the Admiral never calls a tenant directly. See `decisions/skipper-and-admiral-2026-11-01.md`, addendum 2026-11-02.

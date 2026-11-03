@@ -68,3 +68,21 @@ good to keep them separate."
   is data in nonce-keyed provenance blocks, never instructions. Direction comes only from the Admiral's own configuration and
   its declared API.
 - **Open:** whether the Skipper is LLM-driven too.
+
+## Addendum 2026-11-02: GetConfig (Jody)
+
+Jody: "we need to expose a get_config RPC that returns the config for system and for tenants. admiral will call the
+get_config for the deployment and skipper for a tenant. I think admiral can also call for a tenants config too." The hub
+pointed out that the Admiral calling a tenant directly would cross the 11-01 addendum (no tenant data in `/system`) and
+`s2s-never-crosses-tenants-2026-10-31.md`. Jody: "Ok, so right. skipper can get its tenant_config. Admiral can talk to
+skipper".
+
+- **`GetConfig` returns a uni-config's redacted twin, never secret values.** Secret version references stay visible.
+  The redaction is generated (tacplus#274). Real values reach services only through the deterministic config delivery
+  path (`deterministic-deployments-2026-11-02.md`). This is the hub's recommendation, accepted with "Ok, so right".
+- **The Admiral** calls `GetConfig` for the **deployment** (the operator serves it, as part of its narrow typed API).
+- **A Skipper** calls `GetConfig` for **its own tenant only.** Whatever holds tenant uni-configs serves it; where that is,
+  is still the open huddle in `deterministic-deployments-2026-11-02.md`.
+- **The Admiral never reads a tenant's config directly.** It asks that tenant's Skipper over the channel the Skipper
+  dials out to the Admiral, and the Skipper answers for its tenant. The Admiral doesn't store it.
+- **Every `GetConfig` is traced and accounted** like any call.
