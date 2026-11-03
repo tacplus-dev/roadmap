@@ -96,3 +96,15 @@ redacted copy and know what should be happening."
   do, so the reader knows which secret is in use without seeing it. Each recorded uni-config (candidate or known good) gets
   a redacted twin that the pipeline can hand to an assistant.
 - **Applies to tenant uni-configs the same way.** A tenant's redacted copy is shown only within that tenant's scope.
+
+## Addendum: what a redacted value looks like (Jody, 2026-11-02)
+
+Jody: "I dont see why skipper needs to actually see secrets. but this does bring up something. we should probably replace
+a redacted string with the word "REDACTED"". This confirms that the Skipper gets the redacted twin only, like the Admiral.
+
+- **A set sensitive string or bytes field becomes the literal `REDACTED`.** An empty or unset one **stays empty**, so a
+  reader can tell "a secret is configured" from "none is".
+- **Only string and bytes fields** (and messages, by marking their string and bytes leaves) may be annotated sensitive. The
+  gate refuses the annotation on numbers, booleans and enums, because no replacement value there could be told apart from
+  a real one.
+- **Redaction is deterministic.** The same input gives the same output, so redacted twins of two records can be diffed.
