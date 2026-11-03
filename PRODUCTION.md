@@ -21,6 +21,9 @@ something "until production", and ticks it off with the commit or issue that did
 - [ ] **The hub has its own GitLab identity**, so no automation can play a job as Jody (caveat found on cluster#1, 2026-11-02).
 - [ ] **Every GitLab setting from the cloud pipeline:** protected project variables, environments, runner registrations
       (roadmap#2).
+- [ ] **Network exposure enforced by org policy:** VMs can't get external IPs (`compute.vmExternalIpAccess`), no ingress
+      from 0.0.0.0/0 except to the load balancers, the control plane endpoint private, COS and no SSH everywhere
+      (`decisions/network-exposure-2026-11-03.md`).
 - [ ] **Org policies enforced:** no service-account keys, WIF from gitlab.com only, us-central1 only, uniform bucket access,
       domain-restricted sharing (roadmap#2).
 

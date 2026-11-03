@@ -4,6 +4,7 @@ New decisions live in this directory. Older per-repo decision folders, frozen an
 
 - tacplus-dev/kernel `decisions/` (identity, tenant user links, people tenant, security audit 2026-09-12)
 
+- [network-exposure-2026-11-03.md](network-exposure-2026-11-03.md): only the load balancers have public IPs; no internet ingress to any node or VM (outbound through NAT only); COS, no SSH (Jody). An open any-ingress rule from 2021 was found and removed.
 - [cluster-node-pools-2026-11-03.md](cluster-node-pools-2026-11-03.md): 3 normal Arm nodes run the platform and the loopers; everything else is dynamic spot, labelled and tainted; builds only on spot; runner VMs go away (Jody).
 - [certificates-by-pipeline-2026-11-03.md](certificates-by-pipeline-2026-11-03.md): the deployment pipeline checks for a valid certificate; if none, it runs letsencrypt once in the pipeline job by DNS-01; stored as a Secret Manager version the uni-config references; renewed on a schedule; nothing in the cluster (Jody).
 - [trace-propagation-2026-11-03.md](trace-propagation-2026-11-03.md): trace_id on every message; user code copies it (no ambient context); tacplus copies it across projections and transformations; cleared on every store (Jody).
