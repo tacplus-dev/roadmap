@@ -18,6 +18,7 @@ looper#40 (prompt provenance), looper#25 (credentials withheld from the model), 
 Considered first: (1) unshare --pid per model (PROPOSALS, #61) needs CAP_SYS_ADMIN in the job container, which widens the job's own privilege, and it doesn't hide the parent's environment from a root model by itself. (2) looper#28's think/commit split already keeps the identity out of the model's job, but only for kernel's pilot. (3) looper-docker and looper-pkill exist and are the natural broker and helper; the proposal makes looper-docker the boundary rather than a limit-setter. A separate user is the smallest step that makes both guards hold.
 
 ## Status
-open
+accepted
 Rank: 2
 Filed: 2026-11-03 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17692416595)
+Decided: 2026-11-03 by Jody: Accept and next (Jody, 2026-11-03).
