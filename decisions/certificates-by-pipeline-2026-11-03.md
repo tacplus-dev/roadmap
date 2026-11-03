@@ -34,3 +34,15 @@ Jody, dictated:
 ## Issues
 tacplus-dev/letsencrypt (the once-and-done DNS-01 job), tacplus-dev/fleet-seatrials (the pipeline steps),
 tacplus-dev/cloud (the secret and the challenge zone; interim by hand in jody1-328023 until the cloud pipeline runs).
+
+## Amended: no letsencrypt container at all (Jody, 2026-11-03)
+Jody: "if we're utilizing DNS, I don't necessarily think that we have to have the ... Let's Encrypt container. We can do
+this from the pipeline ... I don't know why we would even need to go to the cluster at all."
+
+- **The pipeline's `cert` step uses a standard ACME client**, `lego`, pinned by version and checksum, with its Google Cloud
+  DNS provider. It completes DNS-01 and writes the new Secret Manager version. Nothing runs in the cluster, and no tacplus
+  service is involved.
+- **The check** (valid, due, expired, wrong hostname) is a small pipeline script using `openssl`. It works for Let's
+  Encrypt and third-party certificates alike.
+- **tacplus-dev/letsencrypt#9 is closed as not needed.** Our deployments no longer use the letsencrypt service. Whether to
+  keep the repository for others is left open.
