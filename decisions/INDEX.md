@@ -4,6 +4,7 @@ New decisions live in this directory. Older per-repo decision folders, frozen an
 
 - tacplus-dev/kernel `decisions/` (identity, tenant user links, people tenant, security audit 2026-09-12)
 
+- [certificates-by-pipeline-2026-11-03.md](certificates-by-pipeline-2026-11-03.md): the deployment pipeline checks for a valid certificate; if none, it runs letsencrypt once in the pipeline job by DNS-01; stored as a Secret Manager version the uni-config references; renewed on a schedule; nothing in the cluster (Jody).
 - [trace-propagation-2026-11-03.md](trace-propagation-2026-11-03.md): trace_id on every message; user code copies it (no ambient context); tacplus copies it across projections and transformations; cleared on every store (Jody).
 - [deterministic-deployments-2026-11-02.md](deterministic-deployments-2026-11-02.md): every deployment is deployed and managed only through deterministic, reproducible pipelines; people and AI may do anything, but lasting changes go through the pipeline; a known-good uni-config is recorded and deployed as it is (Jody).
 - [cloud-pipeline-2026-11-02.md](cloud-pipeline-2026-11-02.md): every cloud and CI change comes from a pipeline and people read only; new GCP projects for tacplus-dev (jody1-328023 removed after), GitLab settings too, production planned in from the start (Jody). Design: roadmap#2.
