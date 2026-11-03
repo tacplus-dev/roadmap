@@ -198,3 +198,12 @@ stratum but I could see a future where it does not and exist as a file"
   store, behind the same interface, so callers don't change.
 - **`GetConfig`, the tenant side:** a Skipper reads its tenant's config (redacted) from that tenant's kernel state. The
   Admiral still asks the Skipper (`skipper-and-admiral-2026-11-01.md`).
+- **What is uplifted into system state: tenant OAuth config** (Jody: "There is tenant config that we bring up into our
+  state which is tenant OAUTH config. by our I mean system"). Sign-in components (gateway, oauth, kernel) need every
+  tenant's identity providers before a user is in a tenant. The hub's reading, adjustable by Jody:
+  - **One way, derived:** system state holds a copy rebuilt whenever the tenant's config changes. The system never edits
+    it, and the tenant config stays the source.
+  - **Only what sign-in needs:** issuer, client ID, redirect and allowed-domain settings.
+  - **The client secret goes up as a version reference, never a value.** It's resolved in tenant scope at the moment of use,
+    so no tenant secret material lives in `/system` (`skipper-and-admiral-2026-11-01.md`, addendum 2026-11-01).
+  - **Each uplifted entry records the tenant config version it came from**, so staleness is detectable.
