@@ -24,5 +24,20 @@
 - **Control jobs** (kicker, planner, recap, drift) are deterministic and model-free, and share one small always-on VM.
   That's suggestion 5, folded in. Suggestions 3 and 4 are superseded.
 
+- **Containers, not VMs per job** (Jody: "why should we have a vm per job? we are running things as containers"). With no
+  host socket and no privileged mode, several jobs share a VM. Each gets CPU, memory and disk limits, a read-only root where
+  possible, no capabilities and a non-root user. Containers and volumes are discarded per job, so VM reuse is fine. The
+  shared-kernel risk is accepted for now (Jody: "not worried about that right now"); gVisor for agent containers goes on
+  PRODUCTION.md.
+- **Capacity and cost** (Jody: "we have a vm generally running all the time. if builds are backing up somebody tells me
+  and we spin up more vms and then spin them back down later. Later we can completely automate this but I need to watch
+  cost right now"):
+  - one always-on VM normally runs everything in containers;
+  - **scaling up is on Jody's word.** The hub (each watch pass) and the recap (nightly) tell him with numbers when ready
+    work backs up past a threshold (for example a queue p90 over 30 min): issues waiting, queue time, the cost of one
+    more VM;
+  - scaling back down when the backlog clears needs no ask;
+  - full automation comes later.
+
 ## Open
-- Fresh VM per job (`max_use_count = 1`) for direct reports and build jobs. Hub recommends it.
+- Whether to cut today's autoscaler (up to 7 runner VMs) to the one-VM model now.

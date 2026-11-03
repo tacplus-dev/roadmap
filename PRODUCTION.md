@@ -46,6 +46,8 @@ something "until production", and ticks it off with the commit or issue that did
 ## Reliability and operations
 - [ ] **Chaos running in production**, opt-out per fleet: pod faults (deploymentproxy#10), then node faults; failures
       matched to recovered chaos faults are logged and ignored, others triaged (Jody, 2026-11-01; chaos#1).
+- [ ] **Sandboxed runtime for agent containers** (gVisor or similar): containers share the VM's kernel, and agents run
+      model-driven commands (looper redesign huddle, 2026-11-03; accepted risk until then).
 - [ ] **Durable state backed up and restore tested:** kernel identity, stratum and eventbus. A restore drill, with a
       runbook, before production holds real data.
 - [ ] **Multi-zone production:** a regional or multi-zone production cluster, with zone-aware Stratum backups. The zone
