@@ -89,3 +89,15 @@ flow and use our own system just like we are discussing here"
   token configuration in RatisFencedLock: **peer traffic is unauthenticated gRPC on its own port.** That's against the
   platform's rules (server TLS plus kernel tokens) and the real problem this huddle solves.
 - Hazelcast: still to check, the exact `NodeContext`/`Server` surface on the pinned version.
+
+## Decided: the network layer (Jody, 2026-11-03)
+Jody: "yes 2 for now".
+- **Ratis's own bytes travel inside our black-box gRPC member port** (tacplus#259), attached to Ratis's transport **in code,
+  not through a loopback**. Authentication, make-before-break rotation and the close at expiry come from #259. The server
+  stays Java, in kernel, and the FencedLock proto API is unchanged.
+- **"For now":** a typed transport, with each Raft message a proto message and traced per message (option 1), stays open
+  for later.
+- **Interim, until #259 lands:** kernel's Raft port is reachable only from kernel pods of the same deployment
+  (NetworkPolicy), because today it carries unauthenticated gRPC.
+- **Still open:** the Hazelcast in-code swap through `NodeContext`/`Server` (same pattern, after this), the storage
+  question and verification.
