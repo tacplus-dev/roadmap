@@ -126,3 +126,19 @@ The hub's concrete reading, adjustable by Jody:
   pipeline assembles a uni-config and when a service loads it.
 - **What it can't do:** the estimate shows a value *looks* random. Secrets we generate get their real guarantee from a
   cryptographic random source in the init job.
+
+## Addendum: approval only for production (Jody, 2026-11-02)
+
+Jody, asked why he must play `apply`: "I only want approval for production and we are not production. Dont wait for me".
+
+- **Outside production, nothing waits for Jody.** Cloud (`ci`, `dev`), the cluster pipeline and every non-production fleet
+  pipeline **apply automatically** on `main`, once the plan for that commit succeeds. The saved plan is what gets applied,
+  and the run is traced and logged.
+- **Production keeps Jody's approval:** `apply-prod` and any production fleet deploy are protected manual jobs that only
+  Jody plays (`PRODUCTION.md`).
+- **Deleting a deployment** stays a deliberate deletion pipeline, started on purpose with the deployment named
+  (tacplus-dev/cluster#2). That isn't an approval gate; it's intent. The hub never starts one: deleting data is Jody's.
+- **Until the pipelines are changed,** the hub plays the existing manual dev jobs itself, on Jody's word above.
+
+This supersedes "Jody plays apply" in `cluster-pipeline-2026-11-02.md` and `cloud-pipeline-2026-11-02.md` for everything
+except production.
