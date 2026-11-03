@@ -25,6 +25,7 @@ Change: repo-looper's plan (prompt and conflict check): file-level 'touches', di
 Gain: about 15 issue-hours a night from the directory-only overlaps seen tonight (#264 and #273, 7.47 h each), more as #196's and the generated-output overlaps are split; the ceiling is the 167.56 h of conflict holds in tacplus, operator and looper
 
 ## Status
-open
+rejected
 Rank: 3
 Filed: 2026-11-03 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17692416595)
+Decided: 2026-11-03 by Jody: Superseded by the looper redesign (Jody, 2026-11-03: one job per issue, a manager per repo; decisions/looper-job-per-issue-2026-11-03.md): there are no conflict or time-left holds to tune any more.

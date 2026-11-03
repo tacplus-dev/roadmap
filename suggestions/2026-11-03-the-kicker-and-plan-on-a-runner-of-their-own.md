@@ -24,6 +24,7 @@ Change: a 'dispatch' runner tag on a small always-on runner (gitlab-runner-mgr o
 Gain: the kicker's 155–162 min queues (4 tonight) drop to seconds; about one t2a-standard-8 worker (57 min/h) returned to looper jobs
 
 ## Status
-open
+accepted
 Rank: 5
 Filed: 2026-11-03 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17692416595)
+Decided: 2026-11-03 by Jody: Jody: 'I am okay with this but it also seems that its possible related to our overall design'. Folded into the looper redesign: control jobs on the one always-on VM (decisions/looper-job-per-issue-2026-11-03.md; cloud#5).

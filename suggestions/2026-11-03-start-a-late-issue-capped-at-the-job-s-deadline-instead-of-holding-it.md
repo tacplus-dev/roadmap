@@ -24,6 +24,7 @@ Change: repo-looper's plan: start such an issue with its limit capped at job_dea
 Gain: most of the 58.76 issue-hours a night held by this reason in tacplus (up to 1.78 h per hold): the issue makes a checkpointed start instead of waiting for the next job
 
 ## Status
-open
+rejected
 Rank: 4
 Filed: 2026-11-03 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17692416595)
+Decided: 2026-11-03 by Jody: Superseded by the looper redesign (Jody, 2026-11-03: one job per issue, a manager per repo; decisions/looper-job-per-issue-2026-11-03.md): there are no conflict or time-left holds to tune any more.
