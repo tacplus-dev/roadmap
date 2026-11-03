@@ -108,3 +108,21 @@ a redacted string with the word "REDACTED"". This confirms that the Skipper gets
   gate refuses the annotation on numbers, booleans and enums, because no replacement value there could be told apart from
   a real one.
 - **Redaction is deterministic.** The same input gives the same output, so redacted twins of two records can be diffed.
+
+## Addendum: required secrets are checked for entropy (Jody, 2026-11-02)
+
+Jody: "We already validate types which naturally includes configs. A secret can be required. If it is required and it is
+set we should check it for entropy."
+
+The hub's concrete reading, adjustable by Jody:
+- **`required` on a sensitive field:** an unset or empty value fails validation, as for any required field.
+- **When it is set, it must clear a minimum entropy estimate.** The default is **128 bits**; a field may raise it.
+  - bytes: length × 8;
+  - strings: estimated conservatively as length × log2(the size of the character classes actually present).
+- **Known placeholders always fail:** `REDACTED` (so a redacted twin can never be deployed as a real config), `changeme`,
+  and single-character repeats.
+- **Errors name the field and the rule, never the value.**
+- **It runs in the generated validators** (every language, deterministic, no network), so it applies both when the
+  pipeline assembles a uni-config and when a service loads it.
+- **What it can't do:** the estimate shows a value *looks* random. Secrets we generate get their real guarantee from a
+  cryptographic random source in the init job.
