@@ -57,3 +57,23 @@ implementation for this and if 2 possibly hijack the session in code as opposed 
 - what its RPC plugin interface requires.
 
 **The hub's lean, to test:** (2) in code first; (1) if consensus should be traced message by message.
+
+## The same question for Hazelcast (Jody, 2026-11-03)
+Jody: "sense we are using the hazelcast opensource product I am curious how difficult it is for us to hijack the network
+flow and use our own system just like we are discussing here"
+
+- **Today:**
+  - #212's member port wraps Hazelcast **by loopback**: Hazelcast binds to 127.0.0.1 in the pod, and the member port relays to
+    it (`cross-test/memberport/testdata/HazelcastMemberPortTest.java`).
+  - #259 moves the member port onto gRPC, but keeps the relay unless we change it.
+- **In code:**
+  - Hazelcast builds member networking through its internal `NodeContext`, which creates the node's `Server`.
+  - Hazelcast's own test suite runs clusters with no sockets through it (its mock network), so a full replacement is proven
+    possible in open source.
+  - Ours would implement `Server` over our gRPC member stream, with members found through the public `DiscoveryStrategy`
+    plugin interface, backed by kernel's fleet health state.
+- **Risk:** `NodeContext` and `Server` are **internal** (`com.hazelcast.internal.*`) and can change between versions. Pin the
+  version, keep a contract test of the adapter, and treat every Hazelcast upgrade as a reviewed change.
+- **Question for the huddle:** one in-code member transport over our gRPC stream, with an adapter per engine (Hazelcast
+  through `NodeContext`, Ratis through its RPC plugin)? It would replace #212's loopback relay too. The hub checks the exact
+  `NodeContext`/`Server` surface on the pinned Hazelcast version first.
