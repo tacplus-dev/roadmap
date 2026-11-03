@@ -37,3 +37,23 @@ everything sits behind the proto schema.
    - Jepsen-style linearizability checks under our chaos faults.
 6. **The round-table** this needs, under the 2026-10-31 issue-flow addendum: it's a security- and correctness-critical
    mechanism.
+
+## The network layer: Jody's two options (2026-11-03)
+Jody: "What I want to do is either 1) maintain our own implementation for the network traffic RPC 2) use our blackbox gRPC
+implementation for this and if 2 possibly hijack the session in code as opposed to using a local loopback"
+
+1. **Our own implementation of Ratis's RPC layer, typed.** Ratis plugs in its transport (its gRPC and Netty transports are
+   both plugins). Ours sends each Raft message (vote, append, install-snapshot) as a typed message in our protos.
+   - For: every consensus message is traced and validated.
+   - Against: more work, and we follow Ratis's plugin interface across upgrades.
+2. **The black-box gRPC member port** (tacplus#259): Ratis's own bytes inside our authenticated bidi stream.
+   - For: little work. Authentication, rotation and the close at expiry come with #259.
+   - Against: the trace sees opaque bytes.
+   - **In code, not loopback:** attach the member-port stream directly to Ratis's transport inside the process. Then there
+     is no extra listening port in the pod, no double hop, and nothing outside the process to configure.
+
+**The hub checks before the huddle:**
+- how cleanly Ratis's transport accepts an in-process stream (a custom Netty channel, or a gRPC in-process channel);
+- what its RPC plugin interface requires.
+
+**The hub's lean, to test:** (2) in code first; (1) if consensus should be traced message by message.
