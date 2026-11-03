@@ -198,12 +198,16 @@ stratum but I could see a future where it does not and exist as a file"
   store, behind the same interface, so callers don't change.
 - **`GetConfig`, the tenant side:** a Skipper reads its tenant's config (redacted) from that tenant's kernel state. The
   Admiral still asks the Skipper (`skipper-and-admiral-2026-11-01.md`).
-- **What is uplifted into system state: tenant OAuth config** (Jody: "There is tenant config that we bring up into our
-  state which is tenant OAUTH config. by our I mean system"). Sign-in components (gateway, oauth, kernel) need every
-  tenant's identity providers before a user is in a tenant. The hub's reading, adjustable by Jody:
-  - **One way, derived:** system state holds a copy rebuilt whenever the tenant's config changes. The system never edits
-    it, and the tenant config stays the source.
-  - **Only what sign-in needs:** issuer, client ID, redirect and allowed-domain settings.
-  - **The client secret goes up as a version reference, never a value.** It's resolved in tenant scope at the moment of use,
-    so no tenant secret material lives in `/system` (`skipper-and-admiral-2026-11-01.md`, addendum 2026-11-01).
-  - **Each uplifted entry records the tenant config version it came from**, so staleness is detectable.
+- **The uplift: tenant OAuth config becomes oauth's state** (Jody: "There is tenant config that we bring up into our state
+  which is tenant OAUTH config. by our I mean system". Corrected: "no it does not get saved in system. system is all state
+  the config comes from the pipeline. tenants have config and we uplift the relevant config into our state. This means we
+  grab the per tenant oauth config (could be more in the future) and bring it into oauth and it becomes state").
+  - **Nothing tenant-related is saved in the system.** The system's config comes only from the pipeline. Everything else
+    the system has is state.
+  - **The mechanism already exists in tacplus** (docs/USER.md, "Per-Tenant Config Held in a State Root"):
+    - oauth declares a tenant-scope `(spec.config_slice)`;
+    - the kernel holds each tenant's `TenantConfig`;
+    - tacplus generates a read-only, server-enforced Get/Watch subscription for each slice owner, projected to its own slice;
+    - a `/system` caller sees every tenant's entry, and a tenant caller only its own.
+  - **oauth watches its slices and holds them as in-memory state.** More uplifts later ("could be more in the future") are
+    more `config_slice` declarations, not new mechanisms.
