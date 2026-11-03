@@ -71,7 +71,7 @@ the config."
   - a known-good record is deployed as it is;
   - tenant secrets stay out of the deployment's secrets and vice versa.
 
-**Open, for a later huddle:** where a tenant's uni-config lives and what applies it. Candidates are a tenant pipeline, the
+**Settled 2026-11-02 (addendum "where the configs live" below). Was open:** where a tenant's uni-config lives and what applies it. Candidates are a tenant pipeline, the
 tenant's Skipper (`skipper-and-admiral-2026-11-01.md`), or the kernel's existing `SetTenantConfig` path. Who may author it
 also matters, given the tenant's own users and "tenants talk to their Skipper".
 
@@ -174,3 +174,27 @@ the "no environment variables" wording in the no-magic-environment addendum abov
   - hand-written `env` or `envFrom` in manifests;
   - image-baked defaults that change behaviour.
 - **A test** over the rendered manifests: every env var on every pod traces back to a uni-config field.
+
+## Addendum: where the configs live (Jody, 2026-11-02); settles the open huddle above
+
+Jody: "There is the system config and tenant configs. The system config will reside in kernel state. The tenant configs
+reside in per tenant kernel state. The system config is not writable by the platform at all. We do need to handle
+refreshing but that is already implemented AFAIK. The only thing we have left is the tenant config at rest. The tenant
+config is of course mutable within the platform. We do need the tenant config to persist of course. I think it goes in
+stratum but I could see a future where it does not and exist as a file"
+
+- **System config (the deployment's uni-config)** lives in **kernel state**.
+  - It's **not writable by the platform at all.** No RPC changes it. Only the deployment pipeline sets it, through the
+    operator, which applies a recorded uni-config.
+  - Services pick up a new one through the existing config refresh.
+  - The full deterministic rule applies: recorded, known good, deployed as it is.
+- **Tenant configs** live in **each tenant's own kernel state**, and are **mutable within the platform.**
+  - This corrects the earlier "the rules above apply to tenant uni-configs too": tenant configs are **not**
+    pipeline-deployed.
+  - They're reproducible through **history**: every write is a new version, and any past version can be read or restored.
+    Each version has its redacted twin.
+  - Writes are typed, authorized, traced and accounted.
+- **Tenant config at rest: the tenant's own Stratum** (per tenant since operator#2). A file is a possible future backing
+  store, behind the same interface, so callers don't change.
+- **`GetConfig`, the tenant side:** a Skipper reads its tenant's config (redacted) from that tenant's kernel state. The
+  Admiral still asks the Skipper (`skipper-and-admiral-2026-11-01.md`).
