@@ -47,6 +47,9 @@ something "until production", and ticks it off with the commit or issue that did
       matched to recovered chaos faults are logged and ignored, others triaged (Jody, 2026-11-01; chaos#1).
 - [ ] **Durable state backed up and restore tested:** kernel identity, stratum and eventbus. A restore drill, with a
       runbook, before production holds real data.
+- [ ] **Multi-zone production:** a regional or multi-zone production cluster, with zone-aware Stratum backups. The zone
+      must reach Stratum through the uni-config or a declared runtime fact, never downward-API env (operator#2,
+      2026-11-02; dev is single-zone).
 - [ ] **Monitoring and alerting** for the fleet and the pipelines, with who gets paged.
 - [ ] **Runbooks:** deploy, rollback, restore, tenant deletion (`decisions/tenant-deletion-2026-10-27.md`), certificate
       problems (Let's Encrypt rate limits).
