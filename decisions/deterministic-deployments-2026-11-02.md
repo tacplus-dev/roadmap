@@ -142,3 +142,20 @@ Jody, asked why he must play `apply`: "I only want approval for production and w
 
 This supersedes "Jody plays apply" in `cluster-pipeline-2026-11-02.md` and `cloud-pipeline-2026-11-02.md` for everything
 except production.
+
+### Refined: production approves MAJOR.MINOR only; patches roll out by canary (Jody, 2026-11-02)
+
+Jody: "And let me take some of that back. I want approval on changes to production MAJOR.MINOR. I always want the latest
+patch deployed using canaries."
+
+- **Production needs Jody's approval only for a change of a pinned line,** MAJOR.MINOR: a new minor or major, of tacplus
+  or of any service or component.
+- **The latest patch of every pinned line deploys to production automatically, by canary.** No approval is needed.
+  Patches are fixes only (the versioning rules), so this is how fixes, security ones first, reach production.
+  - The new patch goes to a canary slice first. It's judged on health, error rate and the fleet's checks, with chaos faults
+    told apart from real failures (`chaos`), then widened in steps.
+  - It rolls back automatically, to the previous known-good record, if the canary fails.
+  - Every step is traced. A failed canary is reported and the patch is held.
+- **Everything is still deterministic.** Each step deploys a recorded uni-config, by digest. Picking up "the latest patch"
+  is a recorded pin bump, a new candidate record, never "latest" resolved at deploy time.
+- **Production infrastructure changes** (prod cloud, prod cluster) keep Jody's approval, as `apply-prod`.

@@ -59,6 +59,13 @@ something "until production", and ticks it off with the commit or issue that did
 - [ ] **Reproducibility proven:** rebuild dev from the repositories, pins and secret versions alone, and compare.
 - [ ] **Drift checks** on cloud, cluster and every fleet, with no unexplained differences.
 
+## Release to production
+- [ ] **Canary rollout for patches:** the latest patch of every pinned line deploys to prod automatically through
+      canaries (canary slice, health judgement with chaos faults excluded, stepped widening, automatic rollback to the last
+      known-good record). Only MAJOR.MINOR changes wait for Jody (`decisions/deterministic-deployments-2026-11-02.md`).
+- [ ] **The approval gate for MAJOR.MINOR** in production pipelines: a line change is a protected manual job that only
+      Jody plays.
+
 ## Before go-live
 - [ ] **A security review** of the production layout: a round-table over cluster, cloud and identity.
 - [ ] **Jody's go-live decision**, recorded in `decisions/`.
