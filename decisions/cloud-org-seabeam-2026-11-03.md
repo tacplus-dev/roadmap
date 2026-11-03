@@ -34,3 +34,15 @@ Two pipelines, so the open-source repository never holds rights over SeaBeam's o
   identity.
 - **tacplus-dev/cloud** (open source): owner of the folder `tacplus-dev` only. Its bootstrap and stacks take a folder,
   not an organization, so anyone can run it in a folder of their own.
+
+## Addendum: seabeam.net and thescottsweb.com completely separate (Jody, 2026-11-03)
+
+The hub found that seabeam.net is a **secondary domain of the thescottsweb.com Google Workspace**, so it has no Cloud
+organization of its own and cannot get one. Jody: "I want thescottsweb.com the seabeam.net to be completely separate.
+no overlap".
+
+- seabeam.net leaves the thescottsweb.com Workspace. It gets a Workspace of its own, and with it its own Cloud
+  organization.
+- Nothing is shared between them: accounts, mail, the Cloud organization, billing (Seabeam LLC gets its own billing
+  account), and DNS hosting (the seabeam.net Cloud DNS zone moves out of jody1-328023).
+- seabeam/cloud stays as built: its organization is seabeam.net's new one, and its billing account becomes Seabeam's.
