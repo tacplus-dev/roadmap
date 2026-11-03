@@ -159,3 +159,18 @@ patch deployed using canaries."
 - **Everything is still deterministic.** Each step deploys a recorded uni-config, by digest. Picking up "the latest patch"
   is a recorded pin bump, a new candidate record, never "latest" resolved at deploy time.
 - **Production infrastructure changes** (prod cloud, prod cluster) keep Jody's approval, as `apply-prod`.
+
+### Corrected: env vars are fine if the uni-config produces them (Jody, 2026-11-02)
+
+Jody: "I dont mind using env vars. They just need to come from the uni-config and not be created directly". This replaces
+the "no environment variables" wording in the no-magic-environment addendum above.
+
+- **Allowed:** an environment variable that the operator renders **from the uni-config**, where the uni-config names it
+  and its value. It's then visible in the uni-config and its redacted twin like any other setting. Secrets rendered this
+  way follow the same redaction.
+- **Not allowed: environment created directly**, from anywhere other than the uni-config:
+  - Kubernetes' service-link variables (pods still set `enableServiceLinks: false`);
+  - downward-API env (e.g. a pod's zone or node label);
+  - hand-written `env` or `envFrom` in manifests;
+  - image-baked defaults that change behaviour.
+- **A test** over the rendered manifests: every env var on every pod traces back to a uni-config field.
