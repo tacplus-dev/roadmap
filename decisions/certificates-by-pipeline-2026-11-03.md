@@ -46,3 +46,20 @@ this from the pipeline ... I don't know why we would even need to go to the clus
   Encrypt and third-party certificates alike.
 - **tacplus-dev/letsencrypt#9 is closed as not needed.** Our deployments no longer use the letsencrypt service. Whether to
   keep the repository for others is left open.
+
+## Renewal and distribution (Jody, 2026-11-03)
+Jody: "our pipeline does need to run this every few days or whatever and check to see if it needs to ... renew the
+certificate based on Let's Encrypt best practices and do so. And if it does renew, we simply update the secret ... and we
+write the uniconfig and apply it to the cluster ... the kernel should basically be able to handle that. And ...
+distributing it in state for the gateways." And on the letsencrypt service: "archive it, send it to the boneyard"
+(archived 2026-11-03).
+
+- **The schedule:** the pipeline's `cert` check runs **daily**, which is cheap, by Let's Encrypt's best practice.
+- **Renew per Let's Encrypt's best practice:** use **ARI** (ACME Renewal Information, which lego supports) for the window
+  Let's Encrypt suggests, falling back to renewing in the last third of the certificate's lifetime. This also adapts if
+  Let's Encrypt shortens lifetimes.
+- **On renewal:** a new Secret Manager version, a new uni-config referencing it, applied (automatically outside
+  production; by canary in production).
+- **Distribution:** the certificate is part of the gateway's config in the uni-config. Kernel's system-config refresh
+  delivers it, and **every gateway hot-swaps it with no restart.** The gateway's `cert_chain` mode already has the
+  hot-reload watcher. Its `letsencrypt` mode retires.
