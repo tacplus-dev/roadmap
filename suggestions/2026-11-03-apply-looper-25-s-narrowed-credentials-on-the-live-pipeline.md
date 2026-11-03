@@ -19,6 +19,7 @@ looper#25 (least-privilege credentials), looper#40 (prompt provenance: untrusted
 The procedure is already written and tested (README Credentials, #25), so nothing new needs building. looper#28's per-repository app identity would replace the shared token in the end, but it is a kernel-only pilot still waiting on the hub's setup. It doesn't remove the Owner token from the other 31 repositories' jobs, so it is no substitute for applying #25 now.
 
 ## Status
-open
+rejected
 Rank: 1
 Filed: 2026-11-03 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17692416595)
+Decided: 2026-11-03 by Jody: Reject and next (Jody, 2026-11-03). Already done: the live GITLAB_TOKEN is tacplus-looper-bot's read_api token, looper-runtime is revoked, and every worker runs as looper-runner (hub, checked 2026-11-03); the evidence was a stale STATE.md line, corrected in looper cce1a9c. Fleet secrets get rotated before go-live (PRODUCTION.md).

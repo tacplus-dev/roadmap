@@ -17,6 +17,7 @@ something "until production", and ticks it off with the commit or issue that did
 - [ ] **No standing human or hub write access.** The hub's `jody-desktop@` key is gone, and the hub's project
       setIamPolicy and cluster-admin are removed. People are viewer and securityReviewer only. Break-glass is Jody's account,
       logged (roadmap#2).
+- [ ] **Rotate every fleet secret before go-live.** Anything that existed while the old Owner token (`looper-runtime`, revoked 2026-10-30) could read protected variables is treated as exposed (suggestion rejected as done, 2026-11-03).
 - [ ] **The hub has its own GitLab identity**, so no automation can play a job as Jody (caveat found on cluster#1, 2026-11-02).
 - [ ] **Every GitLab setting from the cloud pipeline:** protected project variables, environments, runner registrations
       (roadmap#2).
