@@ -27,8 +27,8 @@ for running containers" ... "and we should be running COS with NO SSH".
 - **The runner VMs still run Ubuntu.** The GitLab autoscaler reaches them by SSH from inside the network only. They go
   away when loopers and builds move into the cluster (`cluster-node-pools-2026-11-03.md`); until then that internal SSH
   is the one exception.
-- **The GKE control plane's public endpoint** (34.45.55.23): Jody to decide whether it goes private-only. The hub would
-  then check through pipelines and APIs.
+- **The GKE control plane's public endpoint** (34.45.55.23) **stays public** (Jody: "keep it public"). It's Google's managed
+  endpoint, authenticated by Google IAM, not a node or VM.
 - **Cloud NAT's egress IP is outbound only,** and stays.
 - **The cloud pipeline** (cloud#1, cloud#5) must encode all of this: org policy to restrict external IPs on VMs, and no
   firewall rule from 0.0.0.0/0 except to load balancers.
