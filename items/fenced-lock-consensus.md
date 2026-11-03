@@ -77,3 +77,15 @@ flow and use our own system just like we are discussing here"
 - **Question for the huddle:** one in-code member transport over our gRPC stream, with an adapter per engine (Hazelcast
   through `NodeContext`, Ratis through its RPC plugin)? It would replace #212's loopback relay too. The hub checks the exact
   `NodeContext`/`Server` surface on the pinned Hazelcast version first.
+
+## Facts checked before the huddle (hub, 2026-11-03)
+- **Kernel already runs Apache Ratis.** `server/.../fencedlock/RatisFencedLock.java`: one embedded Raft server per kernel
+  instance, `FencedLockStateMachine`, a fixed group id (`kernel.FencedLock`), Raft log in a storage dir, automatic
+  snapshots. Ratis is in `server/pom.xml` (ratis-server, ratis-client, ratis-grpc, ratis-metrics-default).
+- **The API is already ours:** `service FencedLock` in kernel.proto, S2S, `Acquire` (non-blocking, idempotent per
+  `holder_id`) and `Release` (by token). **The fencing token is already "the Raft log index of the granting Acquire",
+  strictly increasing.** Every other service reaches locks only through kernel's FencedLock surface.
+- **The transport is Ratis's stock gRPC** (`SupportedRpcType.GRPC`, `GrpcConfigKeys.Server.setPort`). There's no TLS or
+  token configuration in RatisFencedLock: **peer traffic is unauthenticated gRPC on its own port.** That's against the
+  platform's rules (server TLS plus kernel tokens) and the real problem this huddle solves.
+- Hazelcast: still to check, the exact `NodeContext`/`Server` surface on the pinned version.
