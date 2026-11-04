@@ -20,6 +20,6 @@ decisions/looper-job-per-issue-2026-11-03.md (the manager alone merges; green ga
 looper#28's think/commit split already keeps every identity out of the model's job, but only for kernel's pilot, and it is still waiting on the hub's setup. This is the org-wide floor until it rolls out, and it keeps working after. The pre-push hooks (#13, #70) stay as early, friendly refusals. A required status check (the build's tacplus-reader[bot] status, #71) could replace the push restriction once every repository builds in tacplus-dev/build, but only looper is pinned today (build.lock). GitLab-side tokens are already narrowed (#25, read_api bot), so this is GitHub's half of the same step.
 
 ## Status
-open
+accepted (Jody, 2026-11-04): tacplus-dev/looper#83
 Rank: 1
 Filed: 2026-11-04 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17729413356)
