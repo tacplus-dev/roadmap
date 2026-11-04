@@ -18,3 +18,10 @@ green at about one build per batch; Jody: "Ok let's do merge train."
   the train.
 - **Node pools (Jody, same day):** normal 3 small on-demand Arm nodes (deployments and loopers, never builds); the
   build pool spot, 0 to 3 for now (to become 1, raised only on Jody's word), builds sharing nodes.
+
+## Addendum: looper capacity, start small and learn (Jody, 2026-11-04)
+Jody: "Start with your recommendation A and learn from it." The normal pool stays 3 x c4a-standard-2 (about $195 a
+month): after the platform, the runner and the kicker, roughly 3 to 4 report pods run at once across all repositories
+(about 4 GB each). caps.yaml still caps each repository; the pods' requests bound the total, and the rest wait as
+pending pods. The recap reports how long ready issues wait for room, with numbers, and any change in capacity (a 4th
+node, about $260 a month in all; or 3 x c4a-standard-4, about $390) is Jody's call from those numbers.
