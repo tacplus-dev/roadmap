@@ -25,6 +25,6 @@ Change: the hub: tacplus-looper-bot a Reporter of tacplus-dev/build (and of tacp
 Gain: no hours tonight; the recap sees every build job's queue and failures as they move to tacplus-dev/build (#71, #74, #49), instead of 0 jobs read there on both nights
 
 ## Status
-open
+accepted (Jody, 2026-11-04): tacplus-dev/cloud#12, tacplus-dev/looper#85; Cloud Build dropped instead of granted
 Rank: 4
 Filed: 2026-11-04 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17729413356)
