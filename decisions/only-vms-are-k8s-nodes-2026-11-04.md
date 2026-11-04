@@ -26,3 +26,13 @@ Supersedes, where they speak of VMs outside the cluster:
   Ubuntu image) become "removed with the runner VMs".
 - Pending work that adds or tunes runner VMs (e.g. packing jobs per VM) is replaced by the in-cluster runner with pod
   requests.
+
+## Addendum: CI jobs are GitLab executor pods (Jody, 2026-11-04)
+
+Jody: "if GitLab supports something, then we should probably be utilizing the GitLab way of doing things rather than
+inventing our own." GitLab's Kubernetes executor runs each CI job as a pod (not a Kubernetes Job), so:
+- every CI job, builds included, is a pod the GitLab Kubernetes executor creates: builds on the spot pool, control work
+  (kicker, reports, managers) on the normal pool;
+- spot preemption is handled the GitLab way: `retry:` (`runner_system_failure`, `stuck_or_timeout_failure`) in the
+  pipeline files; time limits by `timeout:`; placement and requests by the runner's settings and per-job overrides;
+- no build submitter and no Kubernetes Job manifests of our own.
