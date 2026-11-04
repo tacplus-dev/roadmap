@@ -20,6 +20,6 @@ looper#49 (the deterministic floor: SCA and SAST, fail on HIGH/CRITICAL, expirin
 looper-scan (in the looper image) is the policy and the tool set already written and tested, and looper-scan local runs it on a checkout. Each pipeline can call it as one job, or include a shared job file, rather than re-implement it. cloud's PROPOSALS entry is this for cloud alone; this takes it to all three apply pipelines with one shared job. fleet-seatrials' checks.sh already runs gitleaks, which covers its secrets but not its dependencies. Moving these repositories into tacplus-dev/build would cover them too, but their plan and apply jobs need their own protected identities, which is why they have pipelines of their own.
 
 ## Status
-open
+accepted (Jody, 2026-11-04): tacplus-dev/cloud#10, tacplus-dev/cluster#5, tacplus-dev/fleet-seatrials#36
 Rank: 2
 Filed: 2026-11-04 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17729413356)
