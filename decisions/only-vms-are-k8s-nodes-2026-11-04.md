@@ -36,3 +36,16 @@ inventing our own." GitLab's Kubernetes executor runs each CI job as a pod (not 
 - spot preemption is handled the GitLab way: `retry:` (`runner_system_failure`, `stuck_or_timeout_failure`) in the
   pipeline files; time limits by `timeout:`; placement and requests by the runner's settings and per-job overrides;
 - no build submitter and no Kubernetes Job manifests of our own.
+
+## Addendum: a new cluster in seabeam.net, then the old one goes (Jody, 2026-11-04)
+
+Jody: "I dont think we need the cluster running on thescottsweb.com org anymore. AFAIK we are not using it. We should
+bring up the new cluster in seabeam.net and then transistion to it."
+
+- The `tacplus` cluster in jody1-328023 runs only deploymentproxy and an empty `tac-seatrials` namespace (tacplus.dev
+  is not live), so nothing migrates but the pipelines' targets.
+- The new cluster is tacplus-dev/cloud's `dev` stack, in the folder `tacplus-dev` of seabeam.net, with cloud#7's pools
+  (normal 3 x c4a-standard-2, spot build pool 0 to 3). tacplus-dev/cluster and the fleets retarget to it; the
+  in-cluster runner (cluster#6) lands there.
+- Then the old cluster is deleted (Jody: a deletion), and the rest of jody1-328023 (runner VMs, DNS zones, the
+  looper's KMS key) follows as each moves.
