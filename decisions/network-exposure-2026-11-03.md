@@ -32,3 +32,11 @@ for running containers" ... "and we should be running COS with NO SSH".
 - **Cloud NAT's egress IP is outbound only,** and stays.
 - **The cloud pipeline** (cloud#1, cloud#5) must encode all of this: org policy to restrict external IPs on VMs, and no
   firewall rule from 0.0.0.0/0 except to load balancers.
+
+## Addendum: we terminate TLS, not the cloud (Jody, 2026-11-05)
+Jody: "A. We terminate TLS we dont let the cloud do it." The public entry is Google's **global external proxy Network
+Load Balancer (TCP proxy)** on the reserved global address `gateway` (tacplus-dev/cloud#13), passing the TLS connection
+through unopened to the tacplus gateway pods (zonal NEG backends). TLS ends in our gateway, with the pipeline's
+certificate (decisions/certificates-by-pipeline-2026-11-03.md) and hot swap (gateway#25). Nodes accept traffic only
+from Google's proxy ranges, never from the internet. No L7 Gateway, no Google-managed or Certificate Manager
+certificate for our traffic.
