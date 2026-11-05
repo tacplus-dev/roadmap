@@ -21,3 +21,8 @@ necessary, who creates and rotates it, and the gap to "by a pipeline". Known so 
 - The in-cluster runners' authentication tokens: re-registration by API possible.
 - The Claude model token, the build trigger token, fleet secrets (`SEATRIALS_K8S_SECRET_*`), certificates
   (pipeline-owned since decisions/certificates-by-pipeline-2026-11-03.md).
+
+## Addendum: GitHub stays the source of truth (Jody, 2026-11-05)
+The hub explained why GitHub Apps exist (the loopers act on GitHub's code and issues; the Apps replace Jody's personal
+token with scoped identities) and offered GitLab-as-source with a GitHub push mirror. Jody: "no I dont want a mirror".
+GitHub keeps tacplus-dev's code and issues; the three Apps stay, and the review settles their key rotation.
