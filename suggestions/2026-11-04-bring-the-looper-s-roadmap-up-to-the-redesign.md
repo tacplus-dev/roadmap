@@ -19,6 +19,6 @@ decisions/repo-roadmap-files-2026-10-27.md (ROADMAP is Jody's, STATE the loopers
 STATE.md already says what is done and true, so the edit is a copy from it, not new writing. planning-files-check (#13) checks only that the four files exist, not that a closed issue left Next. A check that lists a ROADMAP's Next items whose issues are closed (one gh call each) could go in the nightly scan, so this doesn't recur; the scan could also propose the edit in PROPOSALS.md, since it may not make it itself.
 
 ## Status
-open
+accepted (Jody, 2026-11-05): done by the hub in tacplus-dev/looper ROADMAP.md
 Rank: 5
 Filed: 2026-11-04 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17729413356)
