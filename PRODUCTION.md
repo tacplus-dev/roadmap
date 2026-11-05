@@ -79,3 +79,4 @@ something "until production", and ticks it off with the commit or issue that did
 - [ ] **A security review** of the production layout: a round-table over cluster, cloud and identity.
 - [ ] **Jody's go-live decision**, recorded in `decisions/`.
 - [ ] Rolling Ratis upgrades: until then a Ratis minor bump (kernel#43, 3.2 -> 3.3) restarts the whole group at once; settle mixed-version groups or a planned group restart before go-live. (Hub, kernel#43, 2026-11-04)
+- [ ] **Secrets and keys review** (decisions/secrets-by-pipeline-2026-11-05.md): every secret necessary or removed, and each one created and rotated by a pipeline, with no step at a desktop. (Jody, 2026-11-05)
