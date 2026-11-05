@@ -26,6 +26,6 @@ Change: looper-dispatch plan_job: LOOPER_JOB_TAGS_<repo> for --issue jobs only; 
 Gain: up to 28.23 h a night: the 15.94 h lands waited for tacplus's manager and the 12.29 h six reports queued behind the scan; the VM's ~2 h a night of scan time goes back to reports
 
 ## Status
-open
+accepted (Jody, 2026-11-05): tacplus-dev/looper#91
 Rank: 3
 Filed: 2026-11-05 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17765898686)

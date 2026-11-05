@@ -26,6 +26,6 @@ Change: Jody's scale-up: max 2 VMs on MIG runner-arm64-tacplus-big and runner 58
 Gain: about half of the 123.7 h tacplus's jobs waited for a VM tonight, so roughly 60 h a night, since two reports run at once instead of one. #315, the blocker of #84, gets a slot sooner.
 
 ## Status
-open
+rejected (Jody, 2026-11-05): the only VMs are Kubernetes nodes (decisions/only-vms-are-k8s-nodes-2026-11-04.md); the in-cluster runner (tacplus-dev/looper#84) replaces the VM pools
 Rank: 2
 Filed: 2026-11-05 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17765898686)

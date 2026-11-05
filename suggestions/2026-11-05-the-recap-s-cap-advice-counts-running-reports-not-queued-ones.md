@@ -25,6 +25,6 @@ Change: caps.yaml: tacplus: 6 (unchanged: no raise). looper-recap caps_of: at th
 Gain: no hours by itself: it stops a raise that would add pending jobs and no throughput, and points the 544.91 h at the VM (capacity/vm, 123.7 h of tacplus's queue tonight), where a change removes waiting
 
 ## Status
-open
+accepted (Jody, 2026-11-05): tacplus-dev/looper#92
 Rank: 4
 Filed: 2026-11-05 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17765898686)

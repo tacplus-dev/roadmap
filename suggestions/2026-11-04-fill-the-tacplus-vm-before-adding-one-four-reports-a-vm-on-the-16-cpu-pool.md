@@ -25,6 +25,6 @@ Change: Before buying: capacity_per_instance = 4 (3 until tacplus#275 lands) in 
 Gain: up to the 11.14 h a night tacplus reports waited for a VM after the redesign (#284 280.5 min, #275 277.1, #274 56.7, #259 53.9), and most of the 195.7 issue-hours tacplus waited at its cap, since 4 reports run at once instead of 1
 
 ## Status
-open
+rejected (Jody, 2026-11-05): the only VMs are Kubernetes nodes; pods are packed by their requests on the in-cluster runner (tacplus-dev/looper#84)
 Rank: 3
 Filed: 2026-11-04 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17729413356)

@@ -21,6 +21,6 @@ decisions/looper-job-per-issue-2026-11-03.md (the manager alone merges; nothing 
 Considered first: (1) #71's build jobs already run gates with no forge credential, but only for pinned repositories (one of 31). Pinning the others needs per-repository pin issues the hub has not filed, plus BUILD_TRIGGER_TOKEN. That is the end state, and the split is the bridge to it. (2) #86's merge train builds the batch in a build job, the same shape, but it is blocked two levels deep (#84, tacplus#315). (3) PROPOSALS' 'gates as a user of their own' is cheaper on paper, but the gates need docker (the broker for one more user) and tacplus's tests write caches as root (#69's failures). A job boundary needs neither. (4) #28's think/commit split is this pattern for kernel's pilot; the verdict/merge split reuses its idea with GitLab environments and needs: rather than a new identity. (5) The 'Require the build's status on main' proposal would refuse an unbuilt push, but only once every repository builds in tacplus-dev/build.
 
 ## Status
-open
+accepted (Jody, 2026-11-05): tacplus-dev/looper#90
 Rank: 1
 Filed: 2026-11-05 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17765898686)
