@@ -20,6 +20,6 @@ looper#49 (the deterministic floor), looper#71 (agents never build; the cutover 
 Everything that runs is built and tested: looper-build, ci/build.gitlab-ci.yml, looper-scan (#49) and the manager's build-job path (#71). Only the switch is missing. Per-repository security workflows (the coop, eventbus and llmproxy proposals, fleet-seatrials' security.yml) would duplicate #49's policy in each repository and keep gates in agent jobs; the pins make one policy apply everywhere. looper#17 holds the pipeline itself (blocked on tacplus#223 for publishing), not the per-repository pins or the trigger, and publishing is not needed for gates and checks. cloud's gitlab stack already creates bots' tokens and runner registrations, so the trigger token and schedules fit there under the secrets-by-pipeline rule.
 
 ## Status
-open
+accepted (Jody, 2026-11-06): pin issues tracked on tacplus-dev/looper#84; trigger token tacplus-dev/cloud#26
 Rank: 1
 Filed: 2026-11-06 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17802225217)
