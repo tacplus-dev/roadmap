@@ -20,6 +20,6 @@ looper#84 (the switch), tacplus-dev/cluster#6 (CI in the cluster, no privileged 
 GitLab's own mechanisms: tags (a job runs only where its tags are a subset of the runner's) and the runner's paused state, so nothing is built. The build runner's tags (arm64, build) are those looper's README gives the build VM runner, which is not applied yet (STATE: 'no build runs until the hub applies the build runner'). Sharing them matters less there: a build job holds no agent and needs no Docker except for image builds, which wait on tacplus#315 anyway. Pausing the VM runners at the switch, as cluster's README plans, still works as a rollback either way.
 
 ## Status
-open
+accepted (Jody, 2026-11-06): tacplus-dev/cluster#13
 Rank: 2
 Filed: 2026-11-06 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17802225217)
