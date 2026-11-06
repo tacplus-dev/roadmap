@@ -6,7 +6,7 @@ Jody's request). Rejected ones stay here with the reasoning, and aren't raised a
 ## Open
 | Suggestion | Type | Summary | Status |
 |---|---|---|---|
-| [tacplus's cap from 6 to 8, now that its reports were running at it](2026-11-06-tacplus-s-cap-from-6-to-8-now-that-its-reports-were-running-at-it.md) | Performance | For a second night counted by running reports only (#92's rule), tacplus kept all 6 reports running for 5.85 h while 29 ready issues waited (168.75 issue-hours), with a merge backlog p90 of 1. Raise its cap in caps.yaml to 8 and read the next recap: the pool, not the cap, becomes the bound again where its VMs are full | open (rank 3, 2026-11-06) |
+| [tacplus's cap from 6 to 8, now that its reports were running at it](2026-11-06-tacplus-s-cap-from-6-to-8-now-that-its-reports-were-running-at-it.md) | Performance | For a second night counted by running reports only (#92's rule), tacplus kept all 6 reports running for 5.85 h while 29 ready issues waited (168.75 issue-hours), with a merge backlog p90 of 1. Raise its cap in caps.yaml to 8 and read the next recap: the pool, not the cap, becomes the bound again where its VMs are full | held until looper#84 (Jody, 2026-11-06) |
 
 ## Accepted
 | Suggestion | Type | Summary | Status |

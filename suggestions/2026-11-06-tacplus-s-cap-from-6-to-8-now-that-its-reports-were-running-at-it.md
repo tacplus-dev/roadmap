@@ -24,6 +24,6 @@ Change: caps.yaml: tacplus: 8
 Gain: up to 11.7 issue-hours a night (2 more reports over the 5.85 h all 6 ran) of the 168.75 h waited at the cap, less what the shared pool's full hours turn into VM waits (its reports waited 78.6 h for a VM tonight)
 
 ## Status
-open
+held (Jody, 2026-11-06): keep tacplus at 6 until the in-cluster runners replace the VM pool (looper#84); revisit on the recap after that
 Rank: 3
 Filed: 2026-11-06 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17802225217)
