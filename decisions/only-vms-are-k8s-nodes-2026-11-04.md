@@ -49,3 +49,11 @@ bring up the new cluster in seabeam.net and then transistion to it."
   in-cluster runner (cluster#6) lands there.
 - Then the old cluster is deleted (Jody: a deletion), and the rest of jody1-328023 (runner VMs, DNS zones, the
   looper's KMS key) follows as each moves.
+
+## Addendum, 2026-11-07: where loopers and builds run (Jody)
+
+"Every single looper should be running on one of the 3 nodes that is always in existence and they should all run at the same time. Any starvation they have is temporary just as if they were running on my local mac. The builders run on spot instances. And we dont care too much about how long they take. The loopers just move on to something else. If a build failure occurs that is picked up again by a looper. ... loopers are never blocked. We start as many as we need."
+
+- **Agents (kicker, plan, reports, managers):** pods on the always-on normal pool (3 × c4a-standard-2), all at once, each with a small request (they mostly wait on the model's API). There are no per-repository caps that keep a ready issue waiting.
+- **Builds and gates:** build jobs on the spot build pool, asynchronous. A report hands its gates to a build job and moves on, and a red build is a looper's next work, never a block.
+- **Today's gap, as tacplus-dev/looper#84 closes it:** reports run gates inline in 4-CPU/14 GB slots on runner VMs, and caps.yaml caps each repository at 3 (tacplus 6).
