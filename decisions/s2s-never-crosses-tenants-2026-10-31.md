@@ -42,3 +42,10 @@ Prompted by the blobstore, which had been built as one shared `/system` instance
 - So `/system` → tenant, "technically possible", is **not** a way to centralize tenant data. A design that relies on it must say why
   it can't be tenant-owned, and gets Jody's decision.
 - First application: tacplus-dev/blobstore becomes tenant-owned.
+
+## Addendum 2026-11-07: restated, and redo (Jody; tacplus-dev/tacplus#258)
+Jody: "Tenants must be allowed to call into system based on build time policy. Tenant services never talk to other tenant services. This is not the same as user. User traffic can originate from external and is permitted to any tenant and AAA is a runtime policy based on entitlements, etc. Now because a service can act on behalf of a user the same traffic can go between tenants."
+
+- `RPC_FLAG_ANY_TENANT` opens an RPC to other tenants' **users** (C2S), including a service acting on a user's behalf (a delegated token whose subject is the user, checked at run time against the user's entitlements). It never opens one to another tenant's **service** principal. #258 is fixed as written, in every generated language. No reserved-tenant exception (option A) and no new flag (option B).
+- A platform tenant (all-digit tid: `people`, `restore`) is a tenant, not `/system`.
+- **redo:** it held every tenant's write log as one instance in the `restore` tenant, called by each tenant's stratum. That's tenant → another tenant, and it contradicts the 2026-11-01 addendum, since a service that holds a tenant's data is tenant-owned. redo becomes **tenant-owned**, one instance per tenant beside that tenant's stratum (as blobstore did), and stratum → redo is a same-tenant S2S edge. Its second-site copy is cross-deployment, which is parked (tacplus#204).
