@@ -49,3 +49,10 @@ Jody: "Tenants must be allowed to call into system based on build time policy. T
 - `RPC_FLAG_ANY_TENANT` opens an RPC to other tenants' **users** (C2S), including a service acting on a user's behalf (a delegated token whose subject is the user, checked at run time against the user's entitlements). It never opens one to another tenant's **service** principal. #258 is fixed as written, in every generated language. No reserved-tenant exception (option A) and no new flag (option B).
 - A platform tenant (all-digit tid: `people`, `restore`) is a tenant, not `/system`.
 - **redo:** it held every tenant's write log as one instance in the `restore` tenant, called by each tenant's stratum. That's tenant → another tenant, and it contradicts the 2026-11-01 addendum, since a service that holds a tenant's data is tenant-owned. redo becomes **tenant-owned**, one instance per tenant beside that tenant's stratum (as blobstore did), and stratum → redo is a same-tenant S2S edge. Its second-site copy is cross-deployment, which is parked (tacplus#204).
+
+## Addendum 2026-11-07 (2): where user traffic flows (Jody)
+Jody: "If the traffic is from outside it must go thru the gateway. but tenant to tenant user traffic does not have this requirement. because they have the same kernel in system they can directly access each other thru the internal connectivity."
+
+- **From outside:** always through the gateway, the only public entry (network-exposure-2026-11-03.md).
+- **Tenant to tenant, as a user (C2S, including on a user's behalf):** direct, over the cluster's internal network, with no gateway hop. Both tenants trust the same kernel in `/system`, so each verifies the other's user tokens. Isolation rests on identity at every listener, not on network layout ("reachability never implies authorization").
+- So within a deployment, a tenant namespace may reach another tenant namespace at the network layer. Each door then admits only users, and refuses another tenant's service principal (this decision). Across deployments, nothing is reachable.
