@@ -21,3 +21,10 @@ Jody, 2026-10-27 ("I feel that everything runs from gitlab").
   material is already there (FLEET_CRYPTO_YAML, FLEET_CA_PEM).
 - **Nothing on a laptop:** no checkouts, no secrets. The kicker moves to a GitLab schedule too (tacplus-dev/looper#24).
 - Until the deploy pipeline exists (tacplus-dev/fleet-seatrials#17), nothing is deployed from a laptop.
+
+## Addendum, 2026-11-07: release images from a tag-triggered GitHub Actions workflow, for now
+
+Jody (2026-11-07, "do what you think best, get us to deployment"; "I have approved everything to get the deployment up and running"): a service's release image is built and published by a `release.yml` GitHub Actions workflow on its `vX.Y.Z` tag, the way tacplus-dev/llmproxy already does: gates on the tag, both architectures, `ghcr.io/tacplus-dev/<service>:X.Y.Z` and the line tag `X.Y`, pushed with the workflow's own `GITHUB_TOKEN` (no stored secret, no personal token), and the GitHub release created. Packages are public, matching the open-source repositories, so fleets and clusters pull anonymously.
+
+- Why: tacplus 2.6's `fleet build` locks each release to its published image, and seatrials' first deploy waits on it. The GitLab build pipeline (tacplus-dev/looper#17) needs a ghcr push credential that GitHub offers only as a classic personal token.
+- This departs from this decision's "no GitHub Actions" for releases. looper#17 can take releases over later. The deterministic build stays the goal.
