@@ -25,6 +25,6 @@ Change: looper-recap's actions(): recovered only by a later success on the same 
 Gain: 5 release-image failures tonight (16 since 2026-11-08 00:03Z, v2.6.3 on another cause: cargo kani setup on arm64) reported as unrecovered instead of hidden, so a broken release line reaches Jody's daily report the night it breaks
 
 ## Status
-open
+accepted (Jody, 2026-11-09): tacplus-dev/looper#116
 Rank: 3
 Filed: 2026-11-09 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17842078231)

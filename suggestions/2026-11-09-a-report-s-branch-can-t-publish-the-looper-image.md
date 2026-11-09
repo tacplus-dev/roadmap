@@ -20,6 +20,6 @@ suggestions/2026-11-04-only-the-manager-can-write-main.md and 2026-11-05-the-man
 #83's ruleset guards main only, not a branch's workflow runs or the packages they push. The recap's image check compares the image's revision label to main, but a branch build sets that label itself. GitHub environments with branch rules can guard secrets and WIF (nightly-fixes, site), but not GITHUB_TOKEN's packages: write, so they don't cover the image. Retiring Actions (looper#18) ends this, but it isn't scheduled. Build provenance attestations and gh attestation verify are GitHub's own and need nothing new beyond the plan's check.
 
 ## Status
-open
+accepted (Jody, 2026-11-09): tacplus-dev/looper#115; stopgap looper eea43fc (a report's token no longer names workflows: write)
 Rank: 1
 Filed: 2026-11-09 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17842078231)

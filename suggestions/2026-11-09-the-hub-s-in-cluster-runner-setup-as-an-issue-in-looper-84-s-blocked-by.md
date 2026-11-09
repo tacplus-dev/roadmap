@@ -25,6 +25,6 @@ Change: a tacplus-dev/cluster issue for the hub (README What the hub does 1–7,
 Gain: 8 failed build jobs a night to 0, and the nightly security floor running for every pinned repository. It also clears the last infrastructure step before #84, which removes the 388.53 h a night of VM waits (those waits remain #84's to remove)
 
 ## Status
-open
+accepted (Jody, 2026-11-09): tacplus-dev/cluster#18, now in looper#84's Blocked-by in place of cluster#6
 Rank: 2
 Filed: 2026-11-09 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17842078231)
