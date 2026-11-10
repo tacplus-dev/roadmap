@@ -19,6 +19,6 @@ decisions/repo-roadmap-files-2026-10-27.md (STATE overwritten to stay current), 
 The 2026-11-04 suggestion's fix (an agent's pass at Jody's request) is the way, applied here to the platform's own files. Considered: having the nightly scan flag closed issues named as blockers in any ROADMAP.md or STATE.md, a cheap check, but it would be a looper-scan change of its own and is not proposed here.
 
 ## Status
-open
+accepted (Jody, 2026-11-10): tacplus-dev/roadmap#3
 Rank: 4
 Filed: 2026-11-10 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17872762621)

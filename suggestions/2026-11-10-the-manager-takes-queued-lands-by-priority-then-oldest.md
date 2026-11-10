@@ -25,6 +25,6 @@ Change: looper's repo-looper: the verdict/manager orders queued lands by their i
 Gain: the 8 priority:high lands merge in the next 1–3 nights rather than after the ~30 older ones (about 10 nights at 3 merges a night). #315 landing starts looper#84's way off the 421.8 h a night of VM waits. Total hours waited are unchanged until #86/#266/#300.
 
 ## Status
-open
+accepted (Jody, 2026-11-10): tacplus-dev/looper#121
 Rank: 3
 Filed: 2026-11-10 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17872762621)

@@ -20,6 +20,6 @@ decisions/s2s-never-crosses-tenants-2026-10-31.md (bearer tokens isolate; the un
 The kernel-raft NetworkPolicy already exists and selects kernel's pods; the change is its 5001 source. Stratum's HazelcastNetworkPolicy (removed by #24) was exactly this rule for stratum. kernel#42 moves Raft, not Hazelcast, behind the member port, so it doesn't cover 5001. The tacplus member port (tacplus#212) is the lasting fix, and it already carries stratum's members. Not proposed: any NetworkPolicy beyond the unauthenticated-protocol exception Jody kept.
 
 ## Status
-open
+accepted (Jody, 2026-11-10): tacplus-dev/operator#30, tacplus-dev/kernel#47; decision addendum 2026-11-10
 Rank: 1
 Filed: 2026-11-10 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17872762621)

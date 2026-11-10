@@ -59,3 +59,12 @@ Jody: "If the traffic is from outside it must go thru the gateway. but tenant to
 
 ## Terms (Jody, 2026-11-07)
 "`/system`" is a **trust-domain path** (the SPIFFE path of a principal: `spiffe://<td>/…/system/…`), not a Kubernetes namespace. In a cluster, a deployment's `/system` services run in that deployment's platform namespace, **`tac-<deployment>`** (for example `tac-seatrials`), and its tenants run in `tac-<deployment>-<tid>`. So "all kernels are in /system" means each deployment's kernel runs in its own `tac-<deployment>`. The rules above are about principals (trust-domain paths). Namespaces are only where the pods run.
+
+## Addendum 2026-11-10: kernel's Hazelcast port, the second exception (Jody)
+
+Jody accepted (2026-11-10, "approve all") the suggestion
+[Kernel's Hazelcast port to kernel's pods only](../suggestions/2026-11-10-kernel-s-hazelcast-port-to-kernel-s-pods-only-before-operator-24-lands.md).
+Kernel's Hazelcast member protocol (5001) has no authentication of its own, as Raft has none, and kernel's state lives
+there. So the one exception to "no NetworkPolicies" now names two ports: kernel's Raft port and kernel's Hazelcast
+member port, each admitted only from the deployment's kernel pods (tacplus-dev/operator#30). Kernel refuses Hazelcast's
+client protocol (tacplus-dev/kernel#47). Every other port stays bearer tokens only.

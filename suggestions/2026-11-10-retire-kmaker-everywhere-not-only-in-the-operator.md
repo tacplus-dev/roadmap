@@ -19,6 +19,6 @@ operator#16 and kernel#29 (the retirement), decisions/deterministic-deployments-
 Archiving is GitHub's own, and the kicker, the plan and this scan already list repositories with --no-archived, so nothing in the looper changes. Considered: removing the approved label only, but the nightly scan would keep proposing work and the repository would stay in the pin list. SeaBeam's retired sources (ports.yaml, looper#5) were retired the same way, never ported.
 
 ## Status
-open
+accepted (Jody, 2026-11-10): kmaker#2 and #14 closed as retired, fleet-seatrials drop, kmaker archived (hub)
 Rank: 5
 Filed: 2026-11-10 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17872762621)

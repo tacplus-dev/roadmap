@@ -18,6 +18,6 @@ decisions/trace-propagation-2026-11-03.md (no ambient context: the request's con
 OPA's own rego.Capabilities option is the mechanism, so nothing new needs building. loadPolicy already refuses a bundle whose entry point doesn't match its slot, and an unknown built-in is refused at the same point. Considered: a NetworkPolicy on opa's egress, but that is ruled out by decisions/s2s-never-crosses-tenants-2026-10-31.md's 2026-11-07 addendum (no NetworkPolicies) and wouldn't bound the evaluation's time.
 
 ## Status
-open
+accepted (Jody, 2026-11-10): tacplus-dev/opa#11
 Rank: 2
 Filed: 2026-11-10 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17872762621)
