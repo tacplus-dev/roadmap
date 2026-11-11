@@ -25,6 +25,6 @@ Change: repo-looper: the report's STATE.md change as its own last commit (prompt
 Gain: tonight 3 report re-runs in fleet-seatrials (#44, #46, #47; #42 also conflicted in README.md and still goes back) and their VM waits (725.4 and 496.9 min for #46 and #44), with their code landing on the first green verdict instead. Since 2026-11-07, 6 more whose only conflicts beside #105's logs were STATE.md: tacplus#300, #313, #322, #359, stratum#32, tenantecho#10
 
 ## Status
-open
+accepted (Jody, 2026-11-11): tacplus-dev/looper#131
 Rank: 3
 Filed: 2026-11-11 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17928642546)

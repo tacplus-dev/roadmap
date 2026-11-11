@@ -27,6 +27,6 @@ Change: repo-looper security_item: one issue per cause (the findings listed in i
 Gain: tonight 358.52 h of VM waiting (37 of 112 waits) and 22 model runs that pushed nothing; on later nights, the same for each Rust service whose security report carries tacplus#368's 22 crates, and room in the shared pool for the other 75 waits (17 repositories' reports, up to 938 min each) beside them
 
 ## Status
-open
+accepted (Jody, 2026-11-11): tacplus-dev/looper#129
 Rank: 1
 Filed: 2026-11-11 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17928642546)

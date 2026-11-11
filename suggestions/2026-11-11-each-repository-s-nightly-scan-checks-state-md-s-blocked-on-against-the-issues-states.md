@@ -19,6 +19,6 @@ decisions/repo-roadmap-files-2026-10-27.md (STATE.md 'overwritten to stay curren
 Considered: (1) planning-files-check failing on a closed reference: it would make every repository's gates depend on GitHub and on the day, against 'every gate hermetic' (looper#103), and turn a land red for someone else's close. (2) A report updating the blocked repository's STATE.md when it closes its issue: it holds only its own repository. (3) The issue's 'Blocked-by:' lines already make the looper resume an issue when its blockers close, but STATE.md is prose that no looper rewrites. The scan already reads open issues and files approved mechanical bugs, so it is the cheapest place. Not in an open issue.
 
 ## Status
-open
+accepted (Jody, 2026-11-11): tacplus-dev/looper#132
 Rank: 4
 Filed: 2026-11-11 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17928642546)

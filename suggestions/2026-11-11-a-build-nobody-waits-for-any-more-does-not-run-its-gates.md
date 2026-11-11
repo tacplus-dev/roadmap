@@ -25,6 +25,6 @@ Change: looper-build gates: end as 'abandoned' when CI_PIPELINE_CREATED_AT is ol
 Gain: every build started past its requester's 3 h runs no gates: on tonight's queue (p90 131.2 min, max 402.4 over 209 jobs), the full gates of each land the managers gave up on (at least 6 tonight: cloud#29, blobstore#18, opa#10, operator#26, llmproxy#25, fleet-seatrials#42, 30 to 60 min each, run p90 1810 s) go back to the builds someone waits for
 
 ## Status
-open
+accepted (Jody, 2026-11-11): tacplus-dev/looper#130
 Rank: 2
 Filed: 2026-11-11 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/17928642546)
