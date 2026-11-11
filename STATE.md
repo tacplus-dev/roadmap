@@ -4,8 +4,8 @@ Overwritten to stay current (loopers and agents). Last updated: 2026-11-11 by an
 
 - **Version / line:** tacplus **v2.6.6** (2.6 line: v2.6.0 2026-11-05, v2.6.6 2026-11-10); the 2.0–2.4 lines still
   get patches (v2.4.16 and its siblings, 2026-11-10). The services declare the 2.6 floor. Those the fleets deploy
-  have `v0.1.x` source tags (Jody, 2026-11-07), all `0.x` until 2026-12-01; only llmproxy and kmaker publish their
-  images so far.
+  have `v0.1.x` source tags (Jody, 2026-11-07), all `0.x` until 2026-12-01; only llmproxy publishes its image
+  so far (kmaker is retired, Jody 2026-10-29: nothing calls it).
 - **Works:** the Stratum path's first steps are done: the records write surface (tacplus-dev/tacplus#163), routing
   by target tenant (tacplus-dev/tacplus#170), per-tenant in-memory Stratum (tacplus-dev/stratum#2), certificates
   written to Stratum (tacplus-dev/letsencrypt#2), and redo's local step (tacplus-dev/redo#1, on main). Fleets pin
