@@ -46,8 +46,8 @@ In priority order.
 2. **Service releases**: every service tags `vMAJOR.MINOR.PATCH` (from `v0.1.0`, `0.x` until 2026-12-01) and
    publishes its image ("Release: ..." on each repo, e.g. tacplus-dev/kernel#7). Every service the fleets deploy has its `v0.1.x`
    source tag (Jody, 2026-11-07). What releases wait on now is the image: a tag-triggered `release.yml`
-   publishes it to ghcr, public (`decisions/ci-on-gitlab-2026-10-27.md`, 2026-11-07 addendum; llmproxy and kmaker
-   are done). tacplus-dev/gateway#6 is first (priority high, seatrials' first deploy needs it), then the other open
+   publishes it to ghcr, public (`decisions/ci-on-gitlab-2026-10-27.md`, 2026-11-07 addendum; llmproxy is done;
+   kmaker is retired, 2026-11-10). tacplus-dev/gateway#6 is first (priority high, seatrials' first deploy needs it), then the other open
    "Release:" issues (kernel#7, oauth#5, opa#2, eventbus#2, stratum#3, redo#2, doppelganger#2, tenantecho#2, coop#2,
    pigeon#2). tacplus-dev/looper#17 can take releases over later.
 3. **Fleets pin by release line** (MAJOR.MINOR → latest patch, image by digest): done in tacplus
