@@ -7,14 +7,18 @@ This file covers what spans repositories or has no repository yet. Each reposito
 
 ## Now
 
-- **tacplus 2.4.x is the current line** (v2.4.0 and v2.4.1, 2026-10-27): the global registry and the declared
-  compiler floor. The services are moving to the **2.4 floor** ("Declare the tacplus floor: 2.4" on each repo;
-  kernel is done), then to versioned releases.
-- **fleet-seatrials is live** (GKE `seatrials`, https://seatrials.tacplus.dev): kernel, gateway, oauth, opa,
-  eventbus, stratum, letsencrypt, kmaker, llmproxy, doppelganger, tenantecho, coop, pigeonhost. Sign-in works with
-  Google (routed to `alpha`) and Microsoft (routed to `beta`), and Apple.
-- **The loopers** run on the tacplus-dev GitLab group (`gitlab.com/tacplus-dev/looper`): one issue-driven looper
-  per repository, working `approved` issues (`tacplus-dev/looper:ROADMAP.md`).
+- **tacplus 2.6.x is the current line** (v2.6.0 2026-11-05, latest patch v2.6.6 2026-11-10; the older lines
+  still get patches). The services declare the **2.6 floor** in `tacplus.yaml`, and those the fleets deploy have a `v0.1.x` source tag;
+  `tacplus fleet build` on 2.6 locks each release to its published image, which most don't have yet (Next 2).
+- **fleet-seatrials is not deployed now**: its old clusters are gone (`seatrials` 2026-10-29, `tacplus`
+  2026-11-05). Its GitLab deploy and test pipeline targets tacplus-dev/cloud's `dev` cluster in seabeam.net
+  (tacplus-dev/fleet-seatrials#39); the first deploy there waits on the pins (tacplus-dev/fleet-seatrials#1, Next 2
+  and 3) and the move to `tac-seatrials` (tacplus-dev/fleet-seatrials#4). When it was live, sign-in worked with
+  Google (routed to `alpha`), Microsoft (routed to `beta`) and Apple.
+- **The loopers** run on the tacplus-dev GitLab group (`gitlab.com/tacplus-dev/looper`): **one job per issue**, a
+  report working one `approved` issue on its own branch, up to each repository's cap, and a manager per repository
+  that alone merges to main on green gates (`decisions/looper-job-per-issue-2026-11-03.md`;
+  `tacplus-dev/looper:ROADMAP.md`).
 - Planning files in every repository: `decisions/repo-roadmap-files-2026-10-27.md`.
 
 ## Next
@@ -23,37 +27,44 @@ This file covers what spans repositories or has no repository yet. Each reposito
 In priority order.
 
 1. **Stratum: per tenant, in memory, durable through the redo service** (highest priority;
-   `decisions/stratum-per-tenant-2026-10-25.md`). The critical path, each step blocked by the one before:
-   1. tacplus-dev/tacplus#163: the generated records write surface, entry/map locks, durability levels, Watch.
-      **Needs Jody's decision on D1–D6** (on the issue).
-   2. tacplus-dev/tacplus#170: route tenant-owned RPCs by a declared target-tenant field
-      (`decisions/tenant-routing-2026-10-26.md`).
-   3. tacplus-dev/redo#1: the redo service, in the reserved `restore` tenant (`00000002`).
-   4. tacplus-dev/stratum#2: per-tenant, in-memory Stratum, no event bus.
-
-   Then on the same path: tacplus-dev/operator#2 (render per-tenant Stratum and redo), tacplus-dev/people#1 and
-   tacplus-dev/kernel#2 (the identity graph moves to the people service), tacplus-dev/letsencrypt#2 (certificates
-   written to Stratum directly), tacplus-dev/fleet-seatrials#3 (seatrials adopts all of it).
+   `decisions/stratum-per-tenant-2026-10-25.md`). Done: the records write surface (tacplus-dev/tacplus#163),
+   routing by target tenant (tacplus-dev/tacplus#170) and per-tenant, in-memory Stratum (tacplus-dev/stratum#2), all
+   2026-10-28. The critical path from here:
+   1. tacplus-dev/redo#1: the redo service, **a `/system` service** (Jody, 2026-11-07, on the issue): every tenant's
+      stratum calls it, and it keeps each tenant's log apart by the caller's tid, never calling into a tenant. Not
+      tenant-owned and not in the `restore` tenant; `pinned_tenant` and `RPC_FLAG_ANY_TENANT` go
+      (tacplus-dev/tacplus#258). Its local step is on main; the second-site copy is parked on tacplus-dev/tacplus#204
+      (cross-deployment, Later). `/system` stays the platform only (`decisions/products-layer-2026-11-08.md`).
+   2. tacplus-dev/operator#2: render per-tenant Stratum and redo, redo as one `/system` instance; waits on
+      tacplus-dev/stratum#26 and tacplus-dev/kernel#34 (each tenant's Stratum seed members).
+   3. tacplus-dev/people#1 (done, 2026-10-29) and tacplus-dev/kernel#2: the identity graph stays in kernel as
+      `scope: FLEET` roots; kernel#2 waits on tacplus-dev/tacplus#206 (flock state).
+   4. tacplus-dev/letsencrypt#2: certificates written to Stratum directly (done, 2026-11-03).
+   5. tacplus-dev/fleet-seatrials#3: seatrials adopts all of it.
    Roadmaps: `tacplus-dev/tacplus:ROADMAP.md`, `tacplus-dev/redo:ROADMAP.md`, `tacplus-dev/stratum:ROADMAP.md`,
    `tacplus-dev/people:ROADMAP.md`.
 2. **Service releases**: every service tags `vMAJOR.MINOR.PATCH` (from `v0.1.0`, `0.x` until 2026-12-01) and
-   publishes its image ("Release: ..." on each repo, e.g. tacplus-dev/kernel#7). All wait on the org secret
-   tacplus-dev/looper#12 (Jody). The gateway's release also needs a decision: tacplus-dev/gateway#6 (its image is
-   shaped by the fleet).
-3. **Fleets pin by release line** (MAJOR.MINOR → latest patch, image by digest): tacplus-dev/tacplus#180, then
-   tacplus-dev/fleet-seatrials#8 and tacplus-dev/fleet-dev#2. Both fleets move to 2.4 first
-   (tacplus-dev/fleet-seatrials#1, tacplus-dev/fleet-dev#1).
+   publishes its image ("Release: ..." on each repo, e.g. tacplus-dev/kernel#7). Every service the fleets deploy has its `v0.1.x`
+   source tag (Jody, 2026-11-07). What releases wait on now is the image: a tag-triggered `release.yml`
+   publishes it to ghcr, public (`decisions/ci-on-gitlab-2026-10-27.md`, 2026-11-07 addendum; llmproxy and kmaker
+   are done). tacplus-dev/gateway#6 is first (priority high, seatrials' first deploy needs it), then the other open
+   "Release:" issues (kernel#7, oauth#5, opa#2, eventbus#2, stratum#3, redo#2, doppelganger#2, tenantecho#2, coop#2,
+   pigeon#2). tacplus-dev/looper#17 can take releases over later.
+3. **Fleets pin by release line** (MAJOR.MINOR → latest patch, image by digest): done in tacplus
+   (tacplus-dev/tacplus#180) and the fleets (tacplus-dev/fleet-seatrials#8, tacplus-dev/fleet-dev#2). **The pins**
+   themselves, each fleet on tacplus 2.6 with every service at `0.1` (tacplus-dev/fleet-seatrials#1,
+   tacplus-dev/fleet-dev#1), wait on those images (2).
 4. **fleet-dev as the test fleet**: every service, an ephemeral cluster per run, a test IdP, end-to-end tests on
    every release: tacplus-dev/fleet-dev#3 (`tacplus-dev/fleet-dev:ROADMAP.md`).
-5. **Tenant deletion is complete** (`decisions/tenant-deletion-2026-10-27.md`): tacplus-dev/kernel#19 (no new
-   AT/ST, memberships removed, XIDs kept), tacplus-dev/oauth#11 (providers leave nothing behind),
+5. **Tenant deletion is complete** (`decisions/tenant-deletion-2026-10-27.md`): tacplus-dev/oauth#11 (providers
+   leave nothing behind). Done: tacplus-dev/kernel#19 (no new AT/ST, memberships removed, XIDs kept) and
    tacplus-dev/kernel#20 (age out XIDs idle for about a year).
 6. **Several deployments per cluster** (`decisions/deployments-per-cluster-2026-10-26.md`):
-   tacplus-dev/operator#3 (`tac-<deployment>` and `tac-<deployment>-<tid>` namespaces, tenant namespaces through
-   deploymentproxy, formerly nsproxy; its namespace part is done), then tacplus-dev/fleet-seatrials#4 (seatrials moves, with a runbook).
+   tacplus-dev/operator#3 is done (`tac-<deployment>` and `tac-<deployment>-<tid>` namespaces, tenant namespaces
+   through deploymentproxy, formerly nsproxy); next tacplus-dev/fleet-seatrials#4 (seatrials moves, with a runbook).
    `tacplus-dev/operator:ROADMAP.md`, `tacplus-dev/deploymentproxy:ROADMAP.md` (renamed 2026-11-02, `decisions/deploymentproxy-2026-11-02.md`).
 
-- **The cluster pipeline** (tacplus-dev/cluster#1): the only holder of cluster-admin on `tacplus`. It installs deploymentproxy,
+- **The cluster pipeline** (tacplus-dev/cluster#1, built 2026-11-02): the only holder of cluster-admin on `tacplus`. It installs deploymentproxy,
   creates each deployment's namespace and namespace-only roles, runs `plan` on every change, and leaves `apply` to Jody
   alone. It's on the critical path to tacplus.dev, ahead of fleet-seatrials#4 (`decisions/cluster-pipeline-2026-11-02.md`;
   approved by Jody 2026-11-02, roadmap#1). Agent, at Jody's request.
