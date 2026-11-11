@@ -1,0 +1,267 @@
+= init
+= commands_changed
+= commands_changed
+= thinking_tokens
+= thinking_tokens
+> Bash cd /builds/looper/roadmap/issues/3; ls; gh issue view 3 --repo tacplus-dev/roadmap --comments | tail -20; cat suggestions/2026-11-10-the-platform-roadmap-s-critical-path-and-state-as-they-stand.md
+< HISTORY.md PRODUCTION.md PROPOSALS.md README.md ROADMAP.md STATE.md decisions items suggestions templates author:	tacplus-looper association:	none edited:	false status:	none -- The looper of roadmap starts this issue with its limit 4h capped at 4h by this job (https://gitlab.com/tacplus-dev/looper/-...
+> Bash cd /builds/looper/roadmap/issues/3; cat ROADMAP.md; echo =====; cat STATE.md; echo ====; cat README.md; ls decisions items suggestions
+< # Roadmap: tacplus-dev (platform)  Owned by Jody; changed only by an agent at Jody's request. Loopers propose in PROPOSALS.md.  This file covers what spans repositories or has no repository yet. Each repository's own direction is in its `tacplus-dev/<repo>:ROADMAP.md`. tacplus-dev must work by itsel...
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for i in tacplus/163 tacplus/170 stratum/2 redo/1 operator/2 people/1 kernel/2 letsencrypt/2 fleet-seatrials/3 looper/12 gateway/6 kernel/7 tacplus/180 fleet-seatrials/8 fleet-dev/2 fleet-seatrials/1 fleet-dev/1 fleet-dev/3 kernel/19 oauth/11 kernel/20 operator/3 fleet-seatrials/4 cluster/1...
+= task_started
+= task_notification
+< tacplus/163 CLOSED 2026-10-28T11:12:10Z [approved,feature] Records: generated write surface, entry/map locks, durability levels, Watch tacplus/170 CLOSED 2026-10-28T07:42:08Z [approved,feature] Route tenant-owned RPCs by a declared target-tenant field stratum/2 CLOSED 2026-10-28T23:56:26Z [approved,...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for i in kernel/7 oauth/11 ; do r=${i%/*}; n=${i#*/}; gh issue view $n --repo tacplus-dev/$r --json state,title,closedAt,labels -q "\"$i \(.state) \(.closedAt) [\([.labels[].name]|join(\",\"))] \(.title)\""; done; gh release list --repo tacplus-dev/tacplus -L 5; gh issue view 6 --repo tacpl...
+< kernel/7 OPEN null [approved,feature,priority:high] Release: tag vMAJOR.MINOR.PATCH (start at v0.1.0) and publish its image oauth/11 OPEN null [approved,feature] Tenant providers: a deleted tenant leaves nothing behind (removal tested; stable provider key in sign-in state) v2.0.24		v2.0.24	2026-11-1...
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; gh api repos/tacplus-dev/tacplus/tags --paginate -q '.[].name' | sort -V | tail -5; gh issue view 106 --repo tacplus-dev/looper --json state,title,closedAt -q '"\(.state) \(.closedAt) \(.title)"'; gh issue view 1 --repo tacplus-dev/fleet-seatrials --comments | tail -60
+< v2.6.2 v2.6.3 v2.6.4 v2.6.5 v2.6.6 CLOSED 2026-11-08T14:05:32Z looper-token mints report and manager tokens without workflows: write, so the App's grant never reaches a push status:	none -- **Scope decided (hub, under Jody's 2026-11-07 delegation 'do what you think best, get us to deployment'): your...
+Checking the open issues the files name so the new Next/State match reality; then I'll edit ROADMAP.md and STATE.md.
+> Bash cd /tmp; for i in eventbus/2 stratum/3 opa/2 oauth/5 kmaker/2 doppelganger/2 tenantecho/2 coop/2 pigeon/2 redo/2 looper/17 llmproxy/2; do r=${i%/*}; n=${i#*/}; gh issue view $n --repo tacplus-dev/$r --json state,closedAt,title -q "\"$i \(.state) \(.closedAt) \(.title)\"" 2>&1|head -1; done; gh issue...
+= task_started
+= task_notification
+< eventbus/2 OPEN null Release: tag vMAJOR.MINOR.PATCH (start at v0.1.0) and publish its image stratum/3 OPEN null Release: tag vMAJOR.MINOR.PATCH (start at v0.1.0) and publish its image opa/2 OPEN null Release: tag vMAJOR.MINOR.PATCH (start at v0.1.0) and publish its image oauth/5 OPEN null Release: ...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for i in tacplus/204 tacplus/258 tacplus/195; do r=${i%/*}; n=${i#*/}; gh issue view $n --repo tacplus-dev/$r --json state,closedAt,title -q "\"$i \(.state) \(.closedAt) \(.title)\""; done; for i in operator/2 kernel/2 fleet-seatrials/3 fleet-dev/1; do echo "== $i"; gh issue view ${i#*/} --...
+= task_started
+= task_notification
+< tacplus/204 OPEN null Generated S2S clients to a peer service in another cluster or deployment (redo site-to-site, flock gossip) tacplus/258 OPEN null Enforce: S2S never crosses tenants (door refuses other tenants' service tokens even on ANY_TENANT; S2S client stamps its own tid) tacplus/195 OPEN nu...
+= thinking_tokens
+= thinking_tokens
+> Bash cd /builds/looper/roadmap/issues/3; for i in stratum/26 kernel/34 tacplus/206 operator/22; do r=${i%/*}; n=${i#*/}; gh issue view $n --repo tacplus-dev/$r --json state,closedAt,title -q "\"$i \(.state) \(.closedAt) \(.title)\""; done; gh issue view 4 --repo tacplus-dev/fleet-seatrials --comments | g...
+< stratum/26 OPEN null Seed members per tenant: a tenant-scope config slice, read from the tenant's TenantConfig (operator#2, option B) kernel/34 OPEN null Bootstrap tenants carry each tenant's Stratum seed members into TenantConfig.stratum (operator#2, option B) tacplus/206 OPEN null flock state: spe...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for t in v2.5.0 v2.6.0 v2.6.6; do gh api repos/tacplus-dev/tacplus/git/refs/tags/$t -q .object.url | xargs -I{} gh api {} -q '"'$t' \(.tagger.date // .committer.date)"'; done; gh api repos/tacplus-dev/looper/contents/ROADMAP.md -H 'Accept: application/vnd.github.raw' | sed -n '1,40p'
+= task_started
+= task_notification
+< v2.5.0 2026-10-28T16:02:20Z v2.6.0 2026-11-05T19:10:48Z v2.6.6 2026-11-10T18:42:35Z # Roadmap: looper  Owned by Jody; changed only by an agent at Jody's request. Loopers propose in PROPOSALS.md.  ## Now The tacplus-dev loopers run as GitLab pipelines (gitlab.com/tacplus-dev/looper), with nothing on ...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for r in kernel gateway redo stratum operator oauth; do echo "$r: $(gh api repos/tacplus-dev/$r/contents/tacplus.yaml -H 'Accept: application/vnd.github.raw' 2>/dev/null | grep -iE '^\s*(tacplus|floor|version)' | head -2 | tr '\n' ' ')"; done; grep -n -A12 -i addendum /builds/looper/roadmap...
+< kernel: tacplus: "2.6"  gateway: tacplus: "2.6"  redo: tacplus: "2.6"  stratum: tacplus: "2.6"  operator: tacplus: "2.6"  oauth: tacplus: "2.6"  15:## Addendum 2026-10-29: deploys, tests and secrets too (Jody) 16-"we should do deployments including test from gitlab. the secrets should be held by git...
+Now editing ROADMAP.md.
+> Bash python3 -I - <<'EOF' p='ROADMAP.md'; s=open(p).read() def rep(a,b):     global s     assert s.count(a)==1, a[:60]; s=s.replace(a,b) rep('''- **tacplus 2.4.x is the current line** (v2.4.0 and v2.4.1, 2026-10-27): the global registry and the declared   compiler floor. The services are moving to the **...
+<  ROADMAP.md | 61 +++++++++++++++++++++++++++++++++++--------------------------  1 file changed, 35 insertions(+), 26 deletions(-)
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash gh api repos/tacplus-dev/fleet-seatrials/contents/STATE.md -H 'Accept: application/vnd.github.raw'; gh issue list --repo tacplus-dev/roadmap --state all -L 10
+< # State: fleet-seatrials  Overwritten to stay current (loopers and agents). Last updated: 2026-11-09 by the looper (#27).  - **Version / line:** no releases or tags; services pinned by commit in `fleet.lock`; tacplus floor 2.2 - **Works:** seatrials was live at https://seatrials.tacplus.dev until it...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp; for i in looper/25 fleet-seatrials/18 fleet-seatrials/39 cloud/13 cloud/32 cluster/17 fleet-seatrials/14 fleet-seatrials/17 looper/84 kmaker/1; do r=${i%/*}; n=${i#*/}; gh issue view $n --repo tacplus-dev/$r --json state,closedAt,title,labels -q "\"$i \(.state) \(.closedAt) [\([.labels[].na...
+= task_started
+= task_notification
+< looper/25 CLOSED 2026-10-30T18:13:05Z [bug,approved] Agents' GITLAB_TOKEN is a group-Owner api token: it reads fleet-seatrials' protected variables and can start its protected deploy jobs fleet-seatrials/18 CLOSED 2026-11-03T21:27:43Z [feature,priority:high] Set up the seatrials deploy pipeline on G...
+= thinking_tokens
+= thinking_tokens
+> Bash python3 -I - <<'EOF' p='ROADMAP.md'; s=open(p).read() def rep(a,b):     global s     assert s.count(a)==1, a[:60]; s=s.replace(a,b) rep('''- **fleet-seatrials is live** (GKE `seatrials`, https://seatrials.tacplus.dev): kernel, gateway, oauth, opa,   eventbus, stratum, letsencrypt, kmaker, llmproxy, ...
+< diff --git a/ROADMAP.md b/ROADMAP.md index 8f49ce6..551ce7d 100644 --- a/ROADMAP.md +++ b/ROADMAP.md @@ -7,14 +7,18 @@ This file covers what spans repositories or has no repository yet. Each reposito    ## Now   -- **tacplus 2.4.x is the current line** (v2.4.0 and v2.4.1, 2026-10-27): the global reg...
+= thinking_tokens
+= thinking_tokens
+> Bash for r in doppelganger tenantecho coop pigeon letsencrypt people deploymentproxy; do echo "$r: $(gh api repos/tacplus-dev/$r/tags -q '[.[].name]|join(" ")' 2>&1|head -c 60)"; done
+= task_started
+= task_notification
+< doppelganger: v0.1.0 tenantecho: v0.1.0 coop: v0.1.0 pigeon: v0.1.2 v0.1.1 v0.1.0 letsencrypt:  people:  deploymentproxy: v0.2.2 v0.2.1 v0.2.0 v0.1.4 v0.1.3 v0.1.2 v0.1.1 v0.1.0
+= thinking_tokens
+= thinking_tokens
+> Bash sed -i 's/Every service has its `v0.1.x`/Every service the fleets deploy has its `v0.1.x`/' ROADMAP.md && grep -n "fleets deploy has" ROADMAP.md && sed -i 's/and each has a `v0.1.x` source tag;/and those the fleets deploy have a `v0.1.x` source tag;/' ROADMAP.md && grep -n "source tag;" ROADMAP.md
+< 47:   publishes its image ("Release: ..." on each repo, e.g. tacplus-dev/kernel#7). Every service the fleets deploy has its `v0.1.x` 11:  still get patches). The services declare the **2.6 floor** in `tacplus.yaml`, and those the fleets deploy have a `v0.1.x` source tag;
+> Write /builds/looper/roadmap/issues/3/STATE.md
+< The file /builds/looper/roadmap/issues/3/STATE.md has been updated successfully. (file state is current in your context — no need to Read it back)
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+Finishing STATE.md wording, then committing and landing.
+> Bash sed -i 's/Tenant deletion\n//' STATE.md && python3 -I -c " p='STATE.md';s=open(p).read();a='Tenant deletion\n  ends sessions and memberships and ages out idle XIDs';assert a in s;s=s.replace(a,'Tenant deletion\n  issues no new AT/ST, removes memberships and ages out idle XIDs');open(p,'w').write(s)"...
+< # History: roadmap  Append-only: add entries at the end, never edit or remove one (CI enforces it). One line each: `- <YYYY-MM-DD> <who: looper|agent|jody> <kind: issue|decision|release|deploy> <one line> (<links>)`  ls: cannot access '.gitlab-ci.yml': No such file or directory .github: workflows 73...
+> Bash ls .github/workflows && cat .github/workflows/* | head -60
+< planning-files.yml # The planning files check (tacplus-dev/roadmap decisions/repo-roadmap-files-2026-10-27.md): # STATE.md, PROPOSALS.md and HISTORY.md exist and HISTORY.md is append-only. See tacplus-dev/looper. name: planning-files on:   push:     branches: [main]   pull_request: {} permissions:  ...
+= thinking_tokens
+= thinking_tokens
+> Bash G='test -f STATE.md -a -f PROPOSALS.md -a -f HISTORY.md -a -f ROADMAP.md && git diff --check HEAD~1 && echo planning-files-ok' && git add ROADMAP.md STATE.md && git commit -q -F - <<'EOF' ROADMAP and STATE: the platform's critical path and state as they stand (#3)  Both files had gone stale: Next 1 ...
+= task_started
+= task_notification
+< planning-files-ok remote:  [2026-11-11T02:13:59Z] checkpoint of #3 (a step) pushed to looper/roadmap-3:  4 files changed, 294 insertions(+), 52 deletions(-) 2582
+= thinking_tokens
+= thinking_tokens
+> Bash git status --short; git show --stat HEAD | tail -4; cat /tmp/land3.log
+<  ROADMAP.md | 71 ++++++++++++++++++++++++++++++++++++--------------------------  STATE.md   | 56 ++++++++++++++++++++++++++++++-------------------  2 files changed, 75 insertions(+), 52 deletions(-)
+> Monitor until ! kill -0 2582 2>/dev/null; do sleep 20; done; cat /tmp/land3.log | tail -30
+< <tool_use_error>InputValidationError: Monitor failed due to the following issue: The required parameter `description` is missing  This tool's schema was not sent to the API — it was not in the discovered-tool set derived from message history. Without the schema in your prompt, typed parameters (arra...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -30 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+Land is queued with the roadmap manager; waiting for its verdict.
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log; gh issue view 3 --repo tacplus-dev/roadmap --comments | tail -8
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+Still queued (about 40 minutes so far); continuing to wait for the manager.
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log; git -C /builds/looper/roadmap/issues/3 fetch -q origin && git -C /builds/looper/roadmap/issues/3 log --oneline -3 origin/main | cat
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log; date -u
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+Still queued after about 85 minutes, with nothing new on main; I'll keep polling. The time limit runs to about 05:55Z.
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -8 /tmp/land3.log
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+> Bash gh issue view 3 --repo tacplus-dev/roadmap --comments | tail -12; gh issue view 3 --repo tacplus-dev/roadmap --json labels -q '[.labels[].name]'; git -C /builds/looper/roadmap/issues/3 fetch -q origin; git -C /builds/looper/roadmap/issues/3 log --oneline -3 origin/main | cat
+< edited:	false status:	none -- The looper of roadmap starts this issue with its limit 4h capped at 4h by this job (https://gitlab.com/tacplus-dev/looper/-/jobs/17920632125), which ends sooner: the run stops by itself before then, its work checkpointed, and the next run resumes it. -- author:	tacplus-...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; tail -4 /tmp/land3.log | cut -c1-200
+= task_started
+= task_notification
+< jq: error (at <stdin>:5): object ({"message":...) and string ("<!-- loope...) cannot have their containment checked jq: error (at <stdin>:5): object ({"message":...) and string ("<!-- loope...) cannot have their containment checked jq: error (at <stdin>:5): object ({"message":...) and string ("<!-- ...
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; grep -v '^jq' /tmp/land3.log | tail -4; gh issue view 3 --repo tacplus-dev/roadmap --json comments -q '.comments|length'; date -u
+= task_started
+= task_notification
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+Still queued at 04:06Z. I'll keep waiting until about 05:30Z, then hand off if it hasn't landed by then.
+> Bash for i in $(seq 1 28); do kill -0 2582 2>/dev/null || break; sleep 20; done; grep -v '^jq' /tmp/land3.log | tail -3; gh issue view 3 --repo tacplus-dev/roadmap --json comments -q '.comments|length'
+= task_started
+= task_notification
+< remote:      https://github.com/tacplus-dev/roadmap/pull/new/looper/roadmap-3         remote:  [2026-11-11T04:13:14Z] checkpoint of #3 (land done) pushed to looper/roadmap-3:  4 files changed, 359 insertions(+), 52 deletions(-) 4
+> Bash grep -v '^jq' /tmp/land3.log | tail -25 | cut -c1-300; gh issue view 3 --repo tacplus-dev/roadmap --comments | tail -30; cd /builds/looper/roadmap/issues/3; git fetch -q origin; git log --oneline -3 origin/main | cat
+< [2026-11-11T02:14:04Z] checkpoint of #3 (land queued) pushed to looper/roadmap-3:  5 files changed, 301 insertions(+), 52 deletions(-) [2026-11-11T02:14:06Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it;...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash cd /builds/looper/roadmap/issues/3; git status --short; git log --oneline -1 | cat; grep -n -i kmaker ROADMAP.md STATE.md PROPOSALS.md | cut -c1-250; sed -n 1,12p suggestions/2026-11-10-retire-kmaker-everywhere-not-only-in-the-operator.md | cut -c1-400; grep -n Status -A2 suggestions/2026-11-10-reti...
+< 78e32f8 ROADMAP and STATE: the platform's critical path and state as they stand (#3) ROADMAP.md:49:   publishes it to ghcr, public (`decisions/ci-on-gitlab-2026-10-27.md`, 2026-11-07 addendum; llmproxy and kmaker STATE.md:7:  have `v0.1.x` source tags (Jody, 2026-11-07), all `0.x` until 2026-12-01; ...
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+= thinking_tokens
+> Bash git reset -q --hard origin/main && tail -20 PROPOSALS.md
+< # Proposals: roadmap  Written by loopers. Each proposal: what, why, links. Jody promotes accepted ones into ROADMAP.md (via an agent); the looper then marks it `promoted` or `declined` here with the date.  ## Open - **<title>** (<date>, <issue/run link>): <what and why>  ## Promoted / declined
+> Bash python3 -I - <<'EOF' p='STATE.md'; s=open(p).read() a='''only llmproxy and kmaker publish their   images so far.''' assert a in s s=s.replace(a,'''only llmproxy publishes its image   so far (kmaker is retired, Jody 2026-10-29: nothing calls it).''') open(p,'w').write(s) p='PROPOSALS.md'; s=open(p).r...
+< diff --git a/PROPOSALS.md b/PROPOSALS.md index d5b2152..6c1d9d1 100644 --- a/PROPOSALS.md +++ b/PROPOSALS.md @@ -5,5 +5,10 @@ the looper then marks it `promoted` or `declined` here with the date.    ## Open  - **<title>** (<date>, <issue/run link>): <what and why> +- **Let the manager land a ROADMAP...
+> Bash git add -A && git commit -q -F - <<'EOF' STATE: kmaker is retired, not a published release (#3); PROPOSALS: the manager's ROADMAP guard  Jody's follow-up on #3: kmaker was retired on 2026-10-29, so it is not one of the services that publish their images. The ROADMAP.md half of this fix goes to the h...
+< planning-files-ok [2026-11-11T04:13:50Z] checkpoint of #3 (a step) pushed to looper/roadmap-3:  4 files changed, 337 insertions(+), 2 deletions(-) 14542
+> Bash for i in $(seq 1 28); do kill -0 14542 2>/dev/null || break; sleep 20; done; grep -v '^jq' /tmp/land3b.log | tail -4 | cut -c1-300; date -u
+= task_started
+= task_notification
+< remote: Create a pull request for 'looper/roadmap-3' on GitHub by visiting:         remote:      https://github.com/tacplus-dev/roadmap/pull/new/looper/roadmap-3         remote:  [2026-11-11T04:16:28Z] checkpoint of #3 (land done) pushed to looper/roadmap-3:  4 files changed, 340 insertions(+), 2 de...
+> Bash grep -v '^jq' /tmp/land3b.log | grep -v '^remote' | tail -8 | cut -c1-400; cd /builds/looper/roadmap/issues/3; git fetch -q origin; git log --oneline -3 origin/main | cat
+< [2026-11-11T04:13:53Z] queued: the manager of roadmap merges looper/roadmap-3 after the lands queued before it, one at a time, and says on the issue what came of it; waiting for its verdict. If your time runs out first, it still lands it after you. The manager merged [`looper/roadmap-3`](https://git...
+= thinking_tokens
+= thinking_tokens
+Landed da2d617. Now the ROADMAP.md kmaker line: the manager can't land it, so I'll put the exact diff on the issue for the hub.
+> Bash git reset -q --hard origin/main && sed -n 47,52p ROADMAP.md
+<    publishes its image ("Release: ..." on each repo, e.g. tacplus-dev/kernel#7). Every service the fleets deploy has its `v0.1.x`    source tag (Jody, 2026-11-07). What releases wait on now is the image: a tag-triggered `release.yml`    publishes it to ghcr, public (`decisions/ci-on-gitlab-2026-10-2...
+= thinking_tokens
+= thinking_tokens
+> Bash cd /tmp && cat > /tmp/c3.md <<'EOF' The looper of roadmap: **done except one line of ROADMAP.md, which the manager can't land.**  **Landed on main** - 78e32f8 (the hub merged it by hand, as said above). ROADMAP.md:   - **Next 1** now starts at redo#1, as a `/system` service (Jody, 2026-11-07), and g...
+< https://github.com/tacplus-dev/roadmap/issues/3#issuecomment-6786861517 https://github.com/tacplus-dev/roadmap/issues/3 Shell cwd was reset to /builds/looper/roadmap/issues/3
+= thinking_tokens
+= thinking_tokens
+> Bash /usr/local/bin/repo-looper --repo roadmap --issue 3 --checkpoint "Landed 78e32f8 (hub by hand) and da2d617 (manager). Left: ROADMAP Next 2 kmaker line (diff in the issue comment) needs the hub to land by hand; issue labelled needs-decision, then close" 2>&1 | tail -1
+< [2026-11-11T04:16:57Z] checkpoint of #3 (a step) pushed to looper/roadmap-3:  2 files changed, 349 insertions(+)
+ROADMAP.md and STATE.md are updated on main as the issue asked, except one line of ROADMAP.md. The manager refuses any commit that touches ROADMAP.md, so I've labelled #3 `needs-decision` and left it open for the hub.
+
+**What landed:**
+- **78e32f8** (the hub merged it by hand, after the manager kept refusing it):
+  - **Next 1** starts at redo#1 as a `/system` service, then operator#2, people#1/kernel#2, letsencrypt#2 and fleet-seatrials#3. Each step says what it waits on now. tacplus#163, #170 and stratum#2 are marked done.
+  - **Next 2** no longer mentions looper#12. Service releases now wait on their published images: gateway#6 first, then each open "Release:" issue. Next 3 says the fleets' pins (fleet-seatrials#1, fleet-dev#1) wait on those images.
+  - **Now** gives 2.6 as the current line (v2.6.6) and the loopers as one job per issue with a manager per repository. I also corrected the seatrials line: it said seatrials was live, but its clusters were deleted on 2026-10-29 and 2026-11-05, so nothing is deployed.
+  - **STATE.md** is rewritten to 2026-11-11. Its blockers now match the open issues: tacplus#163 and looper#12 are gone, and the open `needs-decision` issues are tacplus#145, tacplus#1, cluster#18 and llmproxy#56.
+- **da2d617** (merged by the manager, full gate set, green): Jody's follow-up on the issue said kmaker is retired, so STATE.md no longer counts it as a published release. I also added an entry to PROPOSALS.md: the manager should accept a ROADMAP.md change from an issue Jody approved, or refuse it at once instead of retrying.
+
+**Still open:** ROADMAP.md's Next 2 still says "llmproxy and kmaker are done". The issue comment has the exact two-line diff to change it to "llmproxy is done, kmaker is retired". The hub needs to land it by hand and then close the issue.
+
+**Checks:** the repository has no build or tests, so the gate I ran checks that the four planning files exist and the diff has no whitespace errors; it passed. The trace-propagation rule doesn't apply because this repository has no handlers.
+
+**Not verified:**
+- That every service declares the 2.6 floor: I read `tacplus.yaml` in six of them (kernel, gateway, redo, stratum, operator, oauth).
+- Seatrials' deploy blockers: these come from fleet-seatrials' own STATE.md and issues, not from looking at the cluster.
+= success: ROADMAP.md and STATE.md are updated on main as the issue asked, except one line of ROADMAP.md. The manager refuses any commit that touches ROADMAP.md, so I've labelled #3 `needs-decision` and left it open for the hub.
+
+**What landed:**
+- **78e32f8** (the hub merged it by hand, after the manager kept refusing it):
+  - **Next 1** starts at redo#1 as a `/system` service, then operator#2, people#1/kernel#2, letsencrypt#2 and fleet-seatrials#3. Each step says what it waits on now. tacplus#163, #170 and stratum#2 are marked done.
+  - **Next 2** no longer mentions looper#12. Service releases now wait on their published images: gateway#6 first, then each open "Release:" issue. Next 3 says the fleets' pins (fleet-seatrials#1, fleet-dev#1) wait on those images.
+  - **Now** gives 2.6 as the current line (v2.6.6) and the loopers as one job per issue with a manager per repository. I also corrected the seatrials line: it said seatrials was live, but its clusters were deleted on 2026-10-29 and 2026-11-05, so nothing is deployed.
+  - **STATE.md** is rewritten to 2026-11-11. Its blockers now match the open issues: tacplus#163 and looper#12 are gone, and the open `needs-decision` issues are tacplus#145, tacplus#1, cluster#18 and llmproxy#56.
+- **da2d617** (merged by the manager, full gate set, green): Jody's follow-up on the issue said kmaker is retired, so STATE.md no longer counts it as a published release. I also added an entry to PROPOSALS.md: the manager should accept a ROADMAP.md change from an issue Jody approved, or refuse it at once instead of retrying.
+
+**Still open:** ROADMAP.md's Next 2 still says "llmproxy and kmaker are done". The issue comment has the exact two-line diff to change it to "llmproxy is done, kmaker is retired". The hub needs to land it by hand and then close the issue.
+
+**Checks:** the repository has no build or tests, so the gate I ran checks that the four planning files exist and the diff has no whitespace errors; it passed. The trace-propagation rule doesn't apply because this repository has no handlers.
+
+**Not verified:**
+- That every service declares the 2.6 floor: I read `tacplus.yaml` in six of them (kernel, gateway, redo, stratum, operator, oauth).
+- Seatrials' deploy blockers: these come from fleet-seatrials' own STATE.md and issues, not from looking at the cluster.
