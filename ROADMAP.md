@@ -22,6 +22,10 @@ This file covers what spans repositories or has no repository yet. Each reposito
 - Planning files in every repository: `decisions/repo-roadmap-files-2026-10-27.md`.
 
 ## Next
+- **The bar for "SeaBeam can start"** (top priority after throughput; `decisions/seabeam-can-start-2026-11-12.md`):
+  A, service release images and the fleets' pins (2 and 3 below); B, fleet-seatrials deployed on `dev` with sign-in
+  (tacplus-dev/fleet-seatrials#4); C, a basic end-to-end run on fleet-dev (tacplus-dev/fleet-dev#3). Stratum with
+  redo (1 below) follows the bar; no new feature outside it starts until it is met. (Jody, 2026-11-12)
 - **Skipper and Admiral as tacplus platform components** (high; moved from SeaBeam): survey, huddle, then the skipper and admiral repos (`items/skipper-admiral.md`, `decisions/skipper-and-admiral-2026-11-01.md`) (Jody, 2026-11-01)
 
 In priority order.
