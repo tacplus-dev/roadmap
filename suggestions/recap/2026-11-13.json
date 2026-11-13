@@ -1,0 +1,6587 @@
+{
+ "actions": {
+  "by_workflow": {
+   "looper/image": {
+    "failed": 0,
+    "minutes": {
+     "max": 25.4,
+     "n": 4,
+     "p50": 24.8,
+     "p90": 25.4
+    },
+    "runs": 4
+   },
+   "tacplus/Images": {
+    "failed": 0,
+    "minutes": {
+     "max": 68,
+     "n": 9,
+     "p50": 44.7,
+     "p90": 68
+    },
+    "runs": 9
+   },
+   "tacplus/Nightly gates": {
+    "failed": 0,
+    "minutes": {
+     "max": 172.8,
+     "n": 1,
+     "p50": 172.8,
+     "p90": 172.8
+    },
+    "runs": 1
+   },
+   "tacplus/Nightly security": {
+    "failed": 0,
+    "minutes": {
+     "max": 9.6,
+     "n": 1,
+     "p50": 9.6,
+     "p90": 9.6
+    },
+    "runs": 1
+   },
+   "tacplus/Release": {
+    "failed": 0,
+    "minutes": {
+     "max": 4.8,
+     "n": 7,
+     "p50": 4.2,
+     "p90": 4.8
+    },
+    "runs": 7
+   }
+  },
+  "runs": [
+   {
+    "conclusion": "success",
+    "id": 43196379870,
+    "minutes": 24.7,
+    "repo": "looper",
+    "url": "https://github.com/tacplus-dev/looper/actions/runs/43196379870",
+    "workflow": "image"
+   },
+   {
+    "conclusion": "success",
+    "id": 43339764436,
+    "minutes": 24.8,
+    "repo": "looper",
+    "url": "https://github.com/tacplus-dev/looper/actions/runs/43339764436",
+    "workflow": "image"
+   },
+   {
+    "conclusion": "success",
+    "id": 43368938724,
+    "minutes": 25.1,
+    "repo": "looper",
+    "url": "https://github.com/tacplus-dev/looper/actions/runs/43368938724",
+    "workflow": "image"
+   },
+   {
+    "conclusion": "success",
+    "id": 43393710134,
+    "minutes": 25.4,
+    "repo": "looper",
+    "url": "https://github.com/tacplus-dev/looper/actions/runs/43393710134",
+    "workflow": "image"
+   },
+   {
+    "conclusion": "success",
+    "id": 43234695001,
+    "minutes": 0.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43234695001",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335176053,
+    "minutes": 33,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335176053",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335191784,
+    "minutes": 47,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335191784",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335208016,
+    "minutes": 64.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335208016",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335222397,
+    "minutes": 47.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335222397",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335237988,
+    "minutes": 41.9,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335237988",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335251862,
+    "minutes": 68,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335251862",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335265428,
+    "minutes": 44.7,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335265428",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43346894957,
+    "minutes": 0.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43346894957",
+    "workflow": "Images"
+   },
+   {
+    "conclusion": "success",
+    "id": 43247609029,
+    "minutes": 172.8,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43247609029",
+    "workflow": "Nightly gates"
+   },
+   {
+    "conclusion": "success",
+    "id": 43265066105,
+    "minutes": 9.6,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43265066105",
+    "workflow": "Nightly security"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335176043,
+    "minutes": 3.3,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335176043",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335191771,
+    "minutes": 3.7,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335191771",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335207956,
+    "minutes": 4.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335207956",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335222426,
+    "minutes": 3.8,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335222426",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335237995,
+    "minutes": 4.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335237995",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335251831,
+    "minutes": 4.2,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335251831",
+    "workflow": "Release"
+   },
+   {
+    "conclusion": "success",
+    "id": 43335265384,
+    "minutes": 4.8,
+    "repo": "tacplus",
+    "url": "https://github.com/tacplus-dev/tacplus/actions/runs/43335265384",
+    "workflow": "Release"
+   }
+  ]
+ },
+ "capacity": {
+  "one_more_vm": {
+   "machine": "t2a-standard-8",
+   "usd_day": 7.39,
+   "usd_hour": 0.308
+  },
+  "queue_minutes": {
+   "max": 655.8,
+   "n": 1248,
+   "p50": 5.3,
+   "p90": 61
+  },
+  "waiting_for_vm": {
+   "hours": 0,
+   "issues": 0,
+   "jobs": []
+  }
+ },
+ "concurrency": {
+  "hours": 23.55,
+  "passes": 466,
+  "reports": {
+   "max": 25,
+   "mean": 12.01
+  },
+  "repos": {
+   "cloud": {
+    "backlog": {
+     "max": 3,
+     "p90": 3
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 3,
+     "mean": 1.62
+    },
+    "running": {
+     "max": 3,
+     "mean": 1.62
+    },
+    "waiting": {
+     "34": 0.05,
+     "45": 0.34,
+     "47": 0.1,
+     "48": 0.09,
+     "49": 0.14,
+     "50": 0.05,
+     "51": 0.05
+    },
+    "waiting_hours": 0.83
+   },
+   "cluster": {
+    "backlog": {
+     "max": 0,
+     "p90": 0
+    },
+    "pool": null,
+    "reports": {
+     "max": 1,
+     "mean": 0.03
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.03
+    },
+    "waiting": {
+     "21": 0.05
+    },
+    "waiting_hours": 0.05
+   },
+   "coop": {
+    "backlog": {
+     "max": 0,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.08
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.08
+    },
+    "waiting": {
+     "2": 0.05
+    },
+    "waiting_hours": 0.05
+   },
+   "deploymentproxy": {
+    "backlog": {
+     "max": 0,
+     "p90": 0
+    },
+    "pool": null,
+    "reports": {
+     "max": 1,
+     "mean": 0.02
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.02
+    },
+    "waiting": {
+     "18": 0.05
+    },
+    "waiting_hours": 0.05
+   },
+   "doppelganger": {
+    "backlog": {
+     "max": 7,
+     "p90": 7
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 6,
+     "mean": 1.65
+    },
+    "running": {
+     "max": 6,
+     "mean": 1.65
+    },
+    "waiting": {
+     "15": 0.22,
+     "16": 0.22,
+     "17": 0.17,
+     "18": 0.17,
+     "19": 0.22,
+     "2": 0.1,
+     "20": 0.22
+    },
+    "waiting_hours": 1.3
+   },
+   "eventbus": {
+    "backlog": {
+     "max": 1,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 2,
+     "mean": 0.73
+    },
+    "running": {
+     "max": 2,
+     "mean": 0.72
+    },
+    "waiting": {
+     "2": 0.05,
+     "28": 0.19
+    },
+    "waiting_hours": 0.24
+   },
+   "fleet-dev": {
+    "backlog": {
+     "max": 1,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.11
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.11
+    },
+    "waiting": {},
+    "waiting_hours": 0
+   },
+   "fleet-seatrials": {
+    "backlog": {
+     "max": 0,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.02
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.02
+    },
+    "waiting": {
+     "50": 0.1
+    },
+    "waiting_hours": 0.1
+   },
+   "gateway": {
+    "backlog": {
+     "max": 1,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 2,
+     "mean": 0.42
+    },
+    "running": {
+     "max": 2,
+     "mean": 0.42
+    },
+    "waiting": {
+     "33": 0.22,
+     "34": 0.05,
+     "6": 0.05
+    },
+    "waiting_hours": 0.32
+   },
+   "kernel": {
+    "backlog": {
+     "max": 10,
+     "p90": 10
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 9,
+     "mean": 2.36
+    },
+    "running": {
+     "max": 9,
+     "mean": 2.35
+    },
+    "waiting": {
+     "48": 0.1,
+     "49": 0.1,
+     "50": 0.05,
+     "51": 0.1,
+     "52": 0.1,
+     "54": 0.05,
+     "57": 0.15,
+     "58": 0.15,
+     "7": 0.05
+    },
+    "waiting_hours": 0.84
+   },
+   "looper": {
+    "backlog": {
+     "max": 32,
+     "p90": 30
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 9,
+     "mean": 1.52
+    },
+    "running": {
+     "max": 9,
+     "mean": 1.52
+    },
+    "waiting": {
+     "104": 0.1,
+     "105": 0.1,
+     "108": 0.05,
+     "115": 0.05,
+     "120": 0.05,
+     "122": 0.05,
+     "127": 0.05,
+     "130": 0.05,
+     "133": 0.1,
+     "134": 0.1,
+     "135": 0.05,
+     "136": 0.05,
+     "137": 0.05,
+     "138": 0.05,
+     "140": 0.05,
+     "48": 0.05,
+     "99": 0.05
+    },
+    "waiting_hours": 1.05
+   },
+   "oauth": {
+    "backlog": {
+     "max": 1,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.16
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.16
+    },
+    "waiting": {
+     "24": 0.05,
+     "5": 0.05
+    },
+    "waiting_hours": 0.1
+   },
+   "opa": {
+    "backlog": {
+     "max": 3,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.25
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.25
+    },
+    "waiting": {
+     "13": 0.05,
+     "2": 0.05
+    },
+    "waiting_hours": 0.1
+   },
+   "operator": {
+    "backlog": {
+     "max": 5,
+     "p90": 5
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 4,
+     "mean": 1.13
+    },
+    "running": {
+     "max": 4,
+     "mean": 1.13
+    },
+    "waiting": {
+     "26": 0.1,
+     "27": 0.05,
+     "28": 0.05,
+     "30": 0.1,
+     "31": 0.1
+    },
+    "waiting_hours": 0.41
+   },
+   "pigeon": {
+    "backlog": {
+     "max": 1,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.14
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.14
+    },
+    "waiting": {
+     "2": 0.05
+    },
+    "waiting_hours": 0.05
+   },
+   "redo": {
+    "backlog": {
+     "max": 1,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 2,
+     "mean": 0.64
+    },
+    "running": {
+     "max": 2,
+     "mean": 0.64
+    },
+    "waiting": {
+     "10": 0.24,
+     "11": 0.05
+    },
+    "waiting_hours": 0.29
+   },
+   "registry": {
+    "backlog": {
+     "max": 1,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.14
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.14
+    },
+    "waiting": {},
+    "waiting_hours": 0
+   },
+   "stratum": {
+    "backlog": {
+     "max": 2,
+     "p90": 1
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.11
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.11
+    },
+    "waiting": {
+     "3": 0.05,
+     "34": 0.05
+    },
+    "waiting_hours": 0.1
+   },
+   "tacplus": {
+    "backlog": {
+     "max": 43,
+     "p90": 43
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 4,
+     "mean": 0.87
+    },
+    "running": {
+     "max": 4,
+     "mean": 0.87
+    },
+    "waiting": {
+     "320": 0.05,
+     "327": 0.05,
+     "329": 0.14,
+     "338": 0.05,
+     "340": 0.05
+    },
+    "waiting_hours": 0.35
+   },
+   "tenantecho": {
+    "backlog": {
+     "max": 0,
+     "p90": 0
+    },
+    "pool": "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)",
+    "reports": {
+     "max": 1,
+     "mean": 0.01
+    },
+    "running": {
+     "max": 1,
+     "mean": 0.01
+    },
+    "waiting": {
+     "2": 0.05
+    },
+    "waiting_hours": 0.05
+   }
+  },
+  "running": {
+   "max": 25,
+   "mean": 12.0
+  },
+  "waiting_hours": 6.28
+ },
+ "failed_jobs": [
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17960945698,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17960945698"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17960949309,
+   "job": "security-cloud",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17960949309"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17960949310,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17960949310"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17962141137,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17962141137"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963198166,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963198166"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963198167,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963198167"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963199348,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963199348"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963199349,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963199349"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963199352,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963199352"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963223944,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963223944"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963223946,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963223946"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963223949,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963223949"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963232430,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963232430"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963232431,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963232431"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963244620,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963244620"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963244621,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963244621"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963244624,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963244624"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963246960,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963246960"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963246961,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963246961"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963246964,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963246964"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963248385,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963248385"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963248386,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963248386"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963248389,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963248389"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963262584,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963262584"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963262585,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963262585"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963262588,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963262588"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963272606,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963272606"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963272607,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963272607"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963272610,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963272610"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963274464,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963274464"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963274465,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963274465"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963274468,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963274468"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963382903,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963382903"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963382904,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963382904"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963382907,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963382907"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963383422,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963383422"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963383762,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963383762"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963386134,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963386134"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963389168,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963389168"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963391691,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963391691"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963391754,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963391754"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963394702,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963394702"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17963532161,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17963532161"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17964508085,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17964508085"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17964825343,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17964825343"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17964978904,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17964978904"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17965697593,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17965697593"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17965844326,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17965844326"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966118736,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966118736"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966122448,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966122448"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966249922,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966249922"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966284559,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966284559"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966298642,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966298642"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966339805,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966339805"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966419961,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966419961"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966491747,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966491747"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966839585,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966839585"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17966920432,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17966920432"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17967588929,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967588929"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967625493,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967625493"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967628328,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967628328"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967629469,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967629469"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967632641,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967632641"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967632861,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967632861"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967635603,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967635603"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967637929,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967637929"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967637930,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967637930"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967638903,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967638903"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967645823,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967645823"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967645824,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967645824"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967647816,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967647816"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967647817,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967647817"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967648199,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967648199"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967651093,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967651093"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967653765,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967653765"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967662939,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967662939"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967664724,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967664724"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967667789,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967667789"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967668208,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967668208"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967671771,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967671771"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967671772,
+   "job": "security-opa",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967671772"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967673884,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967673884"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967673885,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967673885"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967674454,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967674454"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967677311,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967677311"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967677357,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967677357"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967678898,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967678898"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967680519,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967680519"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967682857,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967682857"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967683571,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967683571"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967683572,
+   "job": "security-opa",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967683572"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967688316,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967688316"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967690455,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967690455"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967691636,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967691636"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967717303,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967717303"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17967717636,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17967717636"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972179718,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972179718"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972179719,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972179719"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972179722,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972179722"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17972198705,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972198705"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972198706,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972198706"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972198709,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972198709"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972296953,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972296953"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972296954,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972296954"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972296957,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972296957"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972328808,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972328808"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17972341278,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972341278"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972487863,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972487863"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17972651098,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972651098"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972651102,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972651102"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972662078,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972662078"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972667550,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972667550"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17972816473,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17972816473"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17973065720,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973065720"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17973065721,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973065721"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17973068001,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973068001"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17973071975,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973071975"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17973071976,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973071976"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17973073432,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973073432"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17973077473,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973077473"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17973077474,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973077474"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17973077585,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973077585"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17973077586,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973077586"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17973078252,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973078252"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17973078375,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973078375"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17973078376,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973078376"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17973458151,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17973458151"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17974068224,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17974068224"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17975018640,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17975018640"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17975032836,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17975032836"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17975032837,
+   "job": "security-cloud",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17975032837"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17975032838,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17975032838"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17976663247,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976663247"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17976663248,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976663248"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17976663251,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976663251"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17976664315,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976664315"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17976664316,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976664316"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17976664319,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17976664319"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17977255993,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977255993"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17977256074,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977256074"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17977391422,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977391422"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17977391426,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977391426"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17977495294,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977495294"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17977495297,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977495297"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17977610429,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977610429"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17977610492,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977610492"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17977610626,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977610626"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17977743251,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977743251"
+  },
+  {
+   "before_ready": true,
+   "class": "other:server_timeout_running",
+   "id": 17977743252,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "server_timeout_running",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977743252"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17977745451,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977745451"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17977745452,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977745452"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17977755584,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977755584"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17977755585,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17977755585"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980597858,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980597858"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980597859,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980597859"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980597862,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980597862"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980597944,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980597944"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980597948,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980597948"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980599401,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980599401"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980599404,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980599404"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980602653,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980602653"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980602665,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980602665"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980661282,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980661282"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980666441,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980666441"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17980675552,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980675552"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17980973597,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980973597"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980973598,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980973598"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980973599,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980973599"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17980974019,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980974019"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17980976394,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980976394"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980976396,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980976396"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980976734,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980976734"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980976735,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980976735"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17980977819,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980977819"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980977820,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980977820"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980983422,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980983422"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17980983747,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980983747"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980983748,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17980983748"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17981407264,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17981407264"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17981489648,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17981489648"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17982370133,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982370133"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17982370134,
+   "job": "security-cloud",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982370134"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17982370135,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982370135"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17982378583,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982378583"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17982378584,
+   "job": "security-cloud",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982378584"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17982378585,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17982378585"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17983696268,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17983696268"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17983696272,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17983696272"
+  },
+  {
+   "before_ready": true,
+   "class": "other:no_updates_running",
+   "id": 17984695976,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "no_updates_running",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984695976"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984695977,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984695977"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984880922,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984880922"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984881312,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984881312"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984881526,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984881526"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984884955,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984884955"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984922864,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984922864"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984928867,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984928867"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984961182,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984961182"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984961198,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984961198"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984961214,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984961214"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984964396,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984964396"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984964570,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984964570"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17984964571,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984964571"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17984992062,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17984992062"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17985092730,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985092730"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17985402654,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985402654"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17985402655,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985402655"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17985677528,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985677528"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17985683475,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985683475"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17985786469,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985786469"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17985797286,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17985797286"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17986355652,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17986355652"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17986365198,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17986365198"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17986365199,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17986365199"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989118589,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989118589"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989119128,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989119128"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17989120060,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989120060"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989120063,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989120063"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17989122196,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_external_dependency_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989122196"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989122199,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989122199"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17989132388,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989132388"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989158847,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989158847"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17989176148,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989176148"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17989189758,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989189758"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17989189842,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989189842"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17989190135,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989190135"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17989709025,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989709025"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17989718647,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17989718647"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17990011788,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990011788"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17990016925,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990016925"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17990016927,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990016927"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17990016930,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990016930"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17990127182,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990127182"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17990127186,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990127186"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17990140936,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990140936"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17990145576,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990145576"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990189101,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990189101"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990198371,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990198371"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990198372,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990198372"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990198560,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990198560"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990313677,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990313677"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17990699150,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990699150"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17990702802,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17990702802"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991093312,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991093312"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991095844,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991095844"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991095845,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991095845"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991232310,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991232310"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17991238345,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991238345"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991238346,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991238346"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991348799,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991348799"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991350665,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991350665"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991992532,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991992532"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991992878,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991992878"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17991995943,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991995943"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991996787,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991996787"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991997920,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991997920"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17991999571,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17991999571"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17992003126,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992003126"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17992003129,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992003129"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17992046437,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992046437"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17992053613,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992053613"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17992055809,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992055809"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17992535094,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992535094"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17992584253,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17992584253"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17993160625,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993160625"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17993164551,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993164551"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17993643833,
+   "job": "pending",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993643833"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17993643834,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993643834"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17993643837,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993643837"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17993658146,
+   "job": "plan",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993658146"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17993696883,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993696883"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17993696884,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993696884"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17993832876,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993832876"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17993834754,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993834754"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17993949984,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993949984"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17993953346,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17993953346"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994044977,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994044977"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994049975,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994049975"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994052266,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994052266"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994054258,
+   "job": "security-coop",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994054258"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994054962,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994054962"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994055049,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994055049"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994055342,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994055342"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994055343,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994055343"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994055344,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994055344"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994058230,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994058230"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994065634,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994065634"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994067473,
+   "job": "security-pigeon",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994067473"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994067502,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994067502"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994067857,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994067857"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994067858,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994067858"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994070173,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994070173"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994070551,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994070551"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994075275,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994075275"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994079745,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994079745"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994085075,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994085075"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994086774,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994086774"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994086885,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994086885"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994091813,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994091813"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17994091815,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994091815"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994094743,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994094743"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994101908,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994101908"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994111298,
+   "job": "security-oauth",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994111298"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994137086,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994137086"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994141472,
+   "job": "security-opa",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994141472"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17994141473,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994141473"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994159676,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994159676"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994210099,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994210099"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17994210100,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994210100"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17994212104,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994212104"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17994212105,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994212105"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17994216495,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994216495"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994216496,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994216496"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17994221002,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994221002"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17994221003,
+   "job": "security-opa",
+   "project": "tacplus-dev/build",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994221003"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994234474,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994234474"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994234475,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994234475"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994241360,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994241360"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994334271,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994334271"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994472852,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994472852"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994483755,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994483755"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994484892,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994484892"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994486742,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994486742"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994499791,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994499791"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994533917,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994533917"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994648392,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994648392"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994648393,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994648393"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994651830,
+   "job": "security-pigeon",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994651830"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994662115,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994662115"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994669007,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994669007"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994670632,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994670632"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994734669,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994734669"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994754765,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994754765"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994762989,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994762989"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994789513,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994789513"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17994871577,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994871577"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994871578,
+   "job": "security-tacplus",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994871578"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17994871605,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994871605"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994912115,
+   "job": "security-opa",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994912115"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994921371,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994921371"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994990154,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994990154"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994990156,
+   "job": "security-website",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994990156"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994990157,
+   "job": "security-report",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994990157"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17994994309,
+   "job": "security-oauth",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17994994309"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17995061019,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995061019"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17995127029,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995127029"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17995200198,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995200198"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17995206057,
+   "job": "security-pigeon",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995206057"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17995271677,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995271677"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17995275018,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995275018"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17995488209,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995488209"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17995490040,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995490040"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17995670177,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995670177"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17995672948,
+   "job": "security-gateway",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17995672948"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996228916,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996228916"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996234500,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996234500"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996325453,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996325453"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996329790,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996329790"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996330968,
+   "job": "security-operator",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996330968"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996333248,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996333248"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996333627,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996333627"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996342054,
+   "job": "security-looper",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996342054"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996347311,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996347311"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996347312,
+   "job": "security-kernel",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996347312"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17996427908,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996427908"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996718632,
+   "job": "security-doppelganger",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996718632"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17996723887,
+   "job": "security-redo",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17996723887"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17997670222,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997670222"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17997671233,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997671233"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17997675687,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997675687"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17997677710,
+   "job": "security-oauth",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997677710"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17997701563,
+   "job": "report-fail",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997701563"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17997708490,
+   "job": "security-deploymentproxy",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17997708490"
+  },
+  {
+   "before_ready": false,
+   "class": "gate_failure",
+   "id": 17998185236,
+   "job": "gates",
+   "project": "tacplus-dev/build",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/build/-/jobs/17998185236"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17952313144,
+   "job": "looper-looper-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17952313144"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17956792524,
+   "job": "looper-operator-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956792524"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17956849011,
+   "job": "looper-looper-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849011"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17956849013,
+   "job": "looper-operator-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849013"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17960260265,
+   "job": "looper-cloud-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17960260265"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17962167528,
+   "job": "looper-scan-doppelganger",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167528"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17962167529,
+   "job": "looper-scan-gateway",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167529"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17962167534,
+   "job": "looper-scan-llmproxy",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167534"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17962167535,
+   "job": "looper-scan-mailbox",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167535"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17962167545,
+   "job": "looper-scan-launcher",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167545"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17962941019,
+   "job": "looper-scan-mailbox",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962941019"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963001543,
+   "job": "looper-scan-doppelganger",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963001543"
+  },
+  {
+   "before_ready": true,
+   "class": "runner_system_failure",
+   "id": 17963014988,
+   "job": "looper-scan-gateway",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963014988"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17963102935,
+   "job": "looper-doppelganger-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963102935"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17963102937,
+   "job": "looper-eventbus-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963102937"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17963267922,
+   "job": "looper-scan-gateway",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963267922"
+  },
+  {
+   "before_ready": false,
+   "class": "runner_system_failure",
+   "id": 17963304442,
+   "job": "looper-kernel-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963304442"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17963530924,
+   "job": "looper-kernel-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963530924"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17964409869,
+   "job": "looper-kernel-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17964409869"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17966892084,
+   "job": "looper-doppelganger-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17966892084"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17966892085,
+   "job": "looper-eventbus-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17966892085"
+  },
+  {
+   "before_ready": false,
+   "class": "other:no_updates_running",
+   "id": 17971526356,
+   "job": "looper-tacplus-verdict",
+   "project": "tacplus-dev/looper",
+   "reason": "no_updates_running",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526356"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17971526358,
+   "job": "looper-tacplus-340",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526358"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17971526359,
+   "job": "looper-tacplus-320",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526359"
+  },
+  {
+   "before_ready": false,
+   "class": "other:server_timeout_running",
+   "id": 17971526360,
+   "job": "looper-tacplus-327",
+   "project": "tacplus-dev/looper",
+   "reason": "server_timeout_running",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526360"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17971526361,
+   "job": "looper-tacplus-329",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526361"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972245133,
+   "job": "looper-operator-26",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972245133"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972245134,
+   "job": "looper-operator-30",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972245134"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972245136,
+   "job": "looper-operator-31",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972245136"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972598519,
+   "job": "looper-eventbus-28",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972598519"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972598523,
+   "job": "looper-kernel-49",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972598523"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17972781091,
+   "job": "looper-doppelganger-19",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17972781091"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17974942058,
+   "job": "looper-cloud-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17974942058"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17974942059,
+   "job": "looper-cloud-45",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17974942059"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17976008517,
+   "job": "looper-kick",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17976008517"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17977331559,
+   "job": "looper-redo-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331559"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17977331560,
+   "job": "looper-looper-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331560"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17977331561,
+   "job": "looper-operator-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331561"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17977331562,
+   "job": "looper-redo-10",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331562"
+  },
+  {
+   "before_ready": false,
+   "class": "other:no_updates_running",
+   "id": 17977331563,
+   "job": "looper-kernel-57",
+   "project": "tacplus-dev/looper",
+   "reason": "no_updates_running",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331563"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980497039,
+   "job": "looper-eventbus-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980497039"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980499452,
+   "job": "looper-looper-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980499452"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17980636888,
+   "job": "looper-cloud-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980636889,
+   "job": "looper-eventbus-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636889"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636890,
+   "job": "looper-redo-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636890"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980636891,
+   "job": "looper-doppelganger-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636891"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17980636892,
+   "job": "looper-kernel-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636892"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17980636893,
+   "job": "looper-looper-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636893"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17980636894,
+   "job": "looper-operator-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636894"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636895,
+   "job": "looper-cloud-45",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636895"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636896,
+   "job": "looper-cloud-48",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636896"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636897,
+   "job": "looper-cloud-49",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636897"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636898,
+   "job": "looper-tacplus-329",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636898"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636899,
+   "job": "looper-eventbus-28",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636899"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17980636900,
+   "job": "looper-redo-10",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636900"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17982389330,
+   "job": "looper-kick",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17982389330"
+  },
+  {
+   "before_ready": true,
+   "class": "image_pull",
+   "id": 17984045890,
+   "job": "looper-kick",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_system_failure",
+   "recovered": true,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984045890"
+  },
+  {
+   "before_ready": false,
+   "class": "other:runner_interrupted",
+   "id": 17984689444,
+   "job": "looper-plan",
+   "project": "tacplus-dev/looper",
+   "reason": "runner_interrupted",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984689444"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17984740609,
+   "job": "looper-doppelganger-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984740609"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17984741585,
+   "job": "looper-kernel-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984741585"
+  },
+  {
+   "before_ready": false,
+   "class": "timeout",
+   "id": 17984905962,
+   "job": "looper-redo-manager",
+   "project": "tacplus-dev/looper",
+   "reason": "job_execution_timeout",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905962"
+  },
+  {
+   "before_ready": false,
+   "class": "script_failure",
+   "id": 17993881167,
+   "job": "looper-doppelganger-2",
+   "project": "tacplus-dev/looper",
+   "reason": "script_failure",
+   "recovered": false,
+   "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17993881167"
+  }
+ ],
+ "image": {
+  "current": false,
+  "latest_run": {
+   "conclusion": null,
+   "id": 43404728366,
+   "sha": "423a103c4bf6",
+   "status": "in_progress",
+   "url": "https://github.com/tacplus-dev/looper/actions/runs/43404728366"
+  },
+  "main": "423a103c4bf657a1b722ecc8e69a1b67502f310f",
+  "missing": [
+   {
+    "date": "2026-11-13T09:46:12Z",
+    "sha": "423a103c4bf6",
+    "title": "looper-build: run a tacplus project's gates with the pinned image's own tacplus (#137)"
+   }
+  ],
+  "ref": "ghcr.io/tacplus-dev/looper:main",
+  "revision": "54db66aa9d5ebebdf1706cf0be350f29e2197c4c"
+ },
+ "items": [
+  {
+   "count": 139,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17967625493",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17967628328",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17967629469",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17967632641",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17967632861"
+   ],
+   "key": "failures/tacplus-dev/build/gate_failure",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 139 jobs failed with gate_failure, 0 recovered on retry",
+   "wait_hours": 11.34
+  },
+  {
+   "count": 52,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17972179718",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17972179719",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17972198706",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17972296953",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17972296954"
+   ],
+   "key": "failures/tacplus-dev/build/image_pull",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 52 jobs failed with image_pull, 27 recovered on retry",
+   "wait_hours": 8.78
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17984695976"
+   ],
+   "key": "failures/tacplus-dev/build/other:no_updates_running",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 1 job failed with other:no_updates_running, 0 recovered on retry",
+   "wait_hours": 0.74
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17977743252"
+   ],
+   "key": "failures/tacplus-dev/build/other:server_timeout_running",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 1 job failed with other:server_timeout_running, 0 recovered on retry",
+   "wait_hours": 3
+  },
+  {
+   "count": 48,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17960945698",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17960949309",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17960949310",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17962141137",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963198166"
+   ],
+   "key": "failures/tacplus-dev/build/runner_system_failure",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 48 jobs failed with runner_system_failure, 23 recovered on retry",
+   "wait_hours": 21.77
+  },
+  {
+   "count": 130,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963199352",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963223949",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963244624",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963246964",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17963248389"
+   ],
+   "key": "failures/tacplus-dev/build/script_failure",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 130 jobs failed with script_failure, 0 recovered on retry",
+   "wait_hours": 2.35
+  },
+  {
+   "count": 2,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17991238345",
+    "https://gitlab.com/tacplus-dev/build/-/jobs/17994871577"
+   ],
+   "key": "failures/tacplus-dev/build/timeout",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: 2 jobs failed with timeout, 0 recovered on retry",
+   "wait_hours": 2
+  },
+  {
+   "count": 7,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167545",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17966892085",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331560",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636889",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636891"
+   ],
+   "key": "failures/tacplus-dev/looper/image_pull",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 7 jobs failed with image_pull, 3 recovered on retry",
+   "wait_hours": 0.04
+  },
+  {
+   "count": 2,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526356",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17977331563"
+   ],
+   "key": "failures/tacplus-dev/looper/other:no_updates_running",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 2 jobs failed with other:no_updates_running, 0 recovered on retry",
+   "wait_hours": 10.02
+  },
+  {
+   "count": 34,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849011",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849013",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17960260265",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17963102935",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17963102937"
+   ],
+   "key": "failures/tacplus-dev/looper/other:runner_interrupted",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 34 jobs failed with other:runner_interrupted, 0 recovered on retry",
+   "wait_hours": 86.04
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17971526360"
+   ],
+   "key": "failures/tacplus-dev/looper/other:server_timeout_running",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 1 job failed with other:server_timeout_running, 0 recovered on retry",
+   "wait_hours": 5
+  },
+  {
+   "count": 9,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167528",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167529",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167534",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167535",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962941019"
+   ],
+   "key": "failures/tacplus-dev/looper/runner_system_failure",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 9 jobs failed with runner_system_failure, 5 recovered on retry",
+   "wait_hours": 2.28
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17993881167"
+   ],
+   "key": "failures/tacplus-dev/looper/script_failure",
+   "over": false,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 1 job failed with script_failure, 0 recovered on retry",
+   "wait_hours": 0.06
+  },
+  {
+   "count": 8,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17952313144",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956792524",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636893",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636894"
+   ],
+   "key": "failures/tacplus-dev/looper/timeout",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: 8 jobs failed with timeout, 0 recovered on retry",
+   "wait_hours": 88.01
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://github.com/tacplus-dev/looper/actions/runs/43404728366"
+   ],
+   "key": "image/tacplus-dev/looper",
+   "over": false,
+   "parallel": "an image build that is not cancelled by newer pushes, or one per push",
+   "recovered": false,
+   "summary": "ghcr.io/tacplus-dev/looper:main is at 54db66aa9d5e, main at 423a103c4bf6: 1 commit of main not in it, the oldest -0.17 h old; the latest image run: in_progress at 423a103c4bf6",
+   "wait_hours": -0.17
+  },
+  {
+   "count": 3,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/cloud/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "cloud: its manager behind: merge backlog p90 3, max 3 lands; 3 reports at once at most (mean 1.62), 3 running (mean 1.62) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 16.07
+  },
+  {
+   "count": 9,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849009",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17960260265",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17974942058",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905958"
+   ],
+   "key": "manager/cloud/merge-time",
+   "over": true,
+   "recovered": false,
+   "summary": "cloud: report to merge p90 165.4 min over 9 merges (p50 131.3, max 165.4; threshold 120 min); lands waited 16.07 h for the manager",
+   "wait_hours": 16.07
+  },
+  {
+   "count": 5,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849009",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17960260265",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17974942058",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888",
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905958"
+   ],
+   "key": "manager/cloud/sent-back",
+   "over": true,
+   "recovered": true,
+   "summary": "cloud: the manager sent 5 branches back on a conflict, resolved 0 by regenerating; redone: #45, #45, #45, #45, #45, #45, #45, #45, #45, #45, #46, #48"
+  },
+  {
+   "count": 7,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/doppelganger/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "doppelganger: its manager behind: merge backlog p90 7, max 7 lands; 6 reports at once at most (mean 1.65), 6 running (mean 1.65) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 58.74
+  },
+  {
+   "count": 10,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/kernel/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "kernel: its manager behind: merge backlog p90 10, max 10 lands; 9 reports at once at most (mean 2.36), 9 running (mean 2.35) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 61.48
+  },
+  {
+   "count": 30,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/looper/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "looper: its manager behind: merge backlog p90 30, max 32 lands; 9 reports at once at most (mean 1.52), 9 running (mean 1.52) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 416.95
+  },
+  {
+   "count": 5,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/operator/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "operator: its manager behind: merge backlog p90 5, max 5 lands; 4 reports at once at most (mean 1.13), 4 running (mean 1.13) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 75.29
+  },
+  {
+   "count": 43,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "manager/tacplus/backlog",
+   "over": true,
+   "recovered": false,
+   "running": 2,
+   "summary": "tacplus: its manager behind: merge backlog p90 43, max 43 lands; 4 reports at once at most (mean 0.87), 4 running (mean 0.87) over the kicker's 466 passes (threshold 3)",
+   "wait_hours": 439.42
+  },
+  {
+   "count": 2,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849015"
+   ],
+   "key": "manager/tacplus/merge-time",
+   "over": true,
+   "recovered": false,
+   "summary": "tacplus: report to merge p90 5288.6 min over 2 merges (p50 5241.5, max 5288.6; threshold 120 min); lands waited 439.42 h for the manager",
+   "wait_hours": 439.42
+  },
+  {
+   "count": 2,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849015"
+   ],
+   "key": "manager/tacplus/sent-back",
+   "over": false,
+   "recovered": false,
+   "summary": "tacplus: the manager sent 2 branches back on a conflict, resolved 0 by regenerating; redone: none"
+  },
+  {
+   "count": 984,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/build/-/jobs"
+   ],
+   "key": "queue/tacplus-dev/build",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/build: queue time p90 60.1 min over 984 jobs (p50 7.4, max 245; threshold 15 min)"
+  },
+  {
+   "count": 264,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "queue/tacplus-dev/looper",
+   "over": true,
+   "recovered": false,
+   "summary": "gitlab.com/tacplus-dev/looper: queue time p90 70.3 min over 264 jobs (p50 0.1, max 655.8; threshold 15 min)"
+  },
+  {
+   "count": 1,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167523"
+   ],
+   "key": "scan/tacplus",
+   "over": true,
+   "recovered": false,
+   "summary": "tacplus: its nightly scan held the repository 197.1 min (threshold 60 min)"
+  },
+  {
+   "count": 7,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "wait/doppelganger",
+   "over": true,
+   "recovered": false,
+   "summary": "doppelganger: ready issues waited 1.3 h with no report job (#2 0.1 h, #15 0.22 h, #16 0.22 h, #17 0.17 h, #18 0.17 h, #19 0.22 h, #20 0.22 h): no cap holds them back (looper#107), so the kicker, the plan or its runner did not start them; 6 reports at once at most (mean 1.65), 6 running (mean 1.65) over the kicker's 466 passes (threshold 1 h)",
+   "wait_hours": 1.3
+  },
+  {
+   "count": 17,
+   "evidence": [
+    "https://gitlab.com/tacplus-dev/looper/-/jobs"
+   ],
+   "key": "wait/looper",
+   "over": true,
+   "recovered": false,
+   "summary": "looper: ready issues waited 1.05 h with no report job (#48 0.05 h, #99 0.05 h, #104 0.1 h, #105 0.1 h, #108 0.05 h, #115 0.05 h, #120 0.05 h, #122 0.05 h, #127 0.05 h, #130 0.05 h, #133 0.1 h, #134 0.1 h, #135 0.05 h, #136 0.05 h, #137 0.05 h, #138 0.05 h, #140 0.05 h): no cap holds them back (looper#107), so the kicker, the plan or its runner did not start them; 9 reports at once at most (mean 1.52), 9 running (mean 1.52) over the kicker's 466 passes (threshold 1 h)",
+   "wait_hours": 1.05
+  }
+ ],
+ "longest": {
+  "holds": [],
+  "lands": [],
+  "queues": [
+   {
+    "job": "looper-operator-manager",
+    "minutes": 655.8,
+    "project": "tacplus-dev/looper",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849013"
+   },
+   {
+    "job": "looper-looper-manager",
+    "minutes": 655.5,
+    "project": "tacplus-dev/looper",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849011"
+   },
+   {
+    "job": "looper-looper-manager",
+    "minutes": 655.3,
+    "project": "tacplus-dev/looper",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905960"
+   },
+   {
+    "job": "looper-cloud-manager",
+    "minutes": 655.2,
+    "project": "tacplus-dev/looper",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905958"
+   },
+   {
+    "job": "looper-eventbus-manager",
+    "minutes": 592.8,
+    "project": "tacplus-dev/looper",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905956"
+   }
+  ],
+  "scans": [
+   {
+    "minutes": 197.1,
+    "repo": "tacplus",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167523"
+   },
+   {
+    "minutes": 55.6,
+    "repo": "cloud",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167521"
+   },
+   {
+    "minutes": 38.8,
+    "repo": "cluster",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167522"
+   },
+   {
+    "minutes": 38.5,
+    "repo": "eventbus",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167532"
+   },
+   {
+    "minutes": 38.5,
+    "repo": "deploymentproxy",
+    "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17962167527"
+   }
+  ]
+ },
+ "loopers": {
+  "blobstore": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    9.1
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "chaos": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    4.7
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "cloud": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 24,
+   "lands": {},
+   "scan_minutes": [
+    55.6
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "cluster": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    38.8
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "coop": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    38.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "deploymentproxy": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    38.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "doppelganger": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 19,
+   "lands": {},
+   "scan_minutes": [
+    3.9,
+    7,
+    23.1
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "eventbus": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 13,
+   "lands": {},
+   "scan_minutes": [
+    38.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "fleet-dev": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 4,
+   "lands": {},
+   "scan_minutes": [
+    38.1
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "fleet-seatrials": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    38.4
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "gateway": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 9,
+   "lands": {},
+   "scan_minutes": [
+    6.6,
+    6.7,
+    23.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "kernel": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 24,
+   "lands": {},
+   "scan_minutes": [
+    31.3
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "launcher": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 2,
+   "lands": {},
+   "scan_minutes": [
+    0.3,
+    5.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "llmproxy": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 2,
+   "lands": {},
+   "scan_minutes": [
+    9.8,
+    35.9
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "looper": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 19,
+   "lands": {},
+   "scan_minutes": [
+    38
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "mailbox": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    7,
+    13.2,
+    21.3
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "messaging": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    6.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "oauth": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    6.4
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "onscreen": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    4.5
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "opa": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 7,
+   "lands": {},
+   "scan_minutes": [
+    38.3
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "operator": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 14,
+   "lands": {},
+   "scan_minutes": [
+    17.4
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "people": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    4.3
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "pigeon": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    37.9
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "redo": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 10,
+   "lands": {},
+   "scan_minutes": [
+    15.4
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "registry": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    38
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "roadmap": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    38.4
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "stratum": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 2,
+   "lands": {},
+   "scan_minutes": [
+    37.9
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "tacplus": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 9,
+   "lands": {},
+   "scan_minutes": [
+    197.1
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "tenantecho": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 3,
+   "lands": {},
+   "scan_minutes": [
+    14.1
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  },
+  "website": {
+   "deferred_lands": 0,
+   "holds": {},
+   "jobs": 1,
+   "lands": {},
+   "scan_minutes": [
+    5.8
+   ],
+   "slots": null,
+   "waits": {
+    "by_issue": {},
+    "by_reason": {},
+    "hours": 0
+   }
+  }
+ },
+ "managers": {
+  "cloud": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 1,
+   "failed": 3,
+   "jobs": 6,
+   "lands": 21,
+   "merged": 9,
+   "merges": [
+    {
+     "after": "e40e196",
+     "issue": 44,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849009"
+    },
+    {
+     "after": "b15a1c9",
+     "issue": 46,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849009"
+    },
+    {
+     "after": "bd4253d",
+     "issue": 47,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17960260265"
+    },
+    {
+     "after": "8e92ac8",
+     "issue": 49,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888"
+    },
+    {
+     "after": "ba01590",
+     "issue": 48,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888"
+    },
+    {
+     "after": "77e7b6f",
+     "issue": 50,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888"
+    },
+    {
+     "after": "0506cf8",
+     "issue": 51,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17980636888"
+    },
+    {
+     "after": "d304dc1",
+     "issue": 34,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905958"
+    },
+    {
+     "after": "837bee8",
+     "issue": 45,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17984905958"
+    }
+   ],
+   "red_gates": 4,
+   "red_main": [],
+   "redone": [
+    45,
+    45,
+    45,
+    45,
+    45,
+    45,
+    45,
+    45,
+    45,
+    45,
+    46,
+    48
+   ],
+   "report_to_merge_minutes": {
+    "max": 165.4,
+    "n": 9,
+    "p50": 131.3,
+    "p90": 165.4
+   },
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 5,
+   "waited_hours": 16.07
+  },
+  "coop": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 0,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  },
+  "doppelganger": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 3,
+   "jobs": 4,
+   "lands": 7,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 4,
+   "red_main": [],
+   "redone": [
+    19
+   ],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 58.74
+  },
+  "eventbus": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 2,
+   "jobs": 6,
+   "lands": 6,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 4,
+   "red_main": [],
+   "redone": [
+    28,
+    28,
+    28,
+    28,
+    28
+   ],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0.04
+  },
+  "fleet-dev": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 2,
+   "lands": 1,
+   "merged": 1,
+   "merges": [
+    {
+     "after": "02f902d",
+     "issue": 26,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963506989"
+    }
+   ],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": {
+    "max": 91,
+    "n": 1,
+    "p50": 91,
+    "p90": 91
+   },
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  },
+  "fleet-seatrials": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 0,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  },
+  "gateway": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 2,
+   "lands": 1,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 1,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0.01
+  },
+  "kernel": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 3,
+   "jobs": 5,
+   "lands": 7,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 4,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 61.48
+  },
+  "looper": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 5,
+   "jobs": 6,
+   "lands": 11,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 6,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 416.95
+  },
+  "oauth": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 0,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  },
+  "opa": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 4,
+   "lands": 4,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 4,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 12.88
+  },
+  "operator": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 4,
+   "jobs": 4,
+   "lands": 10,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 6,
+   "red_main": [],
+   "redone": [
+    27,
+    28,
+    30,
+    30
+   ],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 75.29
+  },
+  "pigeon": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 1,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 1,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0.01
+  },
+  "redo": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 2,
+   "jobs": 3,
+   "lands": 4,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 2,
+   "red_main": [],
+   "redone": [
+    10
+   ],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0.03
+  },
+  "registry": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 1,
+   "merged": 1,
+   "merges": [
+    {
+     "after": "1c50251",
+     "issue": 11,
+     "set": "full",
+     "status": "success",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17963102938"
+    }
+   ],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": {
+    "max": 76.2,
+    "n": 1,
+    "p50": 76.2,
+    "p90": 76.2
+   },
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  },
+  "tacplus": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 5,
+   "merged": 2,
+   "merges": [
+    {
+     "after": "0d66c1bb",
+     "issue": 329,
+     "set": "full",
+     "status": "none",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849015"
+    },
+    {
+     "after": "0d66c1bb",
+     "issue": 338,
+     "set": "full",
+     "status": "none",
+     "url": "https://gitlab.com/tacplus-dev/looper/-/jobs/17956849015"
+    }
+   ],
+   "red_gates": 1,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": {
+    "max": 5288.6,
+    "n": 2,
+    "p50": 5241.5,
+    "p90": 5288.6
+   },
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 2,
+   "waited_hours": 439.42
+  },
+  "tenantecho": {
+   "build_queue_minutes": null,
+   "build_run_minutes": null,
+   "builds": 0,
+   "builds_not_started": 0,
+   "deferred": 0,
+   "failed": 0,
+   "jobs": 1,
+   "lands": 0,
+   "merged": 0,
+   "merges": [],
+   "red_gates": 0,
+   "red_main": [],
+   "redone": [],
+   "report_to_merge_minutes": null,
+   "resolved": 0,
+   "reverts": [],
+   "sent_back": 0,
+   "waited_hours": 0
+  }
+ },
+ "night": "2026-11-13",
+ "projects": {
+  "tacplus-dev/build": {
+   "failures": {
+    "gate_failure": 139,
+    "image_pull": 52,
+    "other:no_updates_running": 1,
+    "other:server_timeout_running": 1,
+    "runner_system_failure": 48,
+    "script_failure": 130,
+    "timeout": 2
+   },
+   "jobs": 984,
+   "prepare_s": {
+    "max": 2367,
+    "n": 893,
+    "p50": 12,
+    "p90": 259
+   },
+   "queue_s": {
+    "max": 14702,
+    "n": 984,
+    "p50": 446,
+    "p90": 3608
+   },
+   "run_s": {
+    "max": 10800,
+    "n": 984,
+    "p50": 52,
+    "p90": 943
+   },
+   "status": {
+    "failed": 373,
+    "success": 611
+   }
+  },
+  "tacplus-dev/cluster": {
+   "failures": {},
+   "jobs": 0,
+   "prepare_s": null,
+   "queue_s": null,
+   "run_s": null,
+   "status": {}
+  },
+  "tacplus-dev/looper": {
+   "failures": {
+    "image_pull": 7,
+    "other:no_updates_running": 2,
+    "other:runner_interrupted": 34,
+    "other:server_timeout_running": 1,
+    "runner_system_failure": 9,
+    "script_failure": 1,
+    "timeout": 8
+   },
+   "jobs": 264,
+   "prepare_s": {
+    "max": 557,
+    "n": 254,
+    "p50": 4,
+    "p90": 175
+   },
+   "queue_s": {
+    "max": 39349,
+    "n": 264,
+    "p50": 5,
+    "p90": 4217
+   },
+   "run_s": {
+    "max": 39609,
+    "n": 264,
+    "p50": 3442,
+    "p90": 13608
+   },
+   "status": {
+    "canceled": 2,
+    "failed": 62,
+    "success": 200
+   }
+  }
+ },
+ "runner_pools": {
+  "tacplus-ci build (tacplus-dev/cloud: runner-manager in the ci project)": {
+   "boot_to_ready_s": {
+    "max": 2367,
+    "n": 893,
+    "p50": 12,
+    "p90": 259
+   },
+   "disk_pct": null,
+   "failed_before_ready": 91,
+   "jobs": 984,
+   "vms": 8
+  },
+  "tacplus-ci shared (tacplus-dev/cloud: runner-manager in the ci project)": {
+   "boot_to_ready_s": {
+    "max": 557,
+    "n": 254,
+    "p50": 4,
+    "p90": 175
+   },
+   "disk_pct": {
+    "jobs": 154,
+    "max": 20,
+    "p50": 10
+   },
+   "failed_before_ready": 10,
+   "jobs": 264,
+   "vms": 50
+  }
+ },
+ "sources": {
+  "github-actions": "ok",
+  "github-main": "ok",
+  "gitlab:tacplus-dev/build": "ok",
+  "gitlab:tacplus-dev/cluster": "ok",
+  "gitlab:tacplus-dev/looper": "ok",
+  "image": "ok"
+ },
+ "thresholds": {
+  "backlog": 3,
+  "count": 3,
+  "disk_pct": 85,
+  "hold_hours": 1.0,
+  "image_hours": 2.0,
+  "land_minutes": 60,
+  "merge_minutes": 120,
+  "prepare_p90_s": 300,
+  "queue_p90_s": 900,
+  "scan_minutes": 60,
+  "vm_wait_hours": 1.0,
+  "vm_wait_s": 300,
+  "wait_hours": 1.0
+ },
+ "window": {
+  "from": "2026-11-12T09:36:00Z",
+  "until": "2026-11-13T09:36:00Z"
+ }
+}
