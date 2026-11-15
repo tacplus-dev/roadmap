@@ -1,0 +1,25 @@
+Suggestion: A security run that analyzed none of a Java service's dependencies is not green
+Type: Security
+Summary: stratum's report tonight says '0 finding(s): 0 failing the policy' while its gates failed before building anything (just gates exited 127, trivy not found, stratum#36): spotbugs saw 'Java sources, but the gates compiled no target/classes', osv-scanner resolved no Maven graph (the reactor's own 1.2.0-SNAPSHOT modules; the same in kernel's and eventbus's runs), and there was no jar for trivy. The eight HIGH shaded-Jackson CVEs kernel accepts under kernel#59 ship in stratum.jar too, and tonight's floor could not see them. Fail a run whose tree compiled nothing, and give Maven an SCA path that resolves
+Why: The policy fails a tool that cannot run, but a tool with nothing to analyze is listed under 'Not analyzed, or in part' and the run passes, so a red gate makes a green security job. For the three Java services the only check of their dependencies is trivy on the jars the gates built (looper#147): stratum's STATE says the OSV check of the resolved tree is 'still by hand', eventbus's that its 'none from the OSV scan' was by hand, and kernel#59 itself was found by hand because 'osv-scanner did not resolve the Maven tree'. A report of nothing also poisons the baseline and the 'new since the previous run' of the next real run. Also serves Correctness: the report says what it checked.
+
+## Evidence
+- https://gitlab.com/tacplus-dev/build/-/pipelines/3069906816 (stratum 1a11490, tonight's report: the gates job 'just gates exited 127: sh: 1: trivy: not found; error: recipe audit-jar failed', the security job 0 findings, 0 failing, 'spotbugs: source: Java sources, but the gates compiled no target/classes', 'osv-scanner: source: transitive dependencies not resolved: failed resolution for .../server/pom.xml ... stratum-server[Concrete:1.2.0-SNAPSHOT]'; checked against: osv-scanner and semgrep only, no trivy)
+- https://gitlab.com/tacplus-dev/build/-/pipelines/3070165187 (kernel 65f698e, green: 'osv-scanner: transitive dependencies not resolved: failed resolution for .../codegen/pom.xml ... kernel:codegen[Concrete:1.2.0-SNAPSHOT]'; its 24 trivy HIGH are the jars' shaded Jackson, excepted) and https://gitlab.com/tacplus-dev/build/-/pipelines/3069912458 (eventbus 2e877a5: the same osv-scanner line for eventbus-server)
+- https://github.com/tacplus-dev/stratum/issues/36 (gates red on main: audit-jar needs trivy, absent from the build image; Blocked-by tacplus#712) and https://github.com/tacplus-dev/stratum/blob/main/STATE.md (Known gaps: 'the jackson shaded in Hazelcast 5.7.0 ... HIGH is accepted as unreachable until 2026-12-03'; 'the gates audit the jar but not the resolved tree, so the OSV tree check is still by hand')
+- https://github.com/tacplus-dev/kernel/issues/59 ('the build's own checks do not report them (security/summary.md: no trivy or osv finding on the jar; osv-scanner did not resolve the Maven tree)') and https://github.com/tacplus-dev/eventbus/blob/main/PROPOSALS.md (2026-11-13: 'the 0 covers none of the Maven tree')
+- https://github.com/tacplus-dev/looper/blob/main/README.md (Policy: a run fails on 'a tool that cannot run on the tree's root project (a nested fixture or example that does not load is listed as not analyzed instead), and a scanner missing from the image'; The release jars, looper#147: trivy rootfs on 'the jars a build releases')
+
+## Cost
+A day or two in looper-scan: (1) a Java module with sources and no target/classes or jar after the gates is a tool that could not run on the root project, so the run fails as 'not analyzed' (when the gates themselves failed, the security verdict says 'not run', never 0); (2) Maven SCA from the reactor itself: the cyclonedx-maven-plugin's SBOM (or mvn dependency:tree) in the build image, with the SNAPSHOT modules resolved from the reactor, scanned by osv-scanner --sbom, or syft's sbom.cdx.json, already written per run, fed to it. Tests on kernel's, eventbus's and stratum's trees: the shaded Jackson CVEs appear with or without a jar.
+
+## Touches
+looper#49 (the deterministic floor), looper#147 (trivy on the release jars), kernel#59 and stratum#28 (the shaded-Jackson decisions and their expiries), decisions/deterministic-builds-2026-10-27.md, the rule that nothing reaches main without green gates (a green that checked nothing is not one)
+
+## Reuse considered
+trivy rootfs on the jars (#147) stays the check of shaded copies; osv-scanner reads CycloneDX SBOMs and syft already writes sbom.cdx.json each run, so the SBOM path is the smallest change; stratum's just audit-jar and the hand OSV tree checks recorded in kernel's and stratum's STATE are what this replaces. looper#149 (kernel's spotbugs crash with its cause dropped) is the neighbouring bug, not this one. Considered: a repository-side gate (stratum#36's audit-jar), which the decision of 2026-11-13 moved into the floor.
+
+## Status
+open
+Rank: 2
+Filed: 2026-11-15 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18042630451)

@@ -1,0 +1,24 @@
+Suggestion: Debian's kernel headers in the build images: decide them once, so each kernel advisory batch stops turning the nightly and the pinned repositories red
+Type: Security
+Summary: tacplus's Nightly security has failed 8 of its last 12 runs (3 of the recap's 7 nights); on 2026-11-14 the one failing image of nine was base:latest, whose linux-libc-dev 6.12.116-1 carries six HIGH kernel CVEs fixed in 6.12.117-1, the batch tacplus#711 moved the build images past that morning; base was not rebuilt. The same batch had turned cloud's main red the day before (cloud#59: 'every plan and apply is skipped'), and cloud's STATE says each kernel batch recurs this way 'until the image question is decided'. No kernel runs from these images: decide the headers (an exception by rule where no C is compiled, or a weekly rebuild of base and build with the batch), and rebuild base:latest now
+Why: Debian ships a kernel advisory batch about weekly, and each one re-pins fifteen repositories through tacplus: tacplus#554 then #711 (closed 2026-11-14), cloud#43 then #59, cluster's and fleet-seatrials' exceptions, and the nightly's red that files nothing (the recap lists actions/tacplus/Nightly security three nights with no advice). The headers are only there for the C toolchain (libc6-dev, build-essential in images/base.packages, cloud's PROPOSALS 2026-11-14); an image's kernel headers execute nothing, so the scanner's HIGH is the package's, not the image's risk. Deciding it once (a reasoned, dated exception for linux-libc-dev in images that compile with it, or the rebuild cadence that keeps them current) ends a weekly churn through every pinned repository. Also serves Operability and Cost: fewer red mains and re-pin lands.
+
+## Evidence
+- https://github.com/tacplus-dev/tacplus/actions/runs/43609468960 (Nightly security 2026-11-14 15:18Z: 'scanned 9 image(s), fail=1'; ghcr.io/tacplus-dev/tacplus/base:latest (debian 13.7) 'Total: 6 (HIGH: 6, CRITICAL: 0)': linux-libc-dev 6.12.116-1, fixed 6.12.117-1, CVE-2026-98466, -98715, -98853, -99109, -99281, -99288; build:latest and build:2.0 to 2.6 clean)
+- https://github.com/tacplus-dev/tacplus/actions/workflows/nightly-security.yml (the runs: failed 2026-11-03, 11-05, 11-06, 11-07, 11-08, 11-09, 11-11 and 11-14; passed 11-04, 11-10, 11-12, 11-13: 8 of 12), the recap 2026-11-15 actions/tacplus/Nightly security: 3 of 7 nights
+- https://github.com/tacplus-dev/tacplus/issues/711 (closed 2026-11-14 05:08Z: 'Build images carry linux-libc-dev 6.12.116-1: six HIGH kernel CVEs fixed in Debian 13's 6.12.117-1 (DSA-6628-1) fail every pinned repo's security scan') and https://github.com/tacplus-dev/cloud/issues/59 (closed 2026-11-14: 'security job red on main: 6 new HIGH kernel CVEs in the CI image's linux-libc-dev (build:2.6.10); every plan and apply is skipped')
+- https://github.com/tacplus-dev/cloud/blob/main/PROPOSALS.md ('A CI image without the C toolchain, or Debian's kernel headers accepted by rule', 2026-11-14, #59: 'nothing built here needs it ... and no kernel from it runs ... tacplus's build image cannot drop it: it comes by libc6-dev and build-essential (tacplus images/base.packages)') and https://github.com/tacplus-dev/cloud/blob/main/STATE.md ('Each kernel advisory batch recurs this way until the image question in PROPOSALS.md is decided')
+
+## Cost
+Jody's decision, then hours: (a) a dated exception by rule for linux-libc-dev in security-exceptions.yaml of the images' repository and of the pinned repositories' scans (the Trivy image scan can also ignore the package with a reason), with the risk written down (headers, nothing executes); or (b) the Images workflow rebuilds base and build on each Debian security batch (a weekly schedule, or on the nightly's red) and the pinned repositories re-pin by a looper issue filed from the nightly, the churn kept but automatic. Either way, one base:latest rebuild now (an Images workflow run).
+
+## Touches
+decisions/tacplus-images-2026-10-27.md, decisions/deterministic-builds-2026-10-27.md (pins by digest, so a rebuild is a re-pin everywhere), looper#49 (the floor and its exceptions), tacplus#193 (build:X.Y per line), the SeaBeam bar (release images), suggestions/2026-11-13 (an exception scoped to where it applies)
+
+## Reuse considered
+The Images workflow already rebuilds base and build (tacplus#711 did it for build); the nightly's Trivy step already names the package and the fix; security-exceptions.yaml and Trivy's ignore file are the places a rule goes. Considered: cloud's option (a), a CI image of its own from debian:trixie-slim (ends cloud's churn only, the fifteen pinned service repositories keep tacplus's build image); dropping libc6-dev from base (the image's own C, Rust and Swift builds need it).
+
+## Status
+open
+Rank: 4
+Filed: 2026-11-15 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18042630451)
