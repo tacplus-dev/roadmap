@@ -21,6 +21,6 @@ looper#49 (the floor's policy), the 2026-11-13 open suggestion (exceptions scope
 looper-scan's unsure() already lowers findings by the tool's confidence, and looper#108 already separates the generated tree's findings as not counted: a test-code class is the same mechanism with a path and cfg(test) predicate. CodeQL's Rust extractor does not skip test modules, and a per-repository exception is rule-wide today. Considered: a CodeQL config or query filter per repository (29 copies to keep) and waiting for the 2026-11-13 path-scoped exception (14 entries for oauth tonight, more each time a test moves).
 
 ## Status
-open
+accepted (Jody, 2026-11-17): tacplus-dev/looper#179
 Rank: 4
 Filed: 2026-11-17 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18099142157)
