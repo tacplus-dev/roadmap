@@ -1,0 +1,26 @@
+Suggestion: A SAST finding in test code is listed, never blocking
+Type: Security
+Summary: oauth's nightly floor is red tonight on 13 CRITICAL CodeQL rust/hard-coded-cryptographic-value findings and a HIGH cleartext-logging, all 14 inside #[cfg(test)] modules (auth.rs:1880 to 3092 and oidc.rs:710 to 801 pass the nonce argument '' to build_authorize_url in tests; the one production line, nonce.rs:106, is a [0u8; 12] buffer OsRng fills on the next line), and gateway's on 2 HIGH CodeQL findings in webapp-login/test/page.test.ts; none has an issue, and the only exception the scanner takes is rule-wide, which would accept a hard-coded nonce anywhere in oauth. Have looper-scan mark a SAST finding whose file is a test (tests/, test/, *_test.go, *.test.ts, Rust #[cfg(test)] modules by their line range) as test code: listed and counted, never failing the policy; secrets and dependencies keep their rules
+Why: The floor's credibility is what Jody reviews first; tonight its loudest CRITICALs are test code, and the one production hit is a false positive. Left as is, oauth's next report writes a rule-wide exception for rust/hard-coded-cryptographic-value (tacplus#340 did the same for 8 rules), which is the opposite of what a nonce check is for: the next real hard-coded nonce in oauth would be accepted. The 2026-11-13 open suggestion scopes exceptions by path; this removes the need to write one for every test module in every repository. Also serves Performance: oauth's and gateway's security jobs stop failing on tests (2 of tonight's 14 red nightly security jobs) and no needs-decision issue is filed for them.
+
+## Evidence
+- https://gitlab.com/tacplus-dev/build/-/jobs/18091582461 (security-oauth, nightly of 04f6c5bf, 2026-11-17: 168 failing the policy; CRITICAL codeql rust/hard-coded-cryptographic-value at src/auth.rs:1880, 2589, 2797, 2836, 2837, 3092, src/nonce.rs:106, src/oidc.rs:710, 736, 754, 769, 786, 801; HIGH rust/cleartext-logging at src/auth.rs:2314; all 'new since the previous run')
+- https://github.com/tacplus-dev/oauth/blob/04f6c5bfa689a54c0456de51dc5eb9709a8824e4/src/auth.rs (the 7 lines sit in #[cfg(test)] mod callback_url_allowlist_tests (1777-1977), apple_signin_tests (2325-2852), entra_signin_tests (2854-3618) and authorize_request_validation_tests (2298-2323); each passes nonce '' to build_authorize_url; 2314 is an assert message)
+- https://github.com/tacplus-dev/oauth/blob/04f6c5bfa689a54c0456de51dc5eb9709a8824e4/src/oidc.rs (710 to 801 in #[cfg(test)] mod tests, 621-905) and https://github.com/tacplus-dev/oauth/blob/04f6c5bfa689a54c0456de51dc5eb9709a8824e4/src/nonce.rs (106: let mut nonce_bytes = [0u8; 12]; 107: OsRng.fill_bytes(&mut nonce_bytes): the only production site, a false positive)
+- https://gitlab.com/tacplus-dev/build/-/jobs/18091576233 (security-gateway, nightly: HIGH codeql js/incomplete-multi-character-sanitization at webapp-login/test/page.test.ts:31 and js/polynomial-redos at :45, both failing the policy)
+- https://github.com/tacplus-dev/looper/blob/main/looper-scan (scan_policy: a HIGH or CRITICAL with a fix fails, and SAST findings carry fix=true; unsure() already lowers a finding by the tool's own confidence; looper#108 already sets the generated tree's findings aside as 'not counted'; an exception matches by id)
+- https://github.com/tacplus-dev/tacplus/issues/340 ('8 rule-wide entries ... path scoping impossible: scanner matches by rule id only': the exception oauth's report would write next); https://github.com/tacplus-dev/oauth/issues/26 (the gitleaks test fixtures, the 2026-11-12 open suggestion's case: the same tree, a second way tests turn the floor red)
+
+## Cost
+A day in looper-scan: a test flag on SAST findings from the file's path (tests/, test/, *_test.go, *.test.ts, *_test.py, src/test/java) and, for Rust, from the #[cfg(test)] mod ranges a small parser reads (the attribute line to the module's closing brace); blocking excludes test findings; the summary lists them under 'In test code'. A secret in a test fixture is unchanged (the 2026-11-12 suggestion). Tests: a CRITICAL in a cfg(test) module does not fail the run, the same rule in production code does.
+
+## Touches
+looper#49 (the floor's policy), the 2026-11-13 open suggestion (exceptions scoped by path: this is the case where no exception should be needed), the 2026-11-12 open suggestion (test fixtures as secrets), looper#53 (Jody's Semgrep decision: a finding's severity is the tool's; this changes where, not how severe), looper#108 (the generated tree set aside), oauth#26, tacplus#340
+
+## Reuse considered
+looper-scan's unsure() already lowers findings by the tool's confidence, and looper#108 already separates the generated tree's findings as not counted: a test-code class is the same mechanism with a path and cfg(test) predicate. CodeQL's Rust extractor does not skip test modules, and a per-repository exception is rule-wide today. Considered: a CodeQL config or query filter per repository (29 copies to keep) and waiting for the 2026-11-13 path-scoped exception (14 entries for oauth tonight, more each time a test moves).
+
+## Status
+open
+Rank: 4
+Filed: 2026-11-17 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18099142157)
