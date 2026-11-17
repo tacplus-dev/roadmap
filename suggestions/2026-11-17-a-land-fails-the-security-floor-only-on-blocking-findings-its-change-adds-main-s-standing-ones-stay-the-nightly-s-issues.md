@@ -21,6 +21,6 @@ the principle that nothing reaches main without green gates (kept: a land is jud
 looper-scan already compares a run's findings with the previous report and marks them new; the change lets that comparison decide the verdict, against main's report instead of the previous run's. The 2026-11-15 suggestion (publish 'latest' from main only) gives it the right base. mailbox's second option, a light gate set for planning files without the floor, is covered for STATE.md-only lands by the accepted 2026-11-11 suggestion and does nothing for a code fix. Considered: more rule-wide exceptions (Jody's way so far: each a decision, each accepting a rule everywhere) and waiting for tacplus#368 to land and every repository to re-pin (weeks at tonight's rate).
 
 ## Status
-open
+accepted (Jody, 2026-11-17): tacplus-dev/looper#180
 Rank: 3
 Filed: 2026-11-17 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18099142157)
