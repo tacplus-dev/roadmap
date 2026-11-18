@@ -129,3 +129,10 @@ Jody, 2026-11-18: "And 1 hour is too tight. Instead skipper keeps the user updat
   (validated or not, where the cause was found, the issue it became, the fix landing, the update reaching the tenant) until it
   is resolved or closed. The Admiral reports each step back to the Skipper over the same channel; the user never talks to the
   Admiral.
+
+Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. So don't get too technical unless it's appropriate."
+
+- **The Skipper speaks to its audience.** The same finding is told differently to a non-technical end user (what happened, what
+  is being done, what to expect), to a developer or operator of the tenant (the cause, the issue, the fix), and to an agent
+  (structured, complete). The Skipper chooses the level from who reported it and how they asked; it goes technical only when
+  that audience wants it. The record the Admiral files stays fully technical either way.
