@@ -86,3 +86,24 @@ skipper".
 - **The Admiral never reads a tenant's config directly.** It asks that tenant's Skipper over the channel the Skipper
   dials out to the Admiral, and the Skipper answers for its tenant. The Admiral doesn't store it.
 - **Every `GetConfig` is traced and accounted** like any call.
+
+## Addendum 2026-11-18: a user's bug report reaches a fix within an hour (Jody)
+
+Jody: "A user (human or ai) may report a bug to skipper. Skipper will validate and report to Admiral. Admiral may report it to
+the appropriate repo. Once fixed the cluster will automatically update. This way the user reporting an issue to resolution will
+be within an hour."
+
+- **The path:** user (a person or an agent) → **its tenant's Skipper**, which **validates** the report (reproduces it, attaches
+  the evidence: trace, logs, versions; drops duplicates and non-bugs) → **the Admiral**, over the Skipper's bidi channel (the
+  allowed tenant → `/system` direction) → the Admiral **files it in the repository that owns the cause** (one issue per cause,
+  with the evidence) → the looper fixes and lands it → a release → **the cluster updates itself** from it, with no person in
+  the loop outside production.
+- **The target: report to resolution within an hour.** That bounds everything after the report: the fix's run, its land (the
+  gates), the release and the rollout together fit in an hour. Today's tacplus land alone took ~100 min (2026-11-17); the gate
+  work under way (tacplus#812, #841, #842, #843, #340) is a precondition of this, not a separate goal.
+- **Consistent with what is decided:** the Admiral holds no tenant data (the report it files carries the Skipper's validated
+  evidence, not the tenant's data); a tenant never talks to the Admiral directly; the Admiral asks and pipelines act (it files an
+  issue, it never changes a repository or a cluster itself); deploys only through deterministic pipelines.
+- **Open (Jody):** how the Admiral files across organizations (a tacplus-dev repository vs a tenant's or a product's own); the
+  report's schema and what "validated" must prove; what the user sees while it is being fixed (status back down the same path);
+  the automatic update's rollout rules (canary, rollback) outside production, and that production keeps Jody's approval.
