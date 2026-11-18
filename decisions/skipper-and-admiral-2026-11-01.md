@@ -107,3 +107,18 @@ be within an hour."
 - **Open (Jody):** how the Admiral files across organizations (a tacplus-dev repository vs a tenant's or a product's own); the
   report's schema and what "validated" must prove; what the user sees while it is being fixed (status back down the same path);
   the automatic update's rollout rules (canary, rollback) outside production, and that production keeps Jody's approval.
+
+Jody, 2026-11-18, on the same path: "Ideally we will get most of the tacplus bugs so user facing bugs are more likely to be in a
+services user code. And technically skipper runs in the tenant namespace and has no privileges in system. So this will be a
+joint venture between skipper and admiral."
+
+- **Where the bugs are expected:** the platform's own bugs are meant to be found before users see them (the gates, the nightly,
+  the loopers). A user-facing bug is then most likely in a **service's user code** (the tenant's or product's own logic, not the
+  generated chassis), so the common case is routing it to the repository that owns that service, not to tacplus.
+- **A joint venture, by privilege:** the Skipper runs in the **tenant's namespace** and holds **no privileges in `/system`**; the
+  Admiral is in `/system` and sees the deployment, not the tenant's data. So neither does it alone:
+  - the **Skipper** validates from inside the tenant: it reproduces the report against the tenant's services, gathers what only
+    the tenant may see (its traces, logs, request), and decides what of it may leave the tenant;
+  - the **Admiral** adds what only `/system` sees (versions, the platform components on the path, fleet-wide signals such as
+    the same failure in other tenants), decides where the cause lives (a service's own repository, or tacplus), and files there;
+  - the two exchange this over the Skipper's channel, as typed requests, each acting only within its own privileges.
