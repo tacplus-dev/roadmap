@@ -1,0 +1,25 @@
+Suggestion: The generated record plane pins a Rust reader's predicate to its tenant and stamps a record's owner itself
+Type: Security
+Summary: Two tenant-isolation gaps in what tacplus generates have sat in tacplus's PROPOSALS and STATE.md since 2026-10-28 and 10-30 with no issue: the Rust wrapper renders no (spec.store_namespace) predicate pin on the record query plane, so a /tenants peer's foreign-tenant predicate 'reaches the store and trips the egress abort backstop instead of being refused' (Go and Java pin it before the store is asked); and the record write surface stamps no (spec.identity_spiffe_subject) or (spec.identity_spiffe_actor), so a record whose owner is its spiffe_id (messaging.Message) 'is stored with an empty owner unless the writer fills its own identity in, which the annotation exists to prevent'. Render the Rust pin as Go's and Java's (skipping the write surface's requests), stamp the identity on Put, InsertIfAbsent, ReplaceIfUnchanged and each Apply op as the publish wrapper did, and prove both in cross-test
+Why: Both sit on the Stratum path, the roadmap's priority 1, and every Rust tenant-owned service (gateway, oauth, llmproxy, mailbox, messaging, redo) reads through the unpinned plane: one backstop built to abort a response is what stands between a foreign-tenant query and the store, and mailbox's own PROPOSALS says the owner 'stays empty on every row'. The tenant-routing decision rests on 'generated code reads only it'; here the generated code does not do its half, in one language and on one surface, and nobody has filed it in three weeks. Also serves Correctness: the two annotations promise what the generated code does not do
+
+## Evidence
+- https://github.com/tacplus-dev/tacplus/blob/main/PROPOSALS.md ('Rust: the (spec.store_namespace) predicate pin on the record query plane', 2026-10-28, #163: 'Go and Java pin a tenant-held caller's query predicate to its own tenant before the store is asked (goPredicateNamespacePin, javaPredicateNamespacePin); the Rust wrapper renders none ... A /tenants peer's foreign-tenant predicate then reaches the store and trips the egress abort backstop instead of being refused ... reads through Create/Update<T>Query and Get<T>Rows are not [covered], in Rust only'; 'Stamp (spec.identity_spiffe_subject) / (spec.identity_spiffe_actor) on the record write surface', 2026-10-30, #207: 'stored with an empty owner unless the writer fills its own identity in, which the annotation exists to prevent')
+- https://github.com/tacplus-dev/tacplus/blob/main/STATE.md (Known gaps, last updated 2026-11-17: 'The Rust wrapper renders no (spec.store_namespace) predicate pin on the record query plane'; 'The record write surface stamps no (spec.identity_spiffe_subject) (PROPOSALS.md)')
+- https://github.com/tacplus-dev/mailbox/blob/main/PROPOSALS.md ('Who stamps spiffe_id and store_epoch_ms', 2026-10-30: 'spiffe_id (the record owner) stays empty on every row'; repeated in mailbox's STATE.md Known gaps)
+- https://github.com/tacplus-dev/roadmap/blob/main/decisions/tenant-routing-2026-10-26.md and https://github.com/tacplus-dev/roadmap/blob/main/decisions/s2s-never-crosses-tenants-2026-10-31.md (a caller's tenant is its token's; S2S never crosses tenants: the rules the generated plane is meant to enforce)
+- no issue holds either: gh search issues --repo tacplus-dev/tacplus --state open 'store_namespace OR identity_spiffe_subject' returns none on 2026-11-18, and https://github.com/tacplus-dev/tacplus/blob/main/ROADMAP.md names neither
+
+## Cost
+Days in tacplus: the Rust predicate pin mirrors goPredicateNamespacePin and javaPredicateNamespacePin and skips the write surface's requests (PROPOSALS 2026-10-28, found in #171); the write wrapper stamps the two identity fields from the caller as the eventbus publish wrapper did (#207); a cross-test case per language that sends a foreign-tenant predicate and expects a refusal before the store, and one that writes a record with a forged owner and reads the stamped one back; a 2.6 patch and its backports, then the Rust services relock
+
+## Touches
+decisions/tenant-routing-2026-10-26.md and decisions/s2s-never-crosses-tenants-2026-10-31.md (the rules the generated plane enforces), decisions/stratum-per-tenant-2026-10-25.md (Next 1, the records write surface of tacplus#163), decisions/identity-session-credential-2026-10-25.md, PRODUCTION.md ('The tenant-routing fix shipped on every line'), items/tacplus-security-sweep.md, tacplus#163, #171, #207
+
+## Reuse considered
+Go's and Java's predicate pins and the publish wrapper's identity stamping already exist in the generator: port them; cross-test/current-generation/run.sh already records the Rust principal pin's absence, so the case has a home; the egress abort backstop stays as the second line. Considered: an exception for Rust until the services move to C2S records (the 2.5 decision: no C2S record writes) does not cover reads, which are the gap
+
+## Status
+open
+Rank: 2
+Filed: 2026-11-18 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18137420443)
