@@ -98,9 +98,8 @@ be within an hour."
   allowed tenant → `/system` direction) → the Admiral **files it in the repository that owns the cause** (one issue per cause,
   with the evidence) → the looper fixes and lands it → a release → **the cluster updates itself** from it, with no person in
   the loop outside production.
-- **The target: report to resolution within an hour.** That bounds everything after the report: the fix's run, its land (the
-  gates), the release and the rollout together fit in an hour. Today's tacplus land alone took ~100 min (2026-11-17); the gate
-  work under way (tacplus#812, #841, #842, #843, #340) is a precondition of this, not a separate goal.
+- ~~**The target: report to resolution within an hour.**~~ Superseded the same day (below): no fixed resolution time; the Skipper
+  keeps the user updated instead. Fast lands still shorten the path (tacplus#812, #841, #842, #843, #340).
 - **Consistent with what is decided:** the Admiral holds no tenant data (the report it files carries the Skipper's validated
   evidence, not the tenant's data); a tenant never talks to the Admiral directly; the Admiral asks and pipelines act (it files an
   issue, it never changes a repository or a cluster itself); deploys only through deterministic pipelines.
@@ -122,3 +121,11 @@ joint venture between skipper and admiral."
   - the **Admiral** adds what only `/system` sees (versions, the platform components on the path, fleet-wide signals such as
     the same failure in other tenants), decides where the cause lives (a service's own repository, or tacplus), and files there;
   - the two exchange this over the Skipper's channel, as typed requests, each acting only within its own privileges.
+
+Jody, 2026-11-18: "And 1 hour is too tight. Instead skipper keeps the user updated on the progress and findings."
+
+- **No resolution-time promise.** The one-hour target is dropped.
+- **The Skipper owns the user's side of the report:** it acknowledges it, and keeps the user updated on progress and findings
+  (validated or not, where the cause was found, the issue it became, the fix landing, the update reaching the tenant) until it
+  is resolved or closed. The Admiral reports each step back to the Skipper over the same channel; the user never talks to the
+  Admiral.
