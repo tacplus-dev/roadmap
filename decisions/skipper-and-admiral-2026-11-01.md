@@ -242,3 +242,13 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
   changed through its Skipper with the user's approval. So the Admiral triages and files, and nothing more. "The Admiral
   asks; the operator acts" no longer applies to actions; the Admiral keeps only its read-only `GetConfig` of the
   deployment's redacted config (decided 2026-11-02), for triage.
+
+## Addendum 2026-11-19 (later): the Admiral reads the deployment's redacted config from kernel state (Jody)
+
+- **Supersedes the operator `GetConfig` for the Admiral** (2026-11-02). The kernel, which receives the deployment config
+  from the pipeline, keeps a **redacted copy as its own state** (generated redaction; secrets stay version references).
+  The Admiral **subscribes** with the generated state client (Get/Watch), in the existing model: every service owns its
+  own state and grants others read access.
+- **The Admiral's read access covers the deployment's part only**, never the tenant slices the kernel receives from the
+  tenants' Stratum. The Admiral still holds no tenant data; for a tenant's config it asks that tenant's Skipper.
+- The operator gains no `GetConfig` for this (operator#19 to be re-scoped or closed accordingly).
