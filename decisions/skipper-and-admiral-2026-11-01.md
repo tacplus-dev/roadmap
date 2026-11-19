@@ -234,3 +234,11 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
 - **Admiral v2 (later):** fleet actions, the Admiral asking the operator to act. Not in v1.
 - **APIs and protos:** each component's looper writes them from its ROADMAP; the hub reviews them against these
   decisions.
+
+## Addendum 2026-11-19 (later): the Admiral never asks the operator to act (Jody)
+
+- **Dropped: Admiral fleet actions.** Every fix now has a path that needs no action from the Admiral: a code bug is fixed
+  in its repository, released as a patch on its line and rolled out by the automated canary; a tenant's configuration is
+  changed through its Skipper with the user's approval. So the Admiral triages and files, and nothing more. "The Admiral
+  asks; the operator acts" no longer applies to actions; the Admiral keeps only its read-only `GetConfig` of the
+  deployment's redacted config (decided 2026-11-02), for triage.
