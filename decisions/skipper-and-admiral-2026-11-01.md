@@ -136,3 +136,43 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
   is being done, what to expect), to a developer or operator of the tenant (the cause, the issue, the fix), and to an agent
   (structured, complete). The Skipper chooses the level from who reported it and how they asked; it goes technical only when
   that audience wants it. The record the Admiral files stays fully technical either way.
+
+## Addendum 2026-11-19: open source, Skipper v1, tenant config, the LLM rule (Jody, huddle with the hub)
+
+- **Skipper and Admiral are open source** (tacplus-dev, like every platform component). What a consumer such as
+  SeaBeam wants kept private (prompts, playbooks, product knowledge) lives as configuration in its own private repo,
+  which the open Skipper loads; the mechanism is never forked.
+- **Skipper v1 is tickets plus assisted tenant configuration**, both on the user's authority. Skipper holds no privilege
+  of its own: a config change is applied with the authorized user's on-behalf-of token, scoped to that one write and
+  short-lived (never stored past the request). Tickets do not depend on the config work and come first.
+- **Tenant existence is system data; tenant settings are tenant data.** The tenant registry (a tenant's id, namespace and
+  the trust its workloads run under) lives in the system tenant's own Stratum, written by the operator when a tenant is
+  approved (one versioned registry write, not a deploy). A tenant's settings live in that tenant's Stratum, versioned
+  with a redacted twin (kernel#35). The kernel holds only its pipeline config plus the tenant registry; a tenant's
+  workloads get their identity from its namespace and the registry, so the kernel can serve a tenant before it has any
+  of that tenant's settings. The tenant files in the fleet repo (`deploy/bootstrap/tenants/<name>/`) are wrong under
+  this and go.
+- **Tenant config reaches the kernel by push, tenant to system.** The kernel declares the slice of tenant config it needs
+  (a tenant-scope `config_slice`: sign-in providers, join mode, domains, durations); tacplus generates a publisher on
+  the tenant's Stratum side that holds one stream to the kernel, sends a full snapshot on connect and then each new
+  version. The kernel keeps it in memory only; after a restart every tenant re-sends. Fail closed: until a tenant's
+  snapshot arrives it has no sign-in providers. The kernel accepts a slice only from that tenant's own Stratum identity
+  and only at a higher version than it holds.
+- **Skipper's config writes go to the tenant's Stratum** (not to the kernel, which learns of them through the push), as
+  per-field writes, not the whole-replace `UpdateTenantConfig` of today.
+- **Platform rule: an LLM may propose; it never holds a token or a write path.** Skipper is one service and one binary
+  with a deterministic core and an LLM advisor. The core alone writes, and works with no LLM at all (a user or UI can call
+  its typed config API directly). The advisor's tools are read-only plus "propose", producing a typed `ConfigChange`
+  that becomes a write only after the core validates it against the schema and the user's rights, shows the diff and
+  gets the user's explicit approval with their token. Enforced in the build: the advisor's module gets no state client
+  and no token handle, and a gate fails the build if it imports one. This applies platform-wide (the Admiral and future
+  agents).
+- **The operator and the Admiral stay separate services.** The operator holds standing cluster privilege, runs per
+  cluster, must work with nothing else up (it deploys llmproxy, which the Admiral needs), and stays small, deterministic
+  and LLM-free. The Admiral, per deployment, is where untrusted text (Skippers' messages, users' reports) arrives, so a
+  prompt injection must land in a process with no cluster credentials. The Admiral asks through the operator's narrow
+  typed API; the operator authorizes and logs every request.
+- **Follow-ups:** kernel#35 (tenant config in the tenant's Stratum), operator#17, operator#19 and fleet-seatrials#28
+  re-scoped to this; new: the tenant registry in system Stratum, the generated tenant-to-kernel config push, the
+  per-field tenant config write, the LLM-rule build gate, and the `tacplus-dev/skipper` and `tacplus-dev/admiral`
+  repositories.
