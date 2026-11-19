@@ -204,3 +204,18 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
 - **REVISIT (Jody): a reporting service is the long-term answer.** A tacplus service that takes reports (from Skippers,
   and later from others), holds their records, and is where the private evidence lives, instead of a GitLab repository
   standing in for one. Come back to this once tickets work end to end.
+
+## Addendum 2026-11-19 (later): how a fix reaches a deployment (Jody, huddle 2)
+
+- **Production runs a release line: a pinned MAJOR.MINOR with that line's latest patch, fully automated.** A new patch
+  release on the line starts a canary rollout with no person in the loop. Changing production's pin (a new line) is
+  controlled: it needs Jody's yes.
+- **A release line is a protected branch** (one per production release, e.g. 2.6), and it receives patches for its
+  whole support lifetime. Not every minor becomes a line (there may be no 2.7).
+- **When a bug or a vulnerability is found, it is fixed on main and patched onto every protected release branch still
+  within its support lifetime.**
+- **Dev is features, not patches:** dev deployments track main and new minors.
+- **The canary (to build):** one canary slice first (a cluster or a small set of tenants), a soak with health signals
+  green (each service's errors and latency against its own baseline, accounting, the Skippers' report rate), then
+  wider steps; any regression rolls back to the previous patch automatically and is filed through the report path.
+- **The Skipper tells the reporter when the fix reaches their deployment**, not when the issue closes.
