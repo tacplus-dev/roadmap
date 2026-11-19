@@ -176,3 +176,31 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
   re-scoped to this; new: the tenant registry in system Stratum, the generated tenant-to-kernel config push, the
   per-field tenant config write, the LLM-rule build gate, and the `tacplus-dev/skipper` and `tacplus-dev/admiral`
   repositories.
+
+## Addendum 2026-11-19 (later): the report contract and where reports go (Jody, huddle 2)
+
+- **Every report surfaces.** Validation sets a report's label and priority, never whether it is filed. A reproduced
+  report is filed as a bug; one not yet reproduced is filed as "not yet reproduced" with what the Skipper tried and saw.
+  The Skipper never tells a user "everything is fine" on its own judgment: it says what it checked, what it could not
+  confirm yet, and that the report is filed and watched, and it keeps the user updated until it is closed. The Admiral
+  groups unreproduced reports by symptom across tenants (the symptom only, no tenant data); several of the same
+  escalate as a bug of their own.
+- **"Validated" means:** a minimal reproduction against the tenant's own services with the tenant's own access, re-run;
+  the evidence (requests, responses, trace ids, log lines, versions), secrets redacted and no other tenant's data; and a
+  classification (the tenant's code, a platform service, the generator) with a confidence.
+- **The Admiral files; nothing goes back to the tenant.** Tenants are not expected to have a ticketing system. The
+  Admiral triages and opens the issue itself: with the owning tacplus-dev service when the cause is in tacplus, and in a
+  private GitLab repository otherwise. Its deterministic core holds the credentials (a GitHub App with issues: write on
+  tacplus-dev; WIF/OIDC to the allowed GitLab projects) and files only what the LLM proposed after checking the target
+  against an allow-list, the body for secrets and tenant identifiers, and duplicates (the LLM rule above).
+- **For now: every report's full record goes into a private GitLab triage repository first.** When the cause is in
+  tacplus, the Admiral also opens a public tacplus-dev issue holding only sanitized evidence (trace data is a typed
+  tacplus message, so its sanitizing is generated and deterministic) and a reproduction from generated fixtures, linked
+  to the private record by id only. Tenant data never reaches a public repository.
+- **Considered and set aside for now:** an encrypted evidence blob in the public issue (each repository publishes a
+  public key; its looper decrypts through a KMS key that never leaves KMS; the blob in its own comment, deleted when the
+  issue closes). It works, but public ciphertext is permanent (a later key leak opens every past report), so the
+  private triage repository wins for now.
+- **REVISIT (Jody): a reporting service is the long-term answer.** A tacplus service that takes reports (from Skippers,
+  and later from others), holds their records, and is where the private evidence lives, instead of a GitLab repository
+  standing in for one. Come back to this once tickets work end to end.
