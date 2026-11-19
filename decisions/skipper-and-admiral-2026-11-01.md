@@ -219,3 +219,18 @@ Jody, 2026-11-18: "Of course skipper has contextual awareness of the audience. S
   green (each service's errors and latency against its own baseline, accounting, the Skippers' report rate), then
   wider steps; any regression rolls back to the previous patch automatically and is filed through the report path.
 - **The Skipper tells the reporter when the fix reaches their deployment**, not when the issue closes.
+
+## Addendum 2026-11-19 (later): the hub's defaults, accepted (Jody: "go with your defaults")
+
+- **Support lifetime of a release line:** about 6 months after the next line ships; at most two lines supported at once.
+- **Models:** Skipper and Admiral reach models only through llmproxy; default Opus, Fable reserved for hard triage.
+- **Who may report:** any authenticated user or agent of the tenant, through its Skipper, rate-limited per user; no
+  anonymous reports (the report path is a prompt-injection path).
+- **Reaching the Skipper:** a typed API behind the gateway with the tenant's normal OIDC sign-in; a chat front later.
+- **The Admiral's GitHub credential:** a new GitHub App `tacplus-admiral` with `issues: write` on tacplus-dev only (not
+  the loopers' apps), held by its deterministic core.
+- **The private triage record:** GitLab project `seabeam/triage`, written by the Admiral through WIF. A record is kept
+  until its issue closes plus 90 days, then its evidence is purged and its summary kept.
+- **Admiral v2 (later):** fleet actions, the Admiral asking the operator to act. Not in v1.
+- **APIs and protos:** each component's looper writes them from its ROADMAP; the hub reviews them against these
+  decisions.
