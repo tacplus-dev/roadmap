@@ -27,6 +27,6 @@ Change: repo-looper --manage: on a red batch, a build per land at once (its cand
 Gain: a red batch of 20 is resolved in about two builds' time (2 to 3 h with queue) instead of about 9 serial builds (the night): tonight's 23 lands would have had their verdicts by morning, about 20 land-hours a night at tacplus's current rate; with #892, most unit-test reds never reach a batch
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/looper#205
 Rank: 3
 Filed: 2026-11-20 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18215309726)

@@ -27,6 +27,6 @@ Change: tacplus-dev/looper repo-looper: a report's --build in a pinned repositor
 Gain: the build queue's p90 from 117 min toward its p50 of 14 over 817 jobs: up to the 10.46 h looper's lands waited and tacplus's 5 unstarted batch builds a night; about a third fewer full builds (a report's pre-land set in minutes instead of 55) and half again more slots (9 for 6)
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/looper#204
 Rank: 3
 Filed: 2026-11-19 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18176428236)

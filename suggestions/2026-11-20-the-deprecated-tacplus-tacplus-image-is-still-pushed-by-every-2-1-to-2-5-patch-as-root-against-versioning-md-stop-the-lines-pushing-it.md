@@ -21,6 +21,6 @@ decisions/tacplus-images-2026-10-27.md (base and build only; 'no tacplus image',
 #193's change on main is the patch, and the backport flow (one PR per supported line, docs/VERSIONING.md) carries it; #283's line-rebuild job already runs each line's images.yml, so the removal takes effect at the next patch. Considered: keeping the job and only adding USER on each line (#580's backports), which keeps publishing an image the docs retired and nothing scans.
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/tacplus#932
 Rank: 4
 Filed: 2026-11-20 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18215309726)

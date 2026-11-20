@@ -20,6 +20,6 @@ decisions/rust-default-language-2026-10-27.md, decisions/tenant-deletion-2026-10
 The Go and Java servers already do it through their interceptors, and the Rust layer already ends the generated paths: the change is the path set, not a new mechanism. cross-test's stream-expiry leg (#260) is the proof to extend. Considered: documenting the gap in API.md instead (the contract is what consumers and the go-live review rely on); leaving it to each service (a handler route is generated for every Rust service, so the fix belongs in the generator once)
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/tacplus#931
 Rank: 2
 Filed: 2026-11-19 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18176428236)

@@ -19,6 +19,6 @@ decisions/gateway-per-fleet-2026-10-27.md (the gateway is the fleet's one edge),
 forwardable exists in the same crate and is the fix: nothing new is built. Considered: hyper-util's proxy helpers or a tower layer for hop-by-hop stripping, a dependency for one function the crate already has. Considered: leaving it as the scan's proposal, which no run picks up (the scan files bugs, and this one it did not).
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/gateway#44
 Rank: 2
 Filed: 2026-11-20 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18215309726)

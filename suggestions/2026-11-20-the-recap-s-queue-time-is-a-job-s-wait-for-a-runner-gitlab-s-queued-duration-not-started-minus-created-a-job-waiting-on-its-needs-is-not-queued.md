@@ -25,6 +25,6 @@ Change: looper-recap: queue_s and longest.queues from each job's queued_duration
 Gain: no false queue item: the 676 to 727 min 'queues' of tonight's five longest become the gates' run, and the build project's p90 is the runners' real wait, so a concurrent change or a node (capacity.one_more_node, about 2.14 USD a day) is asked for from it; 0 hours of waiting removed by itself
 
 ## Status
-open
+accepted (Jody, 2026-11-20): tacplus-dev/looper#206
 Rank: 5
 Filed: 2026-11-20 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18215309726)
