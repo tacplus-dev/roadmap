@@ -1,0 +1,26 @@
+Suggestion: A pinned build image follows its line's newest patch by a relock the loopers land, and a pin behind its line is a bug the scan files
+Type: Security
+Summary: kernel, stratum, eventbus and redo pin tacplus build:2.6.1 (sha256:91f42995, 2026-11-07) and fleet-dev the same digest, while the 2.6 line is at v2.6.13 (2026-11-15): fleet-dev#29 counts 86 fixed HIGH/CRITICAL CVEs in that image (libopenexr, linux-libc-dev, libpq, zlib, ASP.NET, gh's x/net), and every gate, every report's compiler and every security check of those five repositories runs in it. Nothing moves a pin but a person or a scan's by-hand issue (registry#10, #11, #12 and #16 in two weeks; fleet-dev#29), and the scan's pin rule reads only the floor's MAJOR.MINOR (opa#7, registry#7), so a stale patch is reported nowhere. Have a nightly relock (the repository's manager, or a scheduled plan) move tacplus.lock and build.lock to the line's newest patch digest and land it on the full gates as any land, and have the nightly scan file a pin behind its line's newest patch as a bug
+Why: The accepted half of tacplus#930 scans the pinned image and files its findings once upstream, which makes a stale pin visible; this makes the line's patch reach its consumers without a person reading the report and running tacplus pin by hand, which registry's loopers did four times in two weeks. Security first (the gates, the compiler and the scanners of five repositories run in an image with 86 fixed HIGH/CRITICAL CVEs); Operability too, since the line's patches to the generated chassis (v2.6.7's Java tree, v2.6.9's trace asserts) reach stratum's and kernel's generated code only with the pin.
+
+## Evidence
+- https://github.com/tacplus-dev/fleet-dev/blob/main/PROPOSALS.md (Move build.lock to its line's latest patch on a schedule, 2026-11-08, updated 2026-11-21: 'nothing moves the digest: the gates keep running on whatever tools 2.6.1 shipped while the line's patches fix the image'; 'on 2026-11-21 (nightly scan) the 2.6.1 image had 86 HIGH/CRITICAL CVEs that v2.6.13's image fixes')
+- https://github.com/tacplus-dev/fleet-dev/issues/29 (approved, in progress: build.lock pins 2.6.1, 86 fixed HIGH/CRITICAL CVEs, relock to v2.6.13: one repository's by-hand relock, filed by the nightly scan)
+- https://github.com/tacplus-dev/stratum/blob/main/PROPOSALS.md (Move the tacplus.lock pin with the 2.6 line's patches, 2026-11-15: 'The scan's pin rule reads the MAJOR.MINOR floor, so a stale patch is reported nowhere. Who moves the pin and when ... is Jody's call')
+- https://github.com/tacplus-dev/kernel/blob/main/tacplus.lock and https://github.com/tacplus-dev/stratum/blob/main/tacplus.lock, https://github.com/tacplus-dev/eventbus/blob/main/tacplus.lock, https://github.com/tacplus-dev/redo/blob/main/tacplus.lock (build_image: build:2.6.1@sha256:91f42995 on 2026-11-21; operator's 2.6.8, registry's 2.6.12; the line's newest https://github.com/tacplus-dev/tacplus/releases/tag/v2.6.13, 2026-11-15)
+- https://github.com/tacplus-dev/registry/issues/16 (with #10, #11 and #12: four re-pins of the build image by hand between 2026-11-08 and 2026-11-20, each a nightly scan's issue on a fixed HIGH or CRITICAL the pinned image still shipped)
+- https://github.com/tacplus-dev/kernel/blob/main/PROPOSALS.md (Move the base images' digests when the base publishes fixes, not by hand, 2026-11-17, #67: 'Nothing tells anyone to: the nightly report keeps listing the fixed advisories until a person resolves the tag again')
+
+## Cost
+A day or two in looper: a relock step (the manager's, once a night, or the plan's schedule) that runs tacplus pin to the line's newest patch (and resolves each pinned FROM's tag, kernel#67's ask) in a commit on a branch of its own and queues it for the merge train, so it lands on the full gates as the README of every pinned repository says a move must; the nightly scan's pin rule compares the lock's patch with the line's newest release and files one bug per repository when it lags. No new credential: the manager already pushes branches and lands them.
+
+## Touches
+decisions/tacplus-dev-stable-gate-2026-10-25.md and deterministic-builds-2026-10-27.md (the pin exists so that no patch reaches main without a commit: the relock is that commit, on the gates), decisions/tacplus-images-2026-10-27.md, Jody's rule on fleet-dev#1 (the loopers run the declared line at its latest patch), the issue flow (a bug is fixed and released as the next patch, which counts once its consumers take it), PRODUCTION.md's shipped-images bar, tacplus#930 (the scan of the pinned image, accepted 2026-11-20)
+
+## Reuse considered
+tacplus pin and the lock files exist (tacplus#180's line pins; registry's four re-pins show the mechanics), the manager lands branches on green gates and appends HISTORY.md lines of its own, so the relock is one more branch it stages; the nightly scan already files 'floor behind the latest released line' (opa#7, registry#7) and needs only the patch compared. tacplus#930's image scan (accepted) finds the CVEs but moves nothing. Renovate's docker manager with pinDigests (kernel's PROPOSALS) would bump the digests, at the cost of an outside app with write access, against the one-manager rule.
+
+## Status
+open
+Rank: 1
+Filed: 2026-11-21 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18244259587)
