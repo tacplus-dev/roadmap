@@ -20,6 +20,6 @@ looper#49 (the deterministic floor), #129 (one issue per cause, blocked when the
 #180 already publishes each commit's findings, so the last nightly's package of main's head exists to compare with; the scan's prompt already searches the repository's issues by id before filing (gateway#43's 'No open or closed gateway issue holds it'), so 'no open issue names it' is that search applied to standing findings too; security-baseline.json keeps the list to HIGH, CRITICAL and blocking. looper#210 (filed tonight, a stale latest when a nightly publishes nothing) is the other way the same latest misleads the scan, and reading main's head's package fixes both.
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-21): tacplus-dev/looper#211
 Rank: 2
 Filed: 2026-11-21 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18244259587)

@@ -21,6 +21,6 @@ decisions/tacplus-dev-stable-gate-2026-10-25.md and deterministic-builds-2026-10
 tacplus pin and the lock files exist (tacplus#180's line pins; registry's four re-pins show the mechanics), the manager lands branches on green gates and appends HISTORY.md lines of its own, so the relock is one more branch it stages; the nightly scan already files 'floor behind the latest released line' (opa#7, registry#7) and needs only the patch compared. tacplus#930's image scan (accepted) finds the CVEs but moves nothing. Renovate's docker manager with pinDigests (kernel's PROPOSALS) would bump the digests, at the cost of an outside app with write access, against the one-manager rule.
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-21): tacplus-dev/looper#212
 Rank: 1
 Filed: 2026-11-21 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18244259587)

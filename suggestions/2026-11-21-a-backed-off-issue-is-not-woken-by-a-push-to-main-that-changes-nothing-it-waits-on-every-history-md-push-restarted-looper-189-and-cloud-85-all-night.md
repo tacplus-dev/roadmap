@@ -27,6 +27,6 @@ Change: looper-dispatch's ready rule and repo-looper's back-off: a push to main 
 Gain: about 46 model runs and the 79 no-op control pods a night (9.34 h of queue tonight), the control runner's 12 slots left to reports with work; the wait items of looper (4.48 h), cloud (3.31 h), oauth (3.11 h), llmproxy (2.51 h), fleet-seatrials (2.11 h) and kernel (1.25 h) are these issues' own back-offs, which the open suggestion of 2026-11-19 has the recap count as waiting by choice
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-21): tacplus-dev/looper#213
 Rank: 4
 Filed: 2026-11-21 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18244259587)

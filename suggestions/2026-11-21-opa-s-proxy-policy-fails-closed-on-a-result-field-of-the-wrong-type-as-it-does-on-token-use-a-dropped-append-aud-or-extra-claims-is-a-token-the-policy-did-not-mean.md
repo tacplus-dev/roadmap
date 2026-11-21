@@ -19,6 +19,6 @@ decisions/identity-session-credential-2026-10-25.md and s2s-never-crosses-tenant
 opa#13's parseTokenUse is the pattern: the value and its type named in a codes.Internal, nothing new to build. A JSON schema of the result checked once at load (OPA's schema annotations on the entrypoint) would catch the same in one place, at the cost of a schema kept beside the proto; the five checks are smaller and land first.
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-21): tacplus-dev/opa#19
 Rank: 3
 Filed: 2026-11-21 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18244259587)
