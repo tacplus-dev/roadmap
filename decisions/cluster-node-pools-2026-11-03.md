@@ -29,3 +29,13 @@ less a month".
 - default-pool deleted, by the hub's mistake of making the cluster all-spot;
 - normal-pool: 3 x c4a-standard-2 on-demand, recreated, limited by the IN_USE_ADDRESSES quota of 8 until the old pool's
   IPs free.
+
+## Addendum, 2026-11-22: a looper pool from 0
+Jody, answering the hub's ask to grow the normal pool from 3 to 5 nodes: "yes grow the build capacity. it should be part
+of a dynamic pool that goes from 0 to X. It should scale to 0 when nothing is building."
+- A third pool, `looper`: c4a-standard-2, on demand (a looper run lasts hours; spot would preempt it), autoscaling from
+  0 to 2, tainted so only the control runner's job pods land there. They fill the 3 normal nodes first and overflow onto
+  it; it empties back to 0 when they end (tacplus-dev/cloud#95, tacplus-dev/cluster#47).
+- This changes the 2026-11-03 rule that loopers run on the normal nodes only: the managers and the kicker still do; the
+  overflow of looper runs does not.
+- X = 2 is at most the $130/month Jody approved. A larger X is a one-line change and needs Jody's yes.
