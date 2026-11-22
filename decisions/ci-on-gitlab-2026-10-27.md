@@ -28,3 +28,7 @@ Jody (2026-11-07, "do what you think best, get us to deployment"; "I have approv
 
 - Why: tacplus 2.6's `fleet build` locks each release to its published image, and seatrials' first deploy waits on it. The GitLab build pipeline (tacplus-dev/looper#17) needs a ghcr push credential that GitHub offers only as a classic personal token.
 - This departs from this decision's "no GitHub Actions" for releases. looper#17 can take releases over later. The deterministic build stays the goal.
+
+## Addendum, 2026-11-22: seatrials' first deploy builds missing release images itself
+
+Jody, 2026-11-22: seatrials' first deploy does not wait for every service's published release image. A service whose release image isn't published yet (today eventbus v0.1.2, stratum v0.1.0, oauth v0.1.3, redo v0.1.5) is built by the fleet from its **latest release tag**, as gateway already is (`images/build.sh` in tacplus-dev/fleet-seatrials). Each service moves to its own published image when its release workflow lands; tacplus#180's direction is unchanged. Recorded by the hub (tacplus-dev/fleet-seatrials#1).
