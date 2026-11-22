@@ -20,6 +20,6 @@ looper#180 (a land fails only on what it adds), looper#211 (the nightly's versio
 looper#211 already publishes security-<repo>/nightly, a base that exists after one nightly; the ancestor walk is a few lines of git in a job that has the clone, and the package fetch is the one the base read makes today. looper#215's third option (HISTORY.md written with the land, in the same push) removes the manager's half of the unpublished heads, not the nightly scan's PROPOSALS push or an agent's ROADMAP edit, so the fallback is needed either way. Building every bookkeeping push to publish a package instead is the full-build cost looper#204 is cutting
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-22): tacplus-dev/looper#217
 Rank: 4
 Filed: 2026-11-22 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18256297468)

@@ -20,6 +20,6 @@ looper#40 (prompt provenance), decisions/looper-identity-panel-2026-10-29 (what 
 looper#40's nonce blocks and author lookup exist for the prompt; the subcommands print them for a later read, nothing new is designed. GitHub's interaction limits are a setting, no code. A webhook or App filter that rewrites comments would be more machinery than the gap needs. The gates (a model-written change lands only on green, by the manager) are why this is rank 2: they bound the merge, not the push, the comment or the spend
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-22): tacplus-dev/looper#219; interaction limits put to Jody
 Rank: 2
 Filed: 2026-11-22 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18256297468)

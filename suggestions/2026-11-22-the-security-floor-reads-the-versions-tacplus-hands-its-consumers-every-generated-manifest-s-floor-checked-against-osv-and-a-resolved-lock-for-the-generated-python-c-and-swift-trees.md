@@ -19,6 +19,6 @@ looper#49 (deterministic SCA on every build), decisions/deterministic-builds-202
 tacplus#376's 'generated' recipe and the build's OSV-Scanner already scan four languages' locks: this extends the recipe to the three languages it leaves out and adds the floor pass over dependencies.yaml's inventory, which #338 made the single place a floor moves. The nightly scan's by-hand OSV queries do this today, once a night, by a model, only on what it thinks of; the advisory issues it files (items/tacplus-security-sweep.md) are its output, not a check. osv-scanner has no floor mode (it reads resolved locks), so the floor pass is a small script against OSV's batch API, like the one the scan's model runs by hand
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-22): tacplus-dev/tacplus#949
 Rank: 3
 Filed: 2026-11-22 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18256297468)

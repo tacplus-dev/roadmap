@@ -26,6 +26,6 @@ Change: approve tacplus-dev/tacplus#892, tacplus-dev/cluster#41 and tacplus-dev/
 Gain: a tacplus report's build before queueing drops from the full set (p50 33.4, p90 106.6 min last night) to the pre-land's unit gate of about 3.5 min, so the full builds that fill the 2-node pool are the lands' alone; with cluster#41, the runner's concurrent follows the pool (6 on 2 nodes as today, 15 on the 5 nodes cloud#88's quota allows) instead of 6 always; with cluster#42 a land's build no longer waits 15 min Pending behind report builds. The queue p90 of 33.5 min over 863 jobs, a 7th night over 15, is mostly the report builds' wait behind each other: in parallel on the pre-land set they take minutes each
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-22): tacplus-dev/looper#218; approved tacplus-dev/tacplus#892, tacplus-dev/cluster#41, tacplus-dev/cluster#42
 Rank: 5
 Filed: 2026-11-22 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18256297468)

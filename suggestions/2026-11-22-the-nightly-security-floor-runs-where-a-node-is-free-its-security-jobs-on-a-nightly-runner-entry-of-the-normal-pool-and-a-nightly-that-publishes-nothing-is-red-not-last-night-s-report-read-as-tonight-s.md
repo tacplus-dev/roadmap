@@ -23,6 +23,6 @@ looper#49 (the deterministic floor, nightly, on every repository), looper#164 (e
 cluster's control.yaml and render.sh already count a runner's concurrent from the normal pool's room (cluster#36): a nightly entry is that file's shape with other tags, and ci/build.gitlab-ci.yml already carries BUILD_NIGHTLY_TAGS for exactly this (looper#185's cluster half, proposed 2026-11-18, never filed). Considered: cluster#42's build-report entry with a PriorityClass keeps the nightly on the spot pool, where it still waits for a node the lands hold; the quiet-hour schedule (cloud#67, closed) moves the contention and does not remove it: tonight's chain ran 20:36Z to 08:08Z, long past the recap's quietest hours; BUILD_NIGHTLY_SLOTS 2 would double the failures, not the nodes. looper#210 is filed and needs only its approval
 
 ## Status
-open
+accepted (the hub, on Jody's standing authority, 2026-11-22): tacplus-dev/cluster#46, tacplus-dev/looper#220; approved tacplus-dev/looper#210
 Rank: 1
 Filed: 2026-11-22 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18256297468)
