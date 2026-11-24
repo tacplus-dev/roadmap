@@ -1,6 +1,6 @@
 # Loopers and builds leave the cluster: one spot VM per project (2026-11-24)
 
-**Status:** direction decided (Jody, 2026-11-24, in the hub session). The migration plan below needs **Jody's approval before any change**; seatrials stays first in line.
+**Status:** decided, and the plan approved (Jody, 2026-11-24: "This can be done in parallel. Getting tacplus its own vm and going is critical"). It runs **in parallel with seatrials**, and the **pilot is tacplus**. Issues: tacplus-dev/looper#238 (looper-vm), #239 (image), #240 (looper.yaml), tacplus-dev/cloud#108 (VMs), tacplus-dev/looper#241 (kicker).
 **Supersedes:** `only-vms-are-k8s-nodes-2026-11-04.md` for the **build environment** (the deployment cluster still has only its own nodes), and the looper placement of 2026-11-07 and 2026-11-22 (loopers and builds as pods on the cluster's normal, looper and spot pools).
 
 ## Why
@@ -25,11 +25,11 @@ On 2026-11-24 the "loopers don't build" rule and in-cluster placement caused mos
 10. **An off-the-shelf VM image, started by one generic cloud-init** (Jody, 2026-11-24). The VM runs Google's stock **Container-Optimized OS** (Arm), unmodified. We build no VM images: it comes with the container runtime, a read-only root and automatic OS updates. One cloud-init script, the same for every project, is versioned in tacplus-dev/cloud and set by the pipeline. It (a) reads the VM's identity from instance metadata (its project, the pinned image digest, its spec), (b) mounts the cache disk if present and readable, otherwise formats one or uses a local directory, and never stops for it, (c) pulls the image by digest, and (d) starts the main container as a restarting service, with the project name, the cache and the container socket. It decides no work: the main container reads its project's issues, as loopers do today. **No secrets in cloud-init or metadata:** the container fetches its tokens at start as the VM's own service account (Secret Manager, as the pipelines do). Per-project differences live only in metadata generated from that project's spec file, so every VM boots the same way, and a broken or preempted VM is replaced, never repaired.
 
 ## Migration plan (for Jody's approval; nothing changes before it)
-Seatrials comes first: none of this starts until seatrials is deployed, unless Jody says otherwise.
+Runs in parallel with seatrials (Jody, 2026-11-24). Seatrials keeps first claim on today's worker slots.
 1. **Design issue in tacplus-dev/looper:** the parent/child runner (`looper-vm`). It covers the state file format, the preemption handler, child re-runs, the per-project disk layout, and how a project VM takes its issues (the kicker's trigger, or the VM polling its own project).
 2. **cloud (tacplus-ci):** an instance-group template per project, the cache disk optional and recreatable (spot, Arm, the machine size read from the project's own spec file, decision point 9), a persistent disk per project, no SSH and no port 22, egress through NAT only, the kicker's permission to resize, and the GitLab/GitHub credentials the looper already uses (Secret Manager through WIF, as today).
 2b. **The spec file and the right-sizing loop:** the spec file's format (looper), an initial spec per repository from today's build measurements (each repo, one land), and the recap's drift check.
-3. **Pilot on one project** (fleet-seatrials or redo) beside the current in-cluster looper. Compare time-to-feedback, preemption recovery and cost for a few days.
+3. **Pilot on tacplus** beside the current in-cluster looper. Compare time-to-feedback, preemption recovery and cost for a few days.
 4. **Roll out the rest**, a few projects a day. Each project's in-cluster report jobs stop as its VM starts.
 5. **Managers:** move the interim managers (and the kicker) to a small CI VM, or keep them on GitLab's runners until the merge system replaces them. To decide at step 4.
 6. **Shrink the cluster:** remove the spot build pool, the looper pool and the in-cluster CI runners (control, kick, build, build-light, build-report). Size the remaining 3 nodes from the deployments' measured requests (seatrials' 13 services). The infra runner (cloud, cluster and deploy pipelines) moves to the CI VM side, or stays as one small runner. To decide at step 6.
