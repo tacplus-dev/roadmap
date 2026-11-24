@@ -19,10 +19,13 @@ On 2026-11-24 the "loopers don't build" rule and in-cluster placement caused mos
 7. **Security is not the focus of this step.** The worker VMs keep today's level; the control point becomes the future merge system.
 8. **The deployment cluster shrinks to 3 small VMs** once loopers and builds have left: no spot build pool, no looper pool, no in-cluster CI runners. It holds deployments only.
 
+9. **Each project specifies its own VM, in its repository, and it is right-sized over time** (Jody, 2026-11-24). A file in the repo (for example `looper.yaml`, beside `build.lock` and `gates.yaml`) names the project's ideal looper/builder: machine type (or CPU and memory), disk size, spot or not, and how many children may run at once. The cloud pipeline reads it to make that project's VM. It starts from measured builds (a Rust or Java project needs more than a small Go one) and is adjusted as use is measured: the nightly recap compares each project's measured peak CPU, memory and disk against its spec and files a change, up or down, when they drift. The change lands through that project's normal review like any other code.
+
 ## Migration plan (for Jody's approval; nothing changes before it)
 Seatrials comes first: none of this starts until seatrials is deployed, unless Jody says otherwise.
 1. **Design issue in tacplus-dev/looper:** the parent/child runner (`looper-vm`). It covers the state file format, the preemption handler, child re-runs, the per-project disk layout, and how a project VM takes its issues (the kicker's trigger, or the VM polling its own project).
-2. **cloud (tacplus-ci):** an instance-group template per project (spot, Arm, the machine size from measured build needs), a persistent disk per project, no SSH and no port 22, egress through NAT only, the kicker's permission to resize, and the GitLab/GitHub credentials the looper already uses (Secret Manager through WIF, as today).
+2. **cloud (tacplus-ci):** an instance-group template per project (spot, Arm, the machine size read from the project's own spec file, decision point 9), a persistent disk per project, no SSH and no port 22, egress through NAT only, the kicker's permission to resize, and the GitLab/GitHub credentials the looper already uses (Secret Manager through WIF, as today).
+2b. **The spec file and the right-sizing loop:** the spec file's format (looper), an initial spec per repository from today's build measurements (each repo, one land), and the recap's drift check.
 3. **Pilot on one project** (fleet-seatrials or redo) beside the current in-cluster looper. Compare time-to-feedback, preemption recovery and cost for a few days.
 4. **Roll out the rest**, a few projects a day. Each project's in-cluster report jobs stop as its VM starts.
 5. **Managers:** move the interim managers (and the kicker) to a small CI VM, or keep them on GitLab's runners until the merge system replaces them. To decide at step 4.
