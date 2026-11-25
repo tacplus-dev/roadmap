@@ -1,0 +1,25 @@
+Suggestion: Approve looper#232 priority:high: the looper reads a model-owned run directory as root and follows symlinks, so a scan's or report's model can publish the manager's token to a public branch or issue
+Type: Security
+Summary: looper#232 (filed 2026-11-24T16:11Z by looper#227's run; a bug with no approval and no comment) says: after the model has run, the looper, as the job's user (root), reads files in the run directory model_user_up chowned to the model's user (looper#83) and publishes what it reads: maint_land cats relock.txt into the maintenance commit's message, the issue's body and its comment; maint_tools greps tools.md into the same; security_file_unfiled reads security/findings.json; a report's outcome and step are read the same way. The model's user owns the directory, so it can replace any of them with a symlink to a file only the job's user can read (the manager's gh hosts.yml with MANAGER_GH's token, GITLAB_TOKEN's), and [[ -s ]] and cat follow it, so the token lands on a public looper/<repo>-<n> branch or in a public issue. looper#227's fix (merged 2026-11-25 00:02Z) stops git in the model-owned clone and does not cover the run directory. Approve #232 priority:high with its recommended fix (the looper's own files in a directory the job owns and the model only reads; each file the model writes read only as a regular file that is not a symlink, O_NOFOLLOW or cp -P first, size-capped) and its acceptance test (a model replacing relock.txt, tools.md and outcome with symlinks to a file of the job's: none of its content reaches a commit, issue or comment)
+Why: It is the same separation looper#68 and looper#83 built and that the 2026-11-24 suggestion on #227 defended: a model's run holds nothing of the manager's, and every repository is public, so a prompt injection in an issue a scan reads (looper#40) is one symlink from the manager's token on a public branch. #227 landed within a day of being filed; #232, found by that very run, has sat unapproved and uncommented since 2026-11-24 16:11Z. The looper-build-vms decision keeps today's level on the in-cluster path for the weeks of the migration (points 5 and 7), and the VM's main container inherits the same read-after-model code. Also serves Correctness: a report's outcome and step are what the looper acts on
+
+## Evidence
+- https://github.com/tacplus-dev/looper/issues/232 (bug, unapproved, 0 comments: maint_land, maint_tools, security_file_unfiled and a report's outcome and step read as root in a directory the model's user owns; the recommended fix and the acceptance test)
+- https://github.com/tacplus-dev/looper/issues/227 (closed 2026-11-25 00:02Z, 68607c9: the scan's model works in its own clone and no git runs there after the model, 'the looper copies the files it takes (no symlink followed, no .git)'; #232 says that does not cover the run directory)
+- https://github.com/tacplus-dev/looper/blob/main/PROPOSALS.md (2026-11-24, #227: 'A process the model left running as looper-scan could still change the clone while that copy runs', naming #227 and #232)
+- https://github.com/tacplus-dev/roadmap/blob/main/suggestions/2026-11-24-no-git-runs-as-the-job-s-user-in-a-checkout-the-scan-s-model-owns-approve-looper-227-priority-high-so-a-scan-s-model-cannot-get-a-command-run-with-the-manager-s-token.md (open, rank 2: the sibling gap, approved and landed the next day)
+- https://github.com/tacplus-dev/roadmap/blob/main/decisions/looper-build-vms-2026-11-24.md (points 5 and 7: the worker VMs keep today's level; the in-cluster reports and managers stay until the roll-out, and the VM's main container runs the same looper)
+
+## Cost
+Hours to a day in tacplus-dev/looper's repo-looper: the looper's own run files written under a job-owned directory the model can read but not write; tools.md, outcome and step read through a no-follow regular-file check with a size cap; the test #232 names in tests/repo-looper.test.sh. No change to the model's user or the broker
+
+## Touches
+looper#68 and looper#83 (each model as its own unprivileged user, the accepted suggestion of 2026-11-03), looper#40 (text from outside the org reaches the model), looper#227 (its sibling, landed), decisions/looper-build-vms-2026-11-24.md (security not this step's focus, today's level kept: this is today's level), decisions/issue-flow-2026-10-27.md (a bug is fixed, no design step)
+
+## Reuse considered
+#227's fix is the pattern: the looper copies what it takes before reading it, no symlink followed. The same copy step, applied to the run directory's files (cp -P into a job-owned directory, then a regular-file check), covers #232 with no new mechanism; the alternative, a second model-side writer directory, is more code for the same effect. The test harness of tests/repo-looper.test.sh already fakes a model's user (looper#83's tests). Considered and not proposed: an allowlist of file names (a symlink keeps its name)
+
+## Status
+open
+Rank: 1
+Filed: 2026-11-25 by the roadmap scan (https://gitlab.com/tacplus-dev/looper/-/jobs/18352301646)
