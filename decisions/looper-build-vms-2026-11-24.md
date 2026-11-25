@@ -26,6 +26,8 @@ On 2026-11-24 the "loopers don't build" rule and in-cluster placement caused mos
 
 11. **The model's credential is a static secret for now** (Jody, 2026-11-24). The VM reads it from Secret Manager (`tacplus-ci/looper-model-token`) as its own account. **Where we need to go** (to be designed in detail, separately): our cluster **issues short-lived tokens to VMs based on their cloud identity**, so no VM holds a long-lived model credential. Not part of this migration.
 
+12. **Amendment (Jody, 2026-11-25): one VM per heavy project, one shared VM per org for the rest.** This replaces point 1's one-VM-per-project. tacplus-dev/tacplus, a heavy build, keeps its own right-sized VM (`looper-vm-tacplus`). Every other tacplus-dev repository is worked by one shared VM (`looper-vm-tacplus-dev`). It has one parent, children across all of its repositories, one idle timer and one cache directory per repository, and it starts at a c4a-standard-4 spot. A repository that turns out heavy is broken out onto its own VM by moving it in the cloud settings. SeaBeam gets its own shared VM when it starts. Point 3's "nothing shared between projects" now means nothing shared between VMs.
+
 ## Migration plan (for Jody's approval; nothing changes before it)
 Runs in parallel with seatrials (Jody, 2026-11-24). Seatrials keeps first claim on today's worker slots.
 1. **Design issue in tacplus-dev/looper:** the parent/child runner (`looper-vm`). It covers the state file format, the preemption handler, child re-runs, the per-project disk layout, and how a project VM takes its issues (the kicker's trigger, or the VM polling its own project).
