@@ -84,6 +84,7 @@ In priority order.
   creates each deployment's namespace and namespace-only roles, runs `plan` on every change, and leaves `apply` to Jody
   alone. It's on the critical path to tacplus.dev, ahead of fleet-seatrials#4 (`decisions/cluster-pipeline-2026-11-02.md`;
   approved by Jody 2026-11-02, roadmap#1). Agent, at Jody's request.
+- issue-flow decision: a dated note that a looper follow-up inherits its parent's approval (#5; tacplus-dev/looper#264). Hub, on its recommendation with Jody's standing agreement (tp-act-on-recommendations), 2026-11-26.
 
 ## Later
 - **Native-messaging C2D transport** (Jody, 2026-11-03, after tacplus.dev is up): browser extensions reach a local daemon over native messaging (stdio framing, Chrome's 1 MB limit) as another C2D transport, generated for every C2D language. Host manifests and their per-OS install locations are fleet artifacts generated from the types, with an allowlist of extension IDs. First consumer: SeaBeam's Scotty browser extension. Needs a design issue, approval and a line in Next.
