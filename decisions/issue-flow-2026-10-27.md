@@ -41,3 +41,33 @@ A feature design that adds a **new wire format, protocol, transport, or security
 
 Start from the requirements, not from a mechanism someone has already named: write the requirements first, then the
 options.
+
+## Addendum 2026-11-26: a follow-up inherits its parent's approval (looper#264)
+
+Prompted by 10 follow-ups on 2026-11-26 (cloud#113, cloud#114, cluster#65, fleetbox#9, cloud#115, cloud#116, looper#261,
+looper#262, tacplus#968, tacplus#981). Each waited 30 to 90 minutes at `needs-decision` until the hub added its ROADMAP
+line by hand, and each one's parent was blocked behind it. Decided by the hub on its recommendation, under Jody's standing
+word of 2026-11-26 ("dont wait on me unless you absolutely have to"), as the stated half of tacplus-dev/looper#264
+(roadmap#5). Jody has been told of looper#264 and may still veto it; a veto withdraws this addendum with it.
+
+A `feature` that no ROADMAP.md links is still built, on its parent's approval, when **all** of these hold:
+- the looper's own app filed it (not a person, not another bot);
+- the first line of its body is `Parent: <org>/<repo>#N`;
+- that parent is open or was closed as done, carries `approved`, and is linked from a ROADMAP.md on main (its own
+  repository's or the platform's);
+- the parent has a comment from the looper that links this follow-up.
+
+**Not inherited:** production work, a new standing cost, a security or gate exception, or anything outside the parent's
+stated scope. The looper's model judges this before anything else. A follow-up that fails it gets a proposal and stops at
+`needs-decision`, as before, saying why.
+
+The looper commits the follow-up's ROADMAP.md line in that repository, `- Inherited (looper#264): <title> (#N), the other
+half of <parent>, ...`, and the line reaches main with the follow-up's land (the manager lets a land change ROADMAP.md by
+its own inherited line alone). The word "Inherited" keeps the roadmap honest about which items Jody approved directly and
+which came along with a parent. The line's exact format is the one looper#264 ships.
+
+**One level only.** A follow-up of a follow-up inherits only if the first parent named it, and its line says
+`itself inherited from <first parent>`.
+
+This narrows "A looper never builds a feature that is not on a ROADMAP.md" above: an inherited follow-up is on one, from
+its own land onward.
