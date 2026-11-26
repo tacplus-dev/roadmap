@@ -1,6 +1,24 @@
 # The agentic development flow, top to bottom
 
-Status: **agreed in outline by Jody on 2026-11-25** (a huddle); this write-up is for a panel review before it is built. It replaces the merge train (`merge-train-2026-11-04.md`) and extends `looper-build-vms-2026-11-24.md`. Where the two disagree with this page, this page is the newer.
+Status: **agreed in outline by Jody on 2026-11-25** (a huddle), then reviewed by a panel of three models (`agentic-dev-flow-review-2026-11-25/summation.md`). The section "Changes after the panel" below is part of the design and wins over the text after it where they differ; five points the panel did not settle, a new machine and the order of work wait on Jody. It replaces the merge train (`merge-train-2026-11-04.md`) and extends `looper-build-vms-2026-11-24.md`. Where the two disagree with this page, this page is the newer.
+
+## Changes after the panel (2026-11-25)
+
+All three reviewers kept the direction and found the same holes. These are adopted; the numbers refer to the summation.
+
+1. **Gates first.** The slowest gate group and `pkg/**` mapping to everything are the largest bottleneck left. Sharding `current-generation` and per-language gate sets are step 1 of the migration (1).
+2. **Builds on a VM are bounded.** A limit on builds running at once per VM, the wait shown, and a cap on builds and spend per issue. Capacity is sized from measurement (2).
+3. **A looper builds on `main-green`**, the last commit the rolling check found green, never on main's tip, and need not rebase before opening an MR. Its evidence records its base (3).
+4. **The merger is a small fixed program, not an agent.** It runs on a machine that runs no project code. It merges clean MRs and sends a conflicting MR back to its report, which resolves it. This replaces "the merger resolves conflicts" in the flow below (4).
+5. **Trust.** The looper's VM holds neither the main-writing credential nor the accepting one, and build containers there must not reach the VM's metadata server. The merger trusts only a status a report cannot mint; a release trusts only its own independent rebuild (5, 6).
+6. **Clean merges are unbuilt only inside a limit**: a bound on the merges main may hold unchecked, and no merging while the rolling check is red, down, bisecting or stale (7).
+7. **The rolling check has its own reserved machine**, not spot, not a looper's VM, not the GitLab build project (8). Capacity: Jody's to approve.
+8. **Recovery is a fixed procedure**: stop merging; run again to tell a flake from a break; revert only an isolated merge whose reverted tree builds; otherwise one "fix main" issue for one looper. A red no shipped change caused reverts nothing. A reverted change returns as a revert of the revert or as new commits (9, 10).
+9. **Gate scoping fails closed**; the map is derived from the dependency graph and never rewritten by a red check (11).
+10. **A release publishes exactly the commit that was checked**, release branches have a green status of their own, an older build cannot deploy after a newer one, and a red release files an issue (12).
+11. **One run per issue**, claims that survive a restart for merges, reverts and deploys, and a watchdog on every hand-off (13). The cache disk's lifetime, leftover containers and checkpoint time are owned (14).
+
+**Not settled by the panel** (summation, D1 to D5): a quick compile before a clean merge; the size of the unchecked window; what proves a revert; when tacplus's consumers are checked; the panel's time limit.
 
 ## Why
 
@@ -91,7 +109,7 @@ Approving features. Production: its release branch's version, and anything that 
 
 ## Migration, in order
 
-1. **Gates in parallel** for tacplus, measured, as a shadow run on real changes (required by nothing).
+1. **Gates**: `current-generation` sharded and `pkg/**` split into per-language sets, then the groups in parallel, measured as a shadow run on real changes (required by nothing). The panel's first priority.
 2. **MRs**: a report on a VM opens a pull request with its evidence instead of queueing a land.
 3. **The merger**, per project, with clean merges unbuilt.
 4. **The rolling check and the revert agent.** Not before step 3 is the only way onto main, and not after: steps 3 and 4 go live together, or main has no protection.
