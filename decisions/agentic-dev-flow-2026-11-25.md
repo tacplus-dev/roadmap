@@ -1,6 +1,6 @@
 # The agentic development flow, top to bottom
 
-Status: **agreed in outline by Jody on 2026-11-25** (a huddle), then reviewed by a panel of three models (`agentic-dev-flow-review-2026-11-25/summation.md`). The section "Changes after the panel" below is part of the design and wins over the text after it where they differ; five points the panel did not settle, a new machine and the order of work wait on Jody. It replaces the merge train (`merge-train-2026-11-04.md`) and extends `looper-build-vms-2026-11-24.md`. Where the two disagree with this page, this page is the newer.
+Status: **approved by Jody, 2026-11-25** ("then go with what you all agreed with"), after a huddle and a panel of three models (`agentic-dev-flow-review-2026-11-25/summation.md`). The section "Changes after the panel" is part of the design and wins over the text after it where they differ. Work: tacplus-dev/tacplus#976 and #977 (gates, first), tacplus-dev/looper#248 to #252, tacplus-dev/cloud#111.
 
 ## Changes after the panel (2026-11-25)
 
@@ -18,7 +18,7 @@ All three reviewers kept the direction and found the same holes. These are adopt
 10. **A release publishes exactly the commit that was checked**, release branches have a green status of their own, an older build cannot deploy after a newer one, and a red release files an issue (12).
 11. **One run per issue**, claims that survive a restart for merges, reverts and deploys, and a watchdog on every hand-off (13). The cache disk's lifetime, leftover containers and checkpoint time are owned (14).
 
-**Not settled by the panel** (summation, D1 to D5): a quick compile before a clean merge; the size of the unchecked window; what proves a revert; when tacplus's consumers are checked; the panel's time limit.
+**The five points the panel split on, decided** (the hub's recommendations, accepted by Jody): a quick compile of the merged tree runs in shadow and is required only if its numbers earn it (D1); main may hold at most 4 unchecked merges, or one gate's age, to start (D2); a revert lands when the failed gate group is green on the reverted tree, and merging reopens on the next green full check (D3); tacplus's consumers are checked against a release's digest before deploy, not in tacplus's merge path (D4); the panel's time limit is decided when the panel is built (D5).
 
 ## Why
 

@@ -20,6 +20,7 @@ This file covers what spans repositories or has no repository yet. Each reposito
   that alone merges to main on green gates (`decisions/looper-job-per-issue-2026-11-03.md`;
   `tacplus-dev/looper:ROADMAP.md`).
 - Planning files in every repository: `decisions/repo-roadmap-files-2026-10-27.md`.
+- **The agentic development flow** (Jody, 2026-11-25; `decisions/agentic-dev-flow-2026-11-25.md`, approved after a panel review) replaces the merge train: loopers build for themselves on their project's VM and open merge requests; a small fixed merger merges clean ones unbuilt; a rolling check keeps `main-green` and reverts what breaks main; release builds run by branch (main nightly and on demand), and only a green release build is deployed. Order: gates first (tacplus-dev/tacplus#976, #977), then tacplus-dev/looper#248 to #252 and tacplus-dev/cloud#111. The model panel on merge requests comes after the first release. Until its parts are live, the merge train stays.
 
 ## Next
 - **The bar for "SeaBeam can start"** (top priority after throughput; `decisions/seabeam-can-start-2026-11-12.md`):
